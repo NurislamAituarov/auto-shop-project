@@ -1,0 +1,138 @@
+.section {
+  max-width: 1440px;
+  min-height: 370px;
+  margin: 40px auto;
+
+  background-color: var(--lite-gray);
+  border-radius: 11px;
+  padding: 22px 30px;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+}
+
+.block__listCar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  .item {
+    width: 138px;
+    justify-content: start;
+    cursor: pointer;
+    p {
+      margin-left: 10px;
+      transition: all 0.2s;
+      font-size: 14px;
+      &:hover {
+        transform: scale(1.05);
+        color: rgb(155, 155, 155);
+      }
+    }
+  }
+}
+
+.block__selected {
+  h3 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  button {
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+
+.block__selects_wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+  margin-top: 20px;
+  button:nth-child(3) {
+    grid-column: 1/3;
+  }
+}
+.block__selected_item {
+  width: 237px;
+  height: 65px;
+  background-color: white;
+  border-radius: 6px;
+  // overflow: hidden;
+  position: relative;
+
+  div {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 0 30px;
+    grid-template-columns: 1fr;
+    background-color: white;
+    margin: 30px 0;
+  }
+
+  .block__selected {
+    background-color: var(--lite-gray);
+    padding: 35px;
+    border-radius: 15px;
+    margin-top: 30px;
+  }
+  .block__selects_wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+
+    button:nth-child(3) {
+      grid-column: 3;
+      margin: 0;
+    }
+  }
+  .block__selected_item {
+    margin: 0;
+    width: 206px;
+  }
+}
+
+@media screen and (max-width: 386px) {
+  .section {
+    padding: 0 20px;
+  }
+  .block__selected {
+    padding: 20px;
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .block__listCar {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+    .item {
+      width: max-content;
+      p {
+        border-bottom: 1px solid black;
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .block__selects_wrapper {
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    padding: 0;
+    .block__selected_item {
+      width: 100%;
+    }
+    button:nth-child(3) {
+      grid-column: 1;
+    }
+  }
+}

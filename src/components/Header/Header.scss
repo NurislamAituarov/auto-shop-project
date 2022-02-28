@@ -1,0 +1,141 @@
+.header {
+  // position: relative;
+}
+
+.title_info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 43px;
+  width: 100%;
+  padding: 0 233px;
+  background-color: rgba(239, 240, 240, 1);
+  justify-content: space-between;
+  div {
+    color: #737373;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    p {
+      margin-left: 8px;
+    }
+  }
+}
+
+.header__nav {
+  // height: 100px;
+  justify-content: space-between;
+  padding: 22px 0;
+  .nav {
+    width: 406px;
+    ul {
+      width: 100%;
+      font-size: 14px;
+      justify-content: space-between;
+      color: rgba(38, 38, 38, 1);
+      .active {
+        color: var(--red);
+      }
+      li {
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 4px 0;
+        border-bottom: 2px solid rgb(255, 255, 255, 0);
+        &:hover {
+          border-bottom: 2px solid var(--red);
+        }
+      }
+    }
+  }
+  hr {
+    width: 35px;
+    transform: rotate(90deg);
+    background-color: #c2c2c4;
+  }
+  .header__nav_subtitle {
+    line-height: 19px;
+    width: 170px;
+    span {
+    }
+  }
+}
+
+.header__nav_contacts {
+  svg {
+    cursor: pointer;
+  }
+  .phones {
+    width: 253px;
+    text-align: end;
+    align-items: start;
+    justify-content: space-between;
+    p {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+    span {
+      color: rgba(38, 38, 38, 1);
+      text-align: end;
+    }
+  }
+}
+
+.header__select {
+  justify-content: space-between;
+}
+
+//media =========================================================================
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 30px;
+  }
+  .header__nav_logo {
+    svg {
+      width: 127px;
+      height: 36px;
+    }
+  }
+
+  .title_info {
+    display: none;
+  }
+
+  .header__nav_subtitle,
+  .nav,
+  hr {
+    display: none;
+  }
+
+  .header__nav_contacts {
+    .phones {
+      width: 190px;
+      align-items: center;
+      p {
+        font-size: 18px;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    button,
+    span {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header__nav {
+    padding-top: 32px;
+  }
+}

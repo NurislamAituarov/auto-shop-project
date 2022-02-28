@@ -1,0 +1,10 @@
+import { Label } from './Label';
+import { Date } from './Date';
+import { Whatsapp } from './Whatsapp';
+import { Logo } from './Logo';
+import { Down } from './Down';
+import { Heart } from './Heart';
+import { Search } from './Search';
+import { Diagram } from './Diagram';
+import { Phone } from './Phone';
+export { Label, Date, Whatsapp, Logo, Down, Heart, Search, Diagram, Phone };

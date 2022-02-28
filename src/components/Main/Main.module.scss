@@ -1,0 +1,19 @@
+.main {
+  //   position: relative;
+  //   padding: 0 20px;
+  margin-top: 29px;
+}
+
+.section {
+  position: relative;
+  height: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    margin-top: 0;
+  }
+  .section {
+    height: 360px;
+  }
+}

@@ -1,0 +1,23 @@
+.tag {
+  display: inline-block;
+  font-weight: 700;
+  background-color: var(--red);
+  color: white;
+  font-size: 16px;
+}
+
+.s {
+  border-radius: 22px;
+  padding: 3px 9px;
+}
+.m {
+  border-radius: 33px;
+  padding: 5px 13px;
+}
+
+@media screen and (max-width: 368px) {
+  .tag {
+    font-size: 12px;
+    list-style: 14px;
+  }
+}

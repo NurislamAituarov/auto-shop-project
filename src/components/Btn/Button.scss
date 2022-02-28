@@ -1,0 +1,25 @@
+.btn {
+  background-color: rgba(202, 1, 0, 1);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s;
+  border-radius: 6px;
+  &:hover {
+    background-color: rgb(146, 0, 0);
+  }
+}
+
+.normal {
+  width: 210px;
+  height: 50px;
+}
+
+.small {
+  width: 142px;
+  height: 40px;
+}
+
+.big {
+  width: 490px;
+  height: 65px;
+}
