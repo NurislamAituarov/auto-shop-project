@@ -3,9 +3,9 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Tag } from '../Tag';
 import s from './Slider.module.scss';
 
-const rio = require('../Images/rio.png');
-const tiguan = require('../Images/tiguan.png');
-const rapid = require('../Images/rapid.png');
+import rio from '../Images/rio.png';
+import tiguan from '../Images/tiguan.png';
+import rapid from '../Images/rapid.png';
 
 export function CustomCarousel() {
   return (

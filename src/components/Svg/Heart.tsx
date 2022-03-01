@@ -1,5 +1,5 @@
 interface IHeart {
-  sum: number;
+  sum?: number;
   addCarSelect?: () => void;
   active?: boolean;
   width?: number | string;

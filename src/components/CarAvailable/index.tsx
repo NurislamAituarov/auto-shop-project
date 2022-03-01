@@ -1,16 +1,18 @@
 import s from './CarAvailable.module.scss';
 import cn from 'classnames';
+import { useState } from 'react';
+import { Diagram, Heart } from '../Svg';
+import { Button } from '../Btn/Button';
+import { useDispatch } from 'react-redux';
+import { addCar, removeCar } from '../../Actions/action';
+import { IItemCar } from '../../Type';
+
 import gift from '../Svg/gift.svg';
 import sec from '../Svg/sec.svg';
 import speed from '../Svg/speed.svg';
 import petrol from '../Svg/petrol.svg';
 import power from '../Svg/power.svg';
-import { useState } from 'react';
 import car from '../Images/skoda.png';
-import { Diagram, Heart } from '../Svg';
-import { Button } from '../Btn/Button';
-import { useDispatch } from 'react-redux';
-import { addCar, removeCar } from '../../Actions/action';
 
 export function CarAvailable() {
   const [listItem, setListItem] = useState([
@@ -48,7 +50,7 @@ export function CarAvailable() {
 
   const dispatch = useDispatch();
 
-  function addCarSelect(item, index) {
+  function addCarSelect(item: IItemCar, index: number) {
     listItem.forEach((el, i) => {
       if (index === i && el.active !== true) {
         dispatch(addCar(item));

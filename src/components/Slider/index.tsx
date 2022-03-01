@@ -18,9 +18,7 @@ type Ivalue = number[];
 export default function RangeSlider() {
   const [value, setValue] = React.useState<Ivalue>([0, 500]);
 
-  const handleChange = (newValue: number[] | any) => {
-    console.log(newValue);
-
+  const handleChange = (event: any, newValue: number[] | any) => {
     setValue(newValue);
   };
 
