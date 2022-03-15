@@ -1,4 +1,4 @@
-.section {
+.section__slider {
   position: absolute;
   background-color: #f9f9f9;
   width: 1870px;
@@ -13,10 +13,25 @@
   right: 0;
   top: 0;
   width: 1222px;
-  background-image: url('../Images/first.png');
+  background-image: url('../../Images/first.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  .carousel.carousel-slider .control-arrow {
+    top: 50%;
+    height: max-content;
+    border-radius: 6px;
+    background-color: rgb(0, 0, 0);
+  }
+  .control-dots {
+    background-color: var(--red);
+    border-radius: 6px;
+    padding: 2px;
+    width: max-content;
+    li {
+      background: rgb(255, 0, 0);
+    }
+  }
 }
 .fon {
   position: absolute;
@@ -24,7 +39,6 @@
   left: 0;
   opacity: 58%;
 }
-
 .item1 {
   height: 600px;
   position: relative;
@@ -34,6 +48,10 @@
     bottom: 43px;
     right: 334px;
     z-index: 100;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
   div:nth-child(2) {
     position: absolute;
@@ -67,13 +85,16 @@
 }
 
 @media screen and (max-width: 768px) {
-  .section {
+  .section__slider {
     max-width: 96%;
     height: 360px;
     left: 15px;
   }
   .wrapper__slider {
-    width: 526px;
+    width: 100%;
+    .carousel.carousel-slider .control-arrow {
+      padding: 5px 2px;
+    }
   }
   .main__title {
     top: 35px;
@@ -114,13 +135,21 @@
 }
 
 @media screen and (max-width: 375px) {
-  .section {
+  .section__slider {
     max-width: 91.8%;
   }
   .wrapper__slider {
     width: 100%;
+    .carousel.carousel-slider .control-arrow {
+      display: none;
+    }
+    .control-dots {
+      width: 100%;
+      padding: 0px;
+    }
   }
   .main__title {
+    width: 250px;
     top: 24px;
     left: 20px;
     h1 {

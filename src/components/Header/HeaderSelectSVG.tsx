@@ -13,7 +13,7 @@ export function HeaderSelectSVG({ width, height }: IHeaderSelectSVG) {
     <div className="header__select_svg flex header__select_mobile">
       <Heart sum={Boolean(sum.length) && sum.length} width={width} height={height} />
       <Diagram sum="18" width={width} height={height} />
-      <Search />
+      <Search link={true} />
     </div>
   );
 }

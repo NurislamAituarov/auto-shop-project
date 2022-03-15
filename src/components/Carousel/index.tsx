@@ -1,49 +1,68 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import './Carousel.scss';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import { Tag } from '../Tag';
-import s from './Slider.module.scss';
+import rio from '../../Images/rio.png';
+import tiguan from '../../Images/tiguan.png';
+import rapid from '../../Images/rapid.png';
+import camry1 from '../../Images/camry-black.png';
+import camry2 from '../../Images/camry-white.png';
 
-import rio from '../Images/rio.png';
-import tiguan from '../Images/tiguan.png';
-import rapid from '../Images/rapid.png';
-
-export function CustomCarousel() {
+export default function CustomCarousel() {
   return (
-    <div className={s.section}>
-      <div className={s.wrapper__slider}>
+    <div className="section__slider">
+      <div className="wrapper__slider">
         <Carousel
           autoPlay
           infiniteLoop
           showStatus={false}
-          showIndicators={false}
+          // showIndicators={false}
           showThumbs={false}
           interval={5000}>
-          <div className={s.item1}>
-            <div className={s.wrapper__rio}>
-              <img loading="lazy" alt="" src={rio} />
+          <div className="item1">
+            <div className="wrapper__rio">
+              <LazyLoadImage effect="blur" alt="" src={rio} />
             </div>
             <div>
-              <img loading="lazy" alt="" src={tiguan} />
+              <LazyLoadImage effect="blur" alt="" src={tiguan} />
             </div>
             <div>
-              <img loading="lazy" alt="" src={rapid} />
+              <LazyLoadImage effect="blur" alt="" src={rapid} />
             </div>
-            {/* <img className={s.fon} src={fon} alt="" /> */}
           </div>
-          <div className={s.item1}>
-            <div className={s.wrapper__rio}>
-              <img loading="lazy" alt="" src={rio} />
+          <div className="item1">
+            <div className="wrapper__rio">
+              <LazyLoadImage effect="blur" alt="" src={camry1} />
             </div>
             <div>
-              <img loading="lazy" alt="" src={tiguan} />
+              <LazyLoadImage effect="blur" alt="" src={camry2} />
+            </div>
+          </div>
+          <div className="item1">
+            <div className="wrapper__rio">
+              <LazyLoadImage effect="blur" alt="" src={rio} />
             </div>
             <div>
-              <img loading="lazy" alt="" src={rapid} />
+              <LazyLoadImage effect="blur" alt="" src={tiguan} />
+            </div>
+            <div>
+              <LazyLoadImage effect="blur" alt="" src={rapid} />
+            </div>
+          </div>
+          <div className="item1">
+            <div className="wrapper__rio">
+              <LazyLoadImage effect="blur" alt="" src={camry1} />
+            </div>
+            <div>
+              <LazyLoadImage effect="blur" alt="" src={camry2} />
             </div>
           </div>
         </Carousel>
       </div>
-      <div className={s.main__title}>
+      <div className="main__title">
         <Tag title="Осталось всего 10 авто!" size="m" />
         <h1>Грандиозная распродажа тестового парка!</h1>
         <p>Узнай свою цену!</p>

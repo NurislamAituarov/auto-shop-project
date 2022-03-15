@@ -1,0 +1,71 @@
+.block {
+  overflow: hidden;
+}
+.block__wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 33px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .block__item {
+    width: 335px;
+    height: 133px;
+    background-color: rgba(239, 240, 240, 1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.company__carfoto {
+  overflow: hidden;
+}
+.company__carfoto_wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 458px);
+  grid-column-gap: 33px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .company__carfoto_item {
+    span img {
+      width: 100%;
+      height: 288px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .block__wrapper {
+    grid-column-gap: 15px;
+  }
+  .company__carfoto_wrapper {
+    grid-template-columns: repeat(6, 336px);
+    .company__carfoto_item {
+      span img {
+        width: 336px;
+        height: 187px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 378px) {
+  .company__carfoto_wrapper {
+    grid-template-columns: repeat(6, 342px);
+    .company__carfoto_item {
+      span img {
+        width: 116%;
+        height: 187px;
+      }
+    }
+  }
+
+  .block__wrapper {
+    .block__item {
+      width: 344px;
+    }
+  }
+}

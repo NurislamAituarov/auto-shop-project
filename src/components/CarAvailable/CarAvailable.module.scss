@@ -35,7 +35,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-top: 25px;
     .active {
       background-color: var(--red);
@@ -158,6 +158,11 @@
     }
   }
 }
+
+.content_loader {
+  box-shadow: 0px 0px 15px 5px rgba(133, 147, 159, 0.3);
+  border-radius: 25px;
+}
 .item__svg {
   display: flex;
   width: max-content;
@@ -176,7 +181,7 @@
   position: absolute;
   width: 369px;
   height: 218px;
-  background-image: url('../Images/fon-small.png');
+  background-image: url('../../Images/fon-small.png');
   background-position: center;
   background-size: cover;
   top: 30px;
@@ -184,12 +189,15 @@
   pointer-events: none;
   z-index: -1;
 
-  img {
+  span {
+    display: block;
     position: absolute;
-    top: 102px;
+    top: 115px;
     right: 20px;
   }
 }
+
+// ============================================================================================================
 
 @media screen and (max-width: 768px) {
   .section {
@@ -226,9 +234,6 @@
           top: 80px;
           right: 30px;
         }
-      }
-
-      .item__btns {
       }
 
       .price {
@@ -269,7 +274,5 @@
   .wrapper__items {
     padding: 20px 15px;
     grid-column-gap: 30px;
-    .item {
-    }
   }
 }

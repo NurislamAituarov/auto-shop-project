@@ -10,9 +10,9 @@ export function TitleInfo({ text, index }: ITitleInfo) {
   const svg = () => {
     switch (index) {
       case 1:
-        return <Label />;
-      case 2:
         return <Date />;
+      case 2:
+        return <Label />;
       case 3:
         return <Whatsapp />;
       default:

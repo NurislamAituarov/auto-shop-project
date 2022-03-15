@@ -1,3 +1,35 @@
+.header__nav_logo {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .showMenu {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    bottom: -340px;
+    .header__select_item {
+      margin-bottom: 5px;
+    }
+    a {
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .active_ {
+      color: var(--red);
+    }
+  }
+}
+@media screen and (max-width: 378px) {
+  .showMenu {
+    bottom: -320px;
+    .header__select_item {
+      margin-bottom: 0px;
+    }
+  }
+}
 /* GENERAL STYLES */
 .visuallyHidden {
   position: absolute;
@@ -80,9 +112,6 @@
 @media screen and (max-width: 768px) {
   .hamburger {
     height: 22px;
-    .bar {
-      // width: 22px;
-    }
   }
   .bar2,
   .bar3 {
@@ -94,5 +123,29 @@
   }
   .checkbox1:checked + label > .hamburger1 > .bar4 {
     transform-origin: 12%;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .hamburger {
+    .bar {
+      width: 24px;
+    }
+    .bar2,
+    .bar3 {
+      left: 0px;
+    }
+  }
+
+  .checkbox1:checked + label > .hamburger1 > .bar1 {
+    transform: rotate(45deg);
+    transform-origin: -5%;
+    width: 24px;
+  }
+
+  .checkbox1:checked + label > .hamburger1 > .bar4 {
+    transform-origin: 0%;
+    transform: rotate(-45deg);
+    width: 24px;
   }
 }

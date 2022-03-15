@@ -1,0 +1,146 @@
+.section {
+  margin-top: 60px;
+  margin-bottom: 90px;
+}
+
+.block__connections {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 35px;
+  p {
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--grey);
+  }
+}
+.block__connections_items {
+  display: flex;
+  .wrapper__svg {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red);
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .block__connections_title {
+    h5 {
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 10px;
+    }
+    p {
+      cursor: pointer;
+      &:hover {
+        transition: all 0.3s;
+        color: black;
+      }
+    }
+    .address {
+      color: var(--red);
+      &:hover {
+        color: green;
+      }
+    }
+  }
+  .road {
+    p {
+      line-height: 1;
+      border-bottom: 1px solid black;
+      margin-top: 15px;
+      width: max-content;
+    }
+  }
+}
+
+.block__map {
+  margin-top: 100px;
+  margin-bottom: 70px;
+  img {
+    width: 100%;
+  }
+}
+
+.block__company {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .block__company_title {
+    h2 {
+      font-size: 40px;
+      line-height: 46px;
+      margin-bottom: 30px;
+    }
+    p {
+      width: 540px;
+      font-size: 16px;
+      line-height: 30px;
+      color: var(--grey);
+    }
+    margin-right: 170px;
+  }
+  .block__company_img {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 0 15px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    p {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+  .block__connections {
+    grid-column-gap: 0;
+  }
+
+  .block__map {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .block__company {
+    display: block;
+    .block__company_title {
+      margin: 0;
+      margin-bottom: 20px;
+      p {
+        width: 100%;
+      }
+      h2 {
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .section {
+    p {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+  .block__map {
+  }
+  .block__connections {
+    grid-template-columns: 1fr;
+    .block__connections_items {
+      margin-bottom: 20px;
+      .block__connections_title {
+        h5 {
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}

@@ -4,12 +4,23 @@ import './index.scss';
 import App from './components/App';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import ErrorBoundary from './components/Error-boundary/ErrorBoundary';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Error } from './components/Error-boundary/404';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <ErrorBoundary>
+          <App />
+          {/* <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/:error" element={<Error />} />
+          </Routes> */}
+        </ErrorBoundary>
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

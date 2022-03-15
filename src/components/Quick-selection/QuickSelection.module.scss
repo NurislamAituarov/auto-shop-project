@@ -2,8 +2,7 @@
   max-width: 1440px;
   min-height: 370px;
   margin: 40px auto;
-
-  background-color: var(--lite-gray);
+  background-color: var(--lite-grey);
   border-radius: 11px;
   padding: 22px 30px;
   display: grid;
@@ -17,15 +16,6 @@
     width: 138px;
     justify-content: start;
     cursor: pointer;
-    p {
-      margin-left: 10px;
-      transition: all 0.2s;
-      font-size: 14px;
-      &:hover {
-        transform: scale(1.05);
-        color: rgb(155, 155, 155);
-      }
-    }
   }
 }
 
@@ -53,7 +43,7 @@
   }
 }
 .block__selected_item {
-  width: 237px;
+  // width: 237px;
   height: 65px;
   background-color: white;
   border-radius: 6px;
@@ -79,7 +69,7 @@
   }
 
   .block__selected {
-    background-color: var(--lite-gray);
+    background-color: var(--lite-grey);
     padding: 35px;
     border-radius: 15px;
     margin-top: 30px;
@@ -95,7 +85,6 @@
   }
   .block__selected_item {
     margin: 0;
-    width: 206px;
   }
 }
 
@@ -112,7 +101,7 @@
 
   .block__listCar {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 10px;
+    // grid-row-gap: 10px;
     .item {
       width: max-content;
       p {

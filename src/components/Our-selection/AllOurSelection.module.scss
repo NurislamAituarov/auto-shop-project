@@ -1,0 +1,37 @@
+.section {
+  margin-top: 60px;
+  margin-bottom: 80px;
+  button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+
+.selection__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 0 15px;
+    margin-top: 20px;
+  }
+  .selection__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 378px) {
+  .section {
+    margin-top: 0;
+    margin-bottom: 50px;
+    button {
+      margin-top: 20px;
+    }
+  }
+  .selection__wrapper {
+    grid-template-columns: 1fr;
+  }
+}

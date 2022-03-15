@@ -1,8 +1,9 @@
 import './Slider.scss';
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import { useDispatch } from 'react-redux';
+import { addPriceCar } from '../../Actions/action';
 
 function valuetext(value: number) {
   return `${value}°C`;
@@ -12,16 +13,18 @@ interface Imark {
   value: number;
   label: string;
 }
-
 type Ivalue = number[];
+type IHandleChange = (event: any, newValue: number | any) => void;
 
 export default function RangeSlider() {
+  const dispatch = useDispatch();
   const [value, setValue] = React.useState<Ivalue>([0, 500]);
 
-  const handleChange = (event: any, newValue: number[] | any) => {
+  const handleChange: IHandleChange = (event, newValue) => {
+    console.log('render');
     setValue(newValue);
+    dispatch(addPriceCar(newValue));
   };
-
   const mark: Imark[] = [
     { value: 0, label: '0' },
     { value: 300000, label: '300т' },
@@ -35,6 +38,16 @@ export default function RangeSlider() {
     { value: 2700000, label: '2,7м' },
     { value: 3000000, label: '3м' },
   ];
+
+  const debounce = <F extends (...args: any) => any>(func: F, waitFor: number) => {
+    let timeout: any;
+    return function (...args: any) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), waitFor);
+    };
+  };
+
+  const dfunc = debounce<typeof handleChange>(handleChange, 100);
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -50,7 +63,7 @@ export default function RangeSlider() {
           // color="rgba(202, 1, 0, 1)"
           getAriaLabel={() => 'Temperature range'}
           value={value}
-          onChange={handleChange}
+          onChange={dfunc}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
           step={300000}

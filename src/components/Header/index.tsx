@@ -11,8 +11,8 @@ const text: string[] = [
   'Время работы: c 08:00 до 21:00',
   'Whatsapp',
 ];
-const listMenu: string[] = ['Подбор авто', 'О компании', 'Техцентр', 'Отзывы', 'Контакты'];
-const listSelect: string[] = [
+export const listMenu: string[] = ['Подбор авто', 'О компании', 'Техцентр', 'Отзывы', 'Контакты'];
+export const listSelect: string[] = [
   'Каталог авто',
   'Авто с пробегом',
   'Кредит и рассрочка',

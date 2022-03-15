@@ -1,5 +1,5 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Down } from '../Svg';
 import './HeaderSelect.scss';
 
 interface IHeaderSelect {
@@ -7,30 +7,27 @@ interface IHeaderSelect {
 }
 
 export function HeaderSelect({ title }: IHeaderSelect) {
-  const [age, setAge] = useState('');
+  const [size, setSize] = useState(false);
 
-  const handleChange = (event: any) => {
-    setAge(event.target.value);
-  };
-
+  useEffect(() => {
+    function onResize() {
+      if (window.innerWidth < 768) {
+        setSize(true);
+      } else {
+        setSize(false);
+      }
+    }
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
   return (
-    <div className="header__select_item">
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-standard-label">{title}</InputLabel>
-        <Select
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={age}
-          onChange={handleChange}
-          label="Age">
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
+    <div className="header__select_item flex">
+      {size && <Down />}
+      <h3>{title}</h3>
+      {!size && <Down />}
     </div>
   );
 }

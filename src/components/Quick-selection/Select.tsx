@@ -8,11 +8,10 @@ import Select from '@mui/material/Select';
 interface ISelected {
   title: string;
   items: string[];
+  width?: number;
 }
 
-// type InputEvent = SelectChangeEvent<string>
-
-export function Selected({ title, items }: ISelected) {
+export function Selected({ title, items, width = 237 }: ISelected) {
   const [value, setValue] = React.useState('');
 
   const handleChange = (event: any) => {
@@ -21,7 +20,7 @@ export function Selected({ title, items }: ISelected) {
 
   return (
     <div className={s.block__selected_item}>
-      <FormControl sx={{ width: 237 }}>
+      <FormControl sx={{ width: width }}>
         <InputLabel id="demo-simple-select-helper-label">{title}</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
