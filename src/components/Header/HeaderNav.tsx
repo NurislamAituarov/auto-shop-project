@@ -71,7 +71,7 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
             <span>+7 (495) 292-18-67</span>
           </div>
           {(size === 'normal' || size === 'mobile') && <HeaderSelectSVG width="15" height="15" />}
-          <Button title="Обратный звонок" click={() => dispatch(popUpBackCall())} />
+          <Button title="Обратный звонок" click={() => dispatch(popUpBackCall('back call'))} />
         </div>
       </div>
     </>

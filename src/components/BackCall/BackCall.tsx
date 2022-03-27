@@ -9,7 +9,7 @@ export function BackCall() {
     <>
       <div className="back-call flex">
         <p>+7 (800) 551-94-31</p>
-        <p onClick={() => dispatch(popUpBackCall())} className="flex">
+        <p onClick={() => dispatch(popUpBackCall('back call'))} className="flex">
           <Phone />
           Обратный звонок
         </p>

@@ -3,6 +3,7 @@ type TProps = (value: string, refBlock: any, sum: (value: string, prev?: string)
 export const onNext: TProps = (value, refBlock, sum) => {
   let node = refBlock.current;
   let index = sum(value);
+  // console.log(index);
 
   node[index] &&
     node[index + 1].scrollIntoView({ block: 'end', inline: 'start', behavior: 'smooth' });
@@ -11,6 +12,7 @@ export const onNext: TProps = (value, refBlock, sum) => {
 export const onPrev: TProps = (value, refBlock, sum) => {
   let node = refBlock.current;
   let index = sum(value, 'prev');
+  // console.log(index);
 
   node[index] && node[index].scrollIntoView({ block: 'end', inline: 'start', behavior: 'smooth' });
 };

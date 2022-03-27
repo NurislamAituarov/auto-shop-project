@@ -35,7 +35,8 @@ const initialState: IInitialState = {
   selected: [],
   priceCar: [],
   reviewsUser: reviewUser,
-  popUpBackCall: false,
+  popUpBackCall: '',
+  brandList: [],
 };
 
 export default function render(state = initialState, action: IAction) {
@@ -58,7 +59,12 @@ export default function render(state = initialState, action: IAction) {
     case 'POP_UP_BACK_CALL':
       return {
         ...state,
-        popUpBackCall: !state.popUpBackCall ? true : false,
+        popUpBackCall: action.payload,
+      };
+    case 'ADD_BRAND':
+      return {
+        ...state,
+        brandList: action.payload,
       };
     default:
       return {

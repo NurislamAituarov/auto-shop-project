@@ -6,6 +6,7 @@ import './Hamburger.scss';
 import '../Header/Header.scss';
 import { listMenu, listSelect } from '../Header';
 import { motion } from 'framer-motion';
+import { Contacts } from '../Footer';
 
 interface IProps {
   trigger: boolean;
@@ -16,10 +17,11 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
   const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [size, setSize] = useState(false);
   const refLabel = useRef<HTMLLabelElement>(null);
+  const refInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     function onResize() {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
         setSize(true);
       } else {
         setSize(false);
@@ -32,11 +34,11 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [setTrigger]);
 
   function showMenu() {
     if (size) {
-      trigger ? setTrigger(false) : setTrigger(true);
+      refInput.current?.checked ? setTrigger(false) : setTrigger(true);
     }
   }
 
@@ -59,7 +61,7 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
 
   return (
     <div className="header__nav_logo flex">
-      <input type="checkbox" id="checkbox1" className="checkbox1 visuallyHidden" />
+      <input ref={refInput} type="checkbox" id="checkbox1" className="checkbox1 visuallyHidden" />
       <label ref={refLabel} htmlFor="checkbox1">
         <div onClick={showMenu} className="hamburger hamburger1">
           <span className="bar bar1"></span>
@@ -90,6 +92,9 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
               </motion.div>
             );
           })}
+          <motion.div variants={variantsChildren} className="shoMenu_info">
+            <Contacts />
+          </motion.div>
         </motion.div>
       )}
     </div>

@@ -188,11 +188,10 @@
   right: 0;
   pointer-events: none;
   z-index: -1;
-
   span {
     display: block;
     position: absolute;
-    top: 115px;
+    top: 120px;
     right: 20px;
   }
 }
@@ -225,16 +224,6 @@
     .item {
       width: 347px;
       padding: 20px;
-      .fon {
-        width: 100%;
-        top: 60px;
-        img {
-          width: 180px;
-          height: 100px;
-          top: 80px;
-          right: 30px;
-        }
-      }
 
       .price {
         p:nth-child(1) {
@@ -268,11 +257,29 @@
       }
     }
   }
+  .fon {
+    width: 100%;
+    top: 60px;
+    img {
+      width: 220px;
+      top: 80px;
+      right: 30px;
+    }
+    span {
+      top: 70px;
+      right: 0px;
+    }
+  }
 }
 
 @media screen and (max-width: 378px) {
   .wrapper__items {
     padding: 20px 15px;
     grid-column-gap: 30px;
+  }
+  .fon {
+    img {
+      height: 170px;
+    }
   }
 }

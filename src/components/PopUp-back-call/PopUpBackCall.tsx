@@ -1,26 +1,38 @@
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
-import { useAppSelector } from '../../Hooks/Hooks';
+
 import { popUpBackCall } from '../../Actions/action';
 import { useDispatch } from 'react-redux';
 import s from './PopUpBackCall.module.scss';
 import { Button } from '../Btn/Button';
 import girl from '../../Images/girl.png';
 import fon from '../../Images/first.png';
+import rio from '../../Images/rio.png';
+import tiguan from '../../Images/tiguan.png';
+import suzuki from '../../Images/suzuki.png';
 
-export default function BasicModal() {
-  const trigger = useAppSelector((state: any) => state.reducer.popUpBackCall);
+interface IProps {
+  title: string[];
+  trigger: string;
+  button: string;
+}
+
+export default function BasicModal({ trigger, title, button }: IProps) {
   const [open, setOpen] = React.useState(false);
+  const [sent, setSent] = React.useState(false);
   const dispatch = useDispatch();
 
   const handleClose = () => {
     setOpen(false);
-    dispatch(popUpBackCall());
+    dispatch(popUpBackCall(''));
+    setSent(false);
   };
 
   React.useEffect(() => {
-    setOpen(trigger);
+    trigger && setOpen(true);
   }, [trigger]);
+
+  const img = trigger === 'back call' ? girl : suzuki;
   return (
     <div className={s.container}>
       <Modal
@@ -28,24 +40,39 @@ export default function BasicModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <div className={s.modal__content}>
-          <div className={s.modal__content_inf}>
-            <h2>Обратный звонок</h2>
-            <input type="text" placeholder="Ваше имя" />
-            <input type="text" placeholder="Ваш телефон" />
-            <Button title="Перезвоните мне" />
-            <p>
-              Нажимая кнопку “Получить предложение” Вы даете согласие на обработку своих
-              <span> персональных данных</span>
-            </p>
+        {!sent ? (
+          <div className={s.modal__content}>
+            <div className={s.modal__content_inf}>
+              <div className={s.modal__content_title}>
+                <h2>{title[0]}</h2>
+                <p>{title[1]}</p>
+              </div>
+              <input type="text" placeholder="Ваше имя" />
+              <input type="text" placeholder="Ваш телефон" />
+              <Button click={() => setSent(true)} title={button} />
+              <p>
+                Нажимая кнопку “Получить предложение” Вы даете согласие на обработку своих
+                <span> персональных данных</span>
+              </p>
+            </div>
+            <img className={s.modal__content_img} src={img} alt="фото девушки" />
+            <img className={s.modal__content_fon} src={fon} alt="задний фон" />
+            <div onClick={handleClose} className={s.modal__close}>
+              <p></p>
+              <p></p>
+            </div>
           </div>
-          <img className={s.modal__content_img} src={girl} alt="фото девушки" />
-          <img className={s.modal__content_fon} src={fon} alt="задний фон" />
-          <div onClick={handleClose} className={s.modal__close}>
-            <p></p>
-            <p></p>
+        ) : (
+          <div className={s.modal__sent}>
+            <div>
+              <img src={tiguan} alt="tiguan" width="235" />
+              <img src={rio} alt="rio" width="366" />
+            </div>
+            <h2>Спасибо за обращение!</h2>
+            <p>Наш менеджер свяжется с Вами в ближайшее время</p>
+            <Button title="ok" click={handleClose} />
           </div>
-        </div>
+        )}
       </Modal>
     </div>
   );

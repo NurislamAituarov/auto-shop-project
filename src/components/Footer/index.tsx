@@ -50,35 +50,7 @@ export default function Footer() {
           <p>Рассрочка</p>
           <p> Trade-in</p>
         </div>
-        <div className={s.footer__catalog_contacts}>
-          <h4>Контакты</h4>
-          <div className={s.contact__phone}>
-            <div>
-              <Phone color="white" />
-            </div>
-            <div>
-              <p>+7 (800) 551-94-31</p>
-              <p>+7 (495) 292-18-67</p>
-            </div>
-          </div>
-          <div className={s.contact__phone}>
-            <div>
-              <img src={watch} alt="date" />
-            </div>
-            <p>Ежедневно с 08:00 до 21:00</p>
-          </div>
-          <div className={s.contact__phone}>
-            <div>
-              <Date color="white" />
-            </div>
-            <div>
-              <p>Россия, Москва, 38КМ МКАД, 6Бс1 </p>
-              <span>Схема проезда</span>
-            </div>
-          </div>
-
-          <Selected title="Москва" items={['Aстана', 'Костанай']} width={306} />
-        </div>
+        <Contacts />
       </div>
       <div className={s.footer__bottom}>
         <div className={s.footer__bottom_title}>
@@ -94,5 +66,39 @@ export default function Footer() {
         <img src={rating_all} alt="" />
       </div>
     </footer>
+  );
+}
+
+export function Contacts() {
+  return (
+    <div className={s.footer__catalog_contacts}>
+      <h4>Контакты</h4>
+      <div className={s.contact__phone}>
+        <div>
+          <Phone color="white" />
+        </div>
+        <div>
+          <p>+7 (800) 551-94-31</p>
+          <p>+7 (495) 292-18-67</p>
+        </div>
+      </div>
+      <div className={s.contact__phone}>
+        <div>
+          <img src={watch} alt="date" />
+        </div>
+        <p>Ежедневно с 08:00 до 21:00</p>
+      </div>
+      <div className={s.contact__phone}>
+        <div>
+          <Date color="white" />
+        </div>
+        <div>
+          <p>Россия, Москва, 38КМ МКАД, 6Бс1 </p>
+          <span>Схема проезда</span>
+        </div>
+      </div>
+
+      <Selected title="Москва" items={['Aстана', 'Костанай']} width={306} />
+    </div>
   );
 }

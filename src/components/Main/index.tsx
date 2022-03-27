@@ -1,13 +1,14 @@
-// import QuickSelection from '../Quick-selection';
-// import CustomCarousel from '../Carousel';
 import s from './Main.module.scss';
-// import CarAvailable from '../CarAvailable';
 import { lazy, Suspense } from 'react';
+import Partners from '../Partners';
 
 const SectionSelect = lazy(() => import('../Section-selection/SectionSelection'));
 const QuickSelection = lazy(() => import('../Quick-selection'));
 const CarAvailable = lazy(() => import('../CarAvailable'));
 const CustomCarousel = lazy(() => import('../Carousel'));
+const Application = lazy(() => import('../Aplication/Application'));
+const WeAreTrusted = lazy(() => import('../We-are-trusted/WeAreTrusted'));
+const ReviewHome = lazy(() => import('../Reviews/ReviewHome'));
 
 export default function Main() {
   return (
@@ -22,6 +23,12 @@ export default function Main() {
         <QuickSelection />
         <CarAvailable />
         <SectionSelect />
+        <Application />
+        <section className={s.section__partners}>
+          <Partners />
+        </section>
+        <WeAreTrusted />
+        <ReviewHome />
       </Suspense>
     </main>
   );

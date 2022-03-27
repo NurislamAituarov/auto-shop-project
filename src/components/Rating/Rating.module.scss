@@ -1,0 +1,36 @@
+.item__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .item__rating_title {
+    display: flex;
+    div {
+      margin-left: 30px;
+    }
+  }
+  p {
+    text-align: center;
+    border-radius: 4px;
+    width: 40px;
+    height: 24px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+    background-color: #55bc6b;
+  }
+}
+
+.star {
+  cursor: pointer;
+}
+.apple {
+  margin-right: 5px;
+  transition: 0.3s;
+}
+.icon {
+  fill: rgba(255, 184, 0, 1);
+}
+.editable {
+  cursor: pointer;
+}

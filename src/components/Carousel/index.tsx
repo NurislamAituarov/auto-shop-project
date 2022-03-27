@@ -21,8 +21,8 @@ export default function CustomCarousel() {
           showStatus={false}
           // showIndicators={false}
           showThumbs={false}
-          interval={5000}>
-          <div className="item1">
+          transitionTime={500}>
+          <div className="item list1">
             <div className="wrapper__rio">
               <LazyLoadImage effect="blur" alt="" src={rio} />
             </div>
@@ -33,7 +33,7 @@ export default function CustomCarousel() {
               <LazyLoadImage effect="blur" alt="" src={rapid} />
             </div>
           </div>
-          <div className="item1">
+          <div className="item list2">
             <div className="wrapper__rio">
               <LazyLoadImage effect="blur" alt="" src={camry1} />
             </div>
@@ -41,7 +41,7 @@ export default function CustomCarousel() {
               <LazyLoadImage effect="blur" alt="" src={camry2} />
             </div>
           </div>
-          <div className="item1">
+          <div className="item list1">
             <div className="wrapper__rio">
               <LazyLoadImage effect="blur" alt="" src={rio} />
             </div>
@@ -52,7 +52,7 @@ export default function CustomCarousel() {
               <LazyLoadImage effect="blur" alt="" src={rapid} />
             </div>
           </div>
-          <div className="item1">
+          <div className="item list2">
             <div className="wrapper__rio">
               <LazyLoadImage effect="blur" alt="" src={camry1} />
             </div>

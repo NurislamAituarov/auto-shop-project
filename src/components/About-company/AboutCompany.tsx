@@ -1,13 +1,15 @@
-import { DirectionButtons } from '../Direction-btn/DirectionButtons';
-import fotosalon from '../../Images/foto-salon.png';
 import s from './AboutCompany.module.scss';
 import { useRef } from 'react';
+
+import { DirectionButtons } from '../Direction-btn/DirectionButtons';
+import imgSalon from '../../Images/foto-salon.png';
 import map from '../../Images/map.png';
-import { add, reward, SB, vtb, alfa, sberbank, sberbank2, alfa2, rost } from '../Svg';
+import { add, reward } from '../Svg';
 import { CarouselSlider } from '../Carousel/Carousel-Slider';
-import { sum3, sum4 } from '../../Hooks/useCustomCounter';
+import { sum3 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
 import { CompanyTitle } from '../Company-title';
+import Partners from '../Partners';
 
 let list = `самые выгодные цены на автомобили в Москве; возможность выбора автомобилей более чем из
 двухсот моделей различных цветов и комплектаций; приобретение автомобилей с пробегом,
@@ -20,14 +22,13 @@ let list = `самые выгодные цены на автомобили в М
 программе Trade-in в счёт оплаты первоначального взноса; акции и подарки от автосалона при
 покупке автомобиля.`;
 
-const listPartners = [SB, vtb, alfa, sberbank, sberbank2, alfa2, rost];
-const listBlock = [fotosalon, fotosalon, fotosalon, fotosalon, fotosalon, fotosalon];
+const listBlock = [imgSalon, imgSalon, imgSalon, imgSalon, imgSalon, imgSalon];
 
 export default function AboutCompany() {
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
-  const refPartners = useRef<(HTMLDivElement | any)[]>([]);
 
   const newList = list.split(';');
+
   return (
     <section className={s.section}>
       <CompanyTitle title="О компании" />
@@ -91,12 +92,7 @@ export default function AboutCompany() {
 
         <img className={s.company__map_foto} src={map} alt="map" />
       </div>
-      <DirectionButtons
-        title="Банки-партнеры"
-        onNext={() => onNext('partners', refPartners, sum4)}
-        onPrev={() => onPrev('partners', refPartners, sum4)}
-      />
-      <CarouselSlider listBlock={listPartners} refBlock={refPartners} />
+      <Partners />
     </section>
   );
 }

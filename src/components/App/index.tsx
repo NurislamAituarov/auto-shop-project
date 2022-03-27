@@ -5,6 +5,7 @@ import { Spinner } from '../Loader/Spinner';
 import { Route, Routes } from 'react-router-dom';
 // import { Error } from '../Error-boundary/404';
 import Footer from '../Footer';
+import { useAppSelector } from '../../Hooks/Hooks';
 
 const Main = lazy(() => import('../Main'));
 const AboutCompany = lazy(() => import('../About-company/AboutCompany'));
@@ -16,10 +17,12 @@ const Search = lazy(() => import('../Search/Search'));
 const BasicModal = lazy(() => import('../PopUp-back-call/PopUpBackCall'));
 
 function App() {
+  const trigger = useAppSelector((state: any) => state.reducer.popUpBackCall);
+
   return (
     <>
+      <Header />
       <div className="App">
-        <Header />
         <Suspense
           fallback={
             <h2 className="App__loading">
@@ -36,7 +39,15 @@ function App() {
             <Route path="our-selections" element={<AllOurSelection />} />
             <Route path="search" element={<Search />} />
           </Routes>
-          <BasicModal />
+          {trigger === 'back call' ? (
+            <BasicModal trigger={trigger} title={['Обратный звонок']} button="Перезвоните мне" />
+          ) : (
+            <BasicModal
+              trigger={trigger}
+              title={['Зафиксировать скидку до 300 000 ₽', 'на автомобиль Brilliance V3']}
+              button="Отправить"
+            />
+          )}
         </Suspense>
       </div>
       <Footer />

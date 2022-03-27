@@ -39,7 +39,7 @@
   left: 0;
   opacity: 58%;
 }
-.item1 {
+.item {
   height: 600px;
   position: relative;
 
@@ -111,7 +111,7 @@
     }
   }
 
-  .item1 {
+  .item {
     height: 360px;
     div:nth-child(1) {
       width: 353px;
@@ -144,8 +144,7 @@
       display: none;
     }
     .control-dots {
-      width: 100%;
-      padding: 0px;
+      display: none;
     }
   }
   .main__title {
@@ -163,7 +162,7 @@
     }
   }
 
-  .item1 {
+  .item {
     height: 360px;
     div:nth-child(1) {
       width: 212px;

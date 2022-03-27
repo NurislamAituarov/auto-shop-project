@@ -1,0 +1,137 @@
+.section {
+  margin-bottom: 40px;
+  .directionButtons {
+    margin-bottom: 10px;
+    div {
+      margin: 0;
+    }
+  }
+}
+
+.wrapper {
+  padding: 26px 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 327px);
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  grid-column-gap: 32px;
+}
+
+.item {
+  height: 145px;
+  padding: 22px;
+  box-shadow: 0px 0px 30px 0px rgba(133, 147, 159, 0.3);
+  border-radius: 10px;
+  h2 {
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(173, 173, 176, 1);
+    margin-bottom: 35px;
+  }
+  :nth-child(3) {
+    font-size: 14px;
+  }
+}
+
+.trusted__maps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  margin-top: 55px;
+  margin-bottom: 90px;
+}
+.trusted__map_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px;
+  background: var(--lite-grey);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  .trusted__map_name {
+    p {
+      color: rgba(173, 173, 176, 1);
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  div:last-child {
+    div:first-child {
+      display: block;
+      margin-right: 45px;
+      div {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    p {
+      border-radius: 10px;
+      font-size: 43px;
+      width: 123px;
+      height: 73px;
+      grid-row: 1;
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 0 5px;
+  }
+  .trusted__maps {
+    padding: 0 30px;
+    grid-column-gap: 15px;
+  }
+  .trusted__map_item {
+    padding: 20px;
+    .trusted__map_name {
+      margin-bottom: 25px;
+    }
+    div:last-child {
+      div:first-child {
+        div {
+          margin: 0;
+          margin-top: 10px;
+        }
+      }
+      p {
+        width: 90px;
+        height: 60px;
+        font-size: 36px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 378px) {
+  .section {
+    margin: 0;
+    .directionButtons {
+      margin: 0;
+    }
+  }
+
+  .trusted__maps {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 20px;
+    padding: 0 15px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+}

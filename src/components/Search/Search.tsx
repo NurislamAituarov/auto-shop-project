@@ -1,7 +1,8 @@
 import cn from 'classnames';
 import { useState } from 'react';
+import { IlistCarr } from '../../Type';
 import { Button } from '../Btn/Button';
-import { IlistCarr, listCarr } from '../Quick-selection';
+import { listCarr } from '../Quick-selection';
 import { arrSpecificOffers } from '../Section-selection/SectionSelection';
 import { Search } from '../Svg';
 import s from './Search.module.scss';

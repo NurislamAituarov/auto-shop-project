@@ -9,11 +9,25 @@
   height: 600px;
 }
 
+.section__partners {
+  margin: 70px 0;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     margin-top: 0;
   }
   .section {
     height: 360px;
+  }
+  .section__partners {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .section__partners {
+    margin: 0;
+    margin-bottom: 40px;
   }
 }

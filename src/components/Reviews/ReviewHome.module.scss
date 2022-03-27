@@ -1,0 +1,40 @@
+.section {
+  margin-bottom: 100px;
+  h2 {
+    font-size: 40px;
+    line-height: 46px;
+    margin-bottom: 40px;
+  }
+}
+.review__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 460px);
+  grid-column-gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    margin-bottom: 40px;
+    h2 {
+      font-size: 30px;
+      line-height: 35px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .review__wrapper {
+    grid-template-columns: repeat(3, 347px);
+    padding: 0 10px;
+    grid-column-gap: 15px;
+
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 378px) {
+  .review__wrapper {
+    grid-template-columns: repeat(3, 290px);
+  }
+}

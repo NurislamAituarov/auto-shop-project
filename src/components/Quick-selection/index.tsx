@@ -39,21 +39,16 @@ import {
   GAC,
   Honda,
 } from './svg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { useEffect, useState } from 'react';
 
 import { Button } from '../Btn/Button';
 import { Selected } from './Select';
 import DiscreteSlider from '../Slider';
-import { ReactSVGElement, useEffect, useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useAppSelector } from '../../Hooks/Hooks';
 import PositionedTooltips from './Tooltip';
-
-export interface IlistCarr {
-  name: string;
-  svg: ReactSVGElement | any;
-  price: number;
-}
+import { IlistCarr } from '../../Type';
 
 export const listCarr: IlistCarr[] = [
   { name: 'Kia', svg: one, price: 1200000 },

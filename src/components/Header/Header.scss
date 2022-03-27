@@ -1,3 +1,8 @@
+.header {
+  padding: 0 233px;
+  padding-top: 43px;
+  position: relative;
+}
 .title_info {
   position: absolute;
   top: 0;
@@ -55,7 +60,7 @@
   }
 }
 .trigger {
-  transition: all 1s;
+  transition: all 1.5s;
   margin-bottom: 345px;
 }
 
@@ -128,6 +133,9 @@
       display: none;
     }
   }
+  .trigger {
+    margin-bottom: 620px;
+  }
 }
 
 @media screen and (max-width: 520px) {
@@ -135,6 +143,6 @@
     padding-top: 32px;
   }
   .trigger {
-    margin-bottom: 312px;
+    margin-bottom: 570px;
   }
 }
