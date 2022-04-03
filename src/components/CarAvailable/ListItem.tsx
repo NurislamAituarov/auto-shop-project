@@ -1,6 +1,7 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import cn from 'classnames';
 import s from './CarAvailable.module.scss';
+import { memo } from 'react';
 
 import { IItemCar } from '../../Type';
 import gift from '../Svg/gift.svg';
@@ -9,16 +10,17 @@ import speed from '../Svg/speed.svg';
 import petrol from '../Svg/petrol.svg';
 import power from '../Svg/power.svg';
 import { Diagram, Heart } from '../Svg';
-import { memo } from 'react';
+import car_skeleton from '../../Images/car-skeleton.png';
 
 interface IListItem {
-  img: string;
   el: IItemCar;
   i: number;
   addCarSelect: (item: IItemCar, index: number) => void;
 }
 
-export default memo(function ListItem({ img, el, i, addCarSelect }: IListItem) {
+export default memo(function ListItem({ el, i, addCarSelect }: IListItem) {
+  const img = el.url_img ? el.url_img : car_skeleton;
+
   return (
     <div className={s.item}>
       <div className={cn(s.item__svg)}>
@@ -27,7 +29,7 @@ export default memo(function ListItem({ img, el, i, addCarSelect }: IListItem) {
       </div>
 
       <div className={s.fon}>
-        <LazyLoadImage effect="blur" src={img} alt="картинка авто" width="273" />
+        <LazyLoadImage effect="blur" src={img} alt="картинка авто" height="150" />
       </div>
 
       <h3>{el.name_car} 1.6 MPI MT Active </h3>

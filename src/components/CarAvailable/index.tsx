@@ -4,20 +4,25 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDispatch } from 'react-redux';
 
 import { Button } from '../Btn/Button';
-import { addCar, removeCar } from '../../Actions/action';
+import { addCar, addListItem, removeCar } from '../../Actions/action';
 import { IItemCar } from '../../Type';
-import car_skeleton from '../../Images/car-skeleton.png';
 import { getCarItems } from '../../Api/client';
 import { ReactContentLoader } from '../Loader/ContentLoader';
+import { useAppSelector } from '../../Hooks/Hooks';
 
 const ListItem = lazy(() => import('./ListItem'));
 
+let count = 6;
+
 export default function CarAvailable() {
-  const [listItem, setListItem] = useState<Array<IItemCar>>([]);
+  const listItemHome = useAppSelector((state: any) => state.reducer.listItems);
+  const [listItem, setListItem] = useState<Array<IItemCar>>(listItemHome);
   const dispatch = useDispatch();
+  console.log(listItem);
 
   useEffect(() => {
     getCarItems().then((items) => {
+      dispatch(addListItem(items.data));
       setListItem(items.data.slice(0, 6));
     });
   }, []);
@@ -51,20 +56,17 @@ export default function CarAvailable() {
   }
 
   function showMore() {
-    getCarItems().then((items) => {
-      setListItem(items.data);
-    });
-    // setListItem(listItem.concat(listItem.slice(0, 6)));
+    count += 6;
+    setListItem(listItemHome.slice(0, count));
   }
 
   return (
     <section className={s.section}>
       <h2>Автомобили в наличии с ПТС</h2>
       <div className={s.wrapper__items}>
-        {listItem.length
+        {Boolean(listItem.length)
           ? listItem.map((el, i) => {
-              const img = el.url_img ? el.url_img : car_skeleton;
-              return <ListItem key={i} img={img} el={el} addCarSelect={addCarSelect} i={i} />;
+              return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={i} />;
             })
           : [1, 2, 3, 4, 5, 6].map((el, i) => {
               return (
@@ -74,9 +76,11 @@ export default function CarAvailable() {
               );
             })}
       </div>
-      <div className={s.btn__showMore}>
-        <Button click={showMore} title="Показать  еще" />
-      </div>
+      {listItemHome.length !== listItem.length && (
+        <div className={s.btn__showMore}>
+          <Button click={showMore} title="Показать  еще" />
+        </div>
+      )}
     </section>
   );
 }

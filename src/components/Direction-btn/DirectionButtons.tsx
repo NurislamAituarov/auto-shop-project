@@ -15,7 +15,7 @@ export function DirectionButtons({ title, subtitle, onPrev, onNext, link }: IDir
     <div className={s.selection__title}>
       <div className={s.selection__title_subtitle}>
         <h3>{title}</h3>
-        {subtitle && <Tag title={subtitle} size="m" link={link} />}
+        {subtitle && <Tag title={subtitle} size="direction" link={link} />}
       </div>
       <div className={s.selection__title_btn}>
         <button onClick={onPrev}>

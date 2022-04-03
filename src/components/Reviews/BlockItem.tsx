@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import s from './BlockItem.module.scss';
 import cn from 'classnames';
+import { motion } from 'framer-motion';
 
 import { IItem } from '../../Type';
 import { Down } from '../Svg';
@@ -26,7 +27,7 @@ export function BlockItemReview({ item, i, refElement }: IProps) {
     return () => {
       document.removeEventListener('click', handleClose, true);
     };
-  }, [index]);
+  }, [index, refElement]);
 
   function showMoreTitle(i: number) {
     if (index || index === 0) {
@@ -36,18 +37,46 @@ export function BlockItemReview({ item, i, refElement }: IProps) {
     }
   }
 
+  const variants = {
+    visible: {
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.1,
+      },
+    },
+    hidden: {},
+  };
+  const variantsChildren = {
+    visible: {
+      opacity: 1,
+    },
+    hidden: { opacity: 1 },
+  };
+
   return (
     <div tabIndex={0} ref={(el) => (refElement.current[i] = el)} className={s.block__review_item}>
       <div className={s.block__review_img}>
         <img src={reviewImg} alt="review" />
         <img src={play} alt="play" />
       </div>
-      <div
+      <motion.div
+        layout
+        variants={variants}
+        initial={'hidden'}
+        animate={index === i ? 'visible' : 'hidden'}
         className={cn(s.block__review_title, {
           [s.show_more]: index === i,
         })}>
         <h2>{item.name}</h2>
-        {index === i ? <p>{item.title}</p> : <p>{item.title.slice(0, 204) + ' ...'}</p>}
+
+        {index === i ? (
+          <p>{item.title}</p>
+        ) : (
+          <motion.div variants={variantsChildren}>
+            <p>{item.title.slice(0, 204) + ' ...'}</p>{' '}
+          </motion.div>
+        )}
+
         <div
           onClick={(e) => {
             e.stopPropagation();
@@ -59,7 +88,7 @@ export function BlockItemReview({ item, i, refElement }: IProps) {
             <Down color="black" />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

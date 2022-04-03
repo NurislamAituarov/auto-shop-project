@@ -1,8 +1,8 @@
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import s from './Rating.module.scss';
 import cn from 'classnames';
 
-export const Rating = memo(() => {
+export const Rating = () => {
   const [rating, setRating] = useState(4);
   const [arrayRating, setArrayRating] = useState(new Array(5).fill(<></>));
   const [assessment, setAssessment] = useState(0);
@@ -40,7 +40,6 @@ export const Rating = memo(() => {
         </svg>
       );
     });
-
     setArrayRating(updatedArray);
   };
 
@@ -59,4 +58,4 @@ export const Rating = memo(() => {
       </div>
     </>
   );
-});
+};

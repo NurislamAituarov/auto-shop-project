@@ -141,6 +141,14 @@
         background-color: var(--red);
       }
     }
+    .active_hr {
+      background-color: var(--red);
+    }
+    .active_sum {
+      p {
+        color: rgb(0, 0, 0);
+      }
+    }
   }
 }
 .setting__price {
@@ -262,6 +270,7 @@
       .setting {
         grid-template-columns: 1fr 1fr;
         gap: 15px;
+        grid-row-gap: 30px;
       }
     }
     .setting__select {
@@ -387,6 +396,7 @@
     .wrapper__settings {
       .setting {
         grid-template-columns: 1fr;
+        gap: 15px;
 
         .setting__select {
           grid-column: 1;

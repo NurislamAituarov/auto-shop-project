@@ -32,6 +32,7 @@ const reviewUser = [
   },
 ];
 const initialState: IInitialState = {
+  listItems: [],
   selected: [],
   priceCar: [],
   reviewsUser: reviewUser,
@@ -41,6 +42,11 @@ const initialState: IInitialState = {
 
 export default function render(state = initialState, action: IAction) {
   switch (action.type) {
+    case 'ADD_LIST_ITEM':
+      return {
+        ...state,
+        listItems: action.payload,
+      };
     case 'ADD_CAR':
       return {
         ...state,

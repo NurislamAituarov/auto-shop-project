@@ -1,0 +1,28 @@
+.maps__container {
+  height: 570px;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 0 30px;
+    margin-bottom: 40px;
+    .maps__container {
+      border-radius: 25px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .section {
+    padding: 0 15px;
+    margin-bottom: 20px;
+
+    .maps__container {
+      height: 380px;
+    }
+  }
+}

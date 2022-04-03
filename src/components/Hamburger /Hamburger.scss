@@ -141,28 +141,15 @@
 
 @media screen and (max-width: 768px) {
   .hamburger {
-    height: 22px;
-  }
-  .bar2,
-  .bar3 {
     width: 22px;
-    top: 8.5px;
-  }
-  .checkbox1:checked + label > .hamburger1 > .bar1 {
-    transform-origin: 25%;
-  }
-  .checkbox1:checked + label > .hamburger1 > .bar4 {
-    transform-origin: 12%;
-  }
-}
-
-@media screen and (max-width: 378px) {
-  .hamburger {
+    height: 22px;
     .bar {
-      width: 24px;
+      width: 22px;
     }
     .bar2,
     .bar3 {
+      width: 22px;
+      top: 8.5px;
       left: 0px;
     }
   }

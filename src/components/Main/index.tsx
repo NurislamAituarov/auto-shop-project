@@ -9,6 +9,8 @@ const CustomCarousel = lazy(() => import('../Carousel'));
 const Application = lazy(() => import('../Aplication/Application'));
 const WeAreTrusted = lazy(() => import('../We-are-trusted/WeAreTrusted'));
 const ReviewHome = lazy(() => import('../Reviews/ReviewHome'));
+const AboutCompanyHome = lazy(() => import('../About-company/AboutCompanyHome'));
+const SimpleMap = lazy(() => import('../Maps'));
 
 export default function Main() {
   return (
@@ -29,6 +31,8 @@ export default function Main() {
         </section>
         <WeAreTrusted />
         <ReviewHome />
+        <AboutCompanyHome />
+        <SimpleMap />
       </Suspense>
     </main>
   );

@@ -1,0 +1,191 @@
+.section {
+  text-align: center;
+  margin-bottom: 90px;
+  h2 {
+    font-size: 40px;
+    line-height: 46px;
+    margin-bottom: 20px;
+  }
+  .subtitle {
+    width: 920px;
+    line-height: 24px;
+    color: grey;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+}
+
+.img {
+  position: relative;
+  margin-bottom: 100px;
+  .img__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.blog {
+  margin-bottom: 100px;
+  .blog__wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 337px);
+    grid-column-gap: 30px;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.blog__item {
+  text-align: start;
+  img {
+    width: 100%;
+  }
+  span {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--grey);
+    margin-top: 23px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    width: 80%;
+    font-weight: 700;
+    line-height: 18px;
+  }
+}
+
+.aboutTheAutoShop {
+  .aboutTheAutoShop__link {
+    display: flex;
+    margin-bottom: 45px;
+    p {
+      position: relative;
+      margin-right: 50px;
+      padding-bottom: 10px;
+      line-height: 18px;
+      overflow: hidden;
+      font-weight: 700;
+      cursor: pointer;
+
+      &::before {
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: -100%;
+        background-color: var(--red);
+      }
+      &:hover,
+      &:focus {
+        &::before {
+          transition: all 0.5s;
+          left: 0;
+        }
+      }
+    }
+    .active {
+      transition: all 0.3s;
+      color: var(--red);
+      &::before {
+        transition: all 0.5s;
+        left: 0;
+      }
+    }
+  }
+  .aboutTheAutoShop__title {
+    text-align: start;
+    h2 {
+      font-size: 40px;
+      line-height: 46px;
+      font-weight: 700;
+    }
+    p {
+      line-height: 24px;
+      color: var(--grey);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    text-align: start;
+    padding: 0 30px;
+    margin-bottom: 40px;
+    h2 {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    .subtitle {
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+  }
+  .img {
+    margin-bottom: 40px;
+    .img__fon {
+      width: 100%;
+    }
+  }
+
+  .direction {
+    div {
+      padding: 0;
+    }
+  }
+  .blog {
+    margin-bottom: 60px;
+    .blog__wrapper {
+      grid-column-gap: 15px;
+    }
+  }
+
+  .aboutTheAutoShop {
+    .aboutTheAutoShop__link {
+      margin-bottom: 30px;
+    }
+    .aboutTheAutoShop__title {
+      h2 {
+        font-size: 30px;
+        line-height: 35px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .section {
+    padding: 0 15px;
+  }
+  .direction {
+    div {
+      width: 100%;
+    }
+  }
+  .blog .blog__wrapper {
+    grid-template-columns: repeat(6, 290px);
+    grid-column-gap: 10px;
+  }
+
+  .aboutTheAutoShop {
+    .aboutTheAutoShop__link {
+      p {
+        margin-right: 25px;
+      }
+    }
+    .aboutTheAutoShop__title {
+      h2 {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

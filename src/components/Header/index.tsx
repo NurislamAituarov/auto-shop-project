@@ -7,7 +7,7 @@ import { BackCall } from '../BackCall/BackCall';
 import { useEffect, useState } from 'react';
 
 const text: string[] = [
-  'Россия, Москва, 38КМ МКАД, 6Бс1',
+  'Страна, Город, 38КМ МКАД, 6Бс1',
   'Время работы: c 08:00 до 21:00',
   'Whatsapp',
 ];
@@ -22,6 +22,8 @@ export const listSelect: string[] = [
 
 export default function Header() {
   const [size, setSize] = useState('desktop');
+  const [arrTitle, setArrTitle] = useState(text);
+
   useEffect(() => {
     if (window.innerWidth < 768) {
       setSize('normal');
@@ -45,6 +47,19 @@ export default function Header() {
       }
     });
   }, []);
+  // useEffect(() => {
+  //   const successfulLookup = (position: any) => {
+  //     const { latitude, longitude } = position.coords;
+  //     fetch(
+  //       `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_OPENCAGE_DATA_KEY}`,
+  //     )
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         setArrTitle(arrTitle.splice(0, 1, data.results[0].formatted));
+  //       });
+  //   };
+  //   navigator.geolocation.getCurrentPosition(successfulLookup, console.log);
+  // }, [arrTitle]);
 
   return (
     <header className="header">

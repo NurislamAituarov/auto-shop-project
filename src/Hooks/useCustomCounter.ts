@@ -17,11 +17,12 @@ let sum = () => {
         i = 4;
       }
     }
-    if (block === 'blok' || block === 'спецпредложения') {
+    if (block === 'blok' || block === 'спецпредложения' || block === 'Блог') {
       if (i >= 3) {
         i = 3;
       }
     }
+
     return i;
   };
 };
@@ -30,3 +31,4 @@ export let sum2 = sum();
 export let sum3 = sum();
 export let sum4 = sum();
 export let sum5 = sum();
+export let sum6 = sum();

@@ -11,7 +11,14 @@ interface ITag {
 export function Tag({ title, size = 's', link = '' }: ITag) {
   return (
     <NavLink to={link}>
-      <span className={cn('tag', { s: size === 's', m: size === 'm' })}>{title}</span>
+      <span
+        className={cn('tag', {
+          s: size === 's',
+          m: size === 'm',
+          direction: size === 'direction',
+        })}>
+        {title}
+      </span>
     </NavLink>
   );
 }

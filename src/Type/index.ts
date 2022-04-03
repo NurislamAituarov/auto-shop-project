@@ -28,6 +28,7 @@ export interface IlistCarr {
 // reducer===========================================================
 
 export interface IInitialState {
+  listItems: IItemCar[];
   selected: [];
   priceCar: number[];
   reviewsUser: IItem[];

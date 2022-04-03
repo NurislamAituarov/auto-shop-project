@@ -1,6 +1,7 @@
 .App {
   max-width: 1440px;
   margin: 43px auto;
+  margin-bottom: 0;
 }
 
 .App__loading {

@@ -7,7 +7,6 @@ import { Button } from '../Btn/Button';
 import car from '../../Images/car-skeleton.png';
 import { Slider } from '@mui/material';
 import { SettingSelect } from './SettingSelect';
-import carBrand from '../../Images/camry-front.png';
 import { useDispatch } from 'react-redux';
 import { popUpBackCall } from '../../Actions/action';
 import { useDebounce } from '../../Hooks/useDebounce';
@@ -20,9 +19,8 @@ const values = {
 type IHandleChange = (event: any) => void;
 
 export default function Application() {
-  const brand = useAppSelector((state: any) => state.reducer.brandList);
+  const { brandList } = useAppSelector((state: any) => state.reducer);
   const [value, setValue] = useState(values);
-
   const dispatch = useDispatch();
 
   const handleChange: IHandleChange = (event) => {
@@ -44,7 +42,11 @@ export default function Application() {
           <div className={s.setting}>
             <SettingSelect />
             <div className={s.setting__view}>
-              {!brand.name ? <img src={car} alt="car" /> : <img src={carBrand} alt="фото машины" />}
+              {!brandList.name_car ? (
+                <img src={car} alt="car" />
+              ) : (
+                <img src={brandList.url_img} alt="фото машины" width="424" />
+              )}
               <div className={s.setting__view__container}>
                 <div className={cn({ [s.active_credit]: value.value3 })}>
                   <p>
@@ -55,8 +57,8 @@ export default function Application() {
                     {value.value1 - value.value3} {value.value1 > 0 && ' руб.'}
                   </p>
                 </div>
-                <hr />
-                <div>
+                <hr className={cn({ [s.active_hr]: value.value3 })} />
+                <div className={cn({ [s.active_sum]: value.value3 })}>
                   <p>Первоначальный взнос</p>
                   <p>Остаток по кредиту</p>
                 </div>

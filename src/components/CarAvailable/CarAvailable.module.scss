@@ -25,7 +25,7 @@
   padding: 30px 25px;
   position: relative;
   h3 {
-    width: 220px;
+    width: 225px;
     font-size: 27px;
     line-height: 31px;
     font-weight: 700;
@@ -58,10 +58,11 @@
   }
 
   .item__gifts {
+    background: rgb(255, 255, 255, 0.5);
     max-width: 135px;
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    padding: 10px 0;
     div {
       width: 32px;
       height: 32px;
@@ -191,7 +192,7 @@
   span {
     display: block;
     position: absolute;
-    top: 120px;
+    top: 150px;
     right: 20px;
   }
 }
@@ -261,12 +262,12 @@
     width: 100%;
     top: 60px;
     img {
-      width: 220px;
+      // width: 220px;
       top: 80px;
       right: 30px;
     }
     span {
-      top: 70px;
+      top: 120px;
       right: 0px;
     }
   }
@@ -277,9 +278,14 @@
     padding: 20px 15px;
     grid-column-gap: 30px;
   }
+  .item {
+    .item__gifts {
+      max-width: 150px;
+    }
+  }
   .fon {
     img {
-      height: 170px;
+      height: 140px;
     }
   }
 }

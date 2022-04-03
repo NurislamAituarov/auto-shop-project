@@ -5,26 +5,31 @@ import cn from 'classnames';
 import { memo, useEffect, useRef, useState } from 'react';
 
 import { Down } from '../Svg';
-import { listCarr } from '../Quick-selection';
-import { IlistCarr } from '../../Type';
+import { IItemCar } from '../../Type';
 import { addBrandItem } from '../../Actions/action';
+import { useAppSelector } from '../../Hooks/Hooks';
 
 export interface IItem {
   name: string;
-  list: IlistCarr[] | string[];
+  list: IItemCar[] | string[];
 }
-
 const blockSelect: IItem[] = [
-  { name: 'Марка', list: listCarr },
+  { name: 'Марка', list: [] },
   { name: 'Модель', list: ['1', '2', '3', '4'] },
   { name: 'Комплектация', list: ['Базовая', 'Средняя', 'Максимальная'] },
 ];
 
 export const SettingSelect = memo(function SettingSelect() {
+  const { listItems } = useAppSelector((state: any) => state.reducer);
   const [activeList, setActiveList] = useState('');
   const [state, setState] = useState(blockSelect);
   const refItem = useRef<(HTMLUListElement | null)[]>([]);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const newItem = { name: 'Марка', list: listItems };
+    setState([newItem, ...blockSelect.slice(1)]);
+  }, [listItems]);
 
   const variants = {
     visible: {
@@ -43,14 +48,11 @@ export const SettingSelect = memo(function SettingSelect() {
   };
 
   function selectedList(value: string, i: number) {
-    const item = blockSelect.map((el, index) => {
+    state.forEach((el, index) => {
       if (i === index) {
         el.name = value;
-        return el;
       }
-      return el;
     });
-    setState(item);
   }
 
   function showList(event: any, name: string, index: number) {
@@ -82,7 +84,7 @@ export const SettingSelect = memo(function SettingSelect() {
                 [s.active]: activeList === el.name,
               })}>
               {el.list.map((item, i) => {
-                const name = typeof item === 'string' ? item : item.name;
+                const name = typeof item === 'string' ? item : item.name_car;
                 return (
                   <motion.div key={i} variants={variantsChildren}>
                     <li

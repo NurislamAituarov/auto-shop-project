@@ -5,8 +5,8 @@ import App from './components/App';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import ErrorBoundary from './components/Error-boundary/ErrorBoundary';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Error } from './components/Error-boundary/404';
+import { BrowserRouter } from 'react-router-dom';
+// import { Error } from './components/Error-boundary/404';
 
 ReactDOM.render(
   <BrowserRouter>
