@@ -5,9 +5,10 @@ interface IPropsNav {
   activeClass: string;
   setActiveClass: (string: string) => void;
   el: string;
+  setTrigger: (v: boolean) => void;
 }
 
-export function NavList({ activeClass, setActiveClass, el }: IPropsNav) {
+export function NavList({ activeClass, setActiveClass, el, setTrigger }: IPropsNav) {
   function route() {
     switch (el) {
       case 'О компании':
@@ -29,6 +30,7 @@ export function NavList({ activeClass, setActiveClass, el }: IPropsNav) {
       onClick={() => {
         setActiveClass(el);
         localStorage.setItem('active', el);
+        setTrigger(false);
       }}
       className={cn({ active_: el === activeClass })}>
       <li>{el}</li>

@@ -5,6 +5,8 @@ import { HeaderSelect } from './Header-select';
 import { HeaderSelectSVG } from './HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addLocation } from '../../Actions/action';
 
 const text: string[] = [
   'Страна, Город, 38КМ МКАД, 6Бс1',
@@ -23,6 +25,7 @@ export const listSelect: string[] = [
 export default function Header() {
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -55,10 +58,11 @@ export default function Header() {
   //     )
   //       .then((response) => response.json())
   //       .then((data) => {
+  //         dispatch(addLocation(data.results[0].formatted));
   //         setArrTitle(arrTitle.splice(0, 1, data.results[0].formatted));
   //       });
   //   };
-  //   navigator.geolocation.getCurrentPosition(successfulLookup, console.log);
+  //   navigator.geolocation.getCurrentPosition(successfulLookup);
   // }, [arrTitle]);
 
   return (

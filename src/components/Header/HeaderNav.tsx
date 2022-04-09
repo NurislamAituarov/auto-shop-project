@@ -46,6 +46,7 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
                   el={el}
                   activeClass={activeClass}
                   setActiveClass={setActiveClass}
+                  setTrigger={setTrigger}
                 />
               );
             })}

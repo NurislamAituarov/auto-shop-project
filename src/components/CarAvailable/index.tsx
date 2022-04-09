@@ -4,55 +4,34 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDispatch } from 'react-redux';
 
 import { Button } from '../Btn/Button';
-import { addCar, addListItem, removeCar } from '../../Actions/action';
+import { addCar, addListItem } from '../../Actions/action';
 import { IItemCar } from '../../Type';
 import { getCarItems } from '../../Api/client';
 import { ReactContentLoader } from '../Loader/ContentLoader';
 import { useAppSelector } from '../../Hooks/Hooks';
 
 const ListItem = lazy(() => import('./ListItem'));
-
-let count = 6;
+let count = 0;
 
 export default function CarAvailable() {
   const listItemHome = useAppSelector((state: any) => state.reducer.listItems);
   const [listItem, setListItem] = useState<Array<IItemCar>>(listItemHome);
   const dispatch = useDispatch();
-  console.log(listItem);
 
   useEffect(() => {
-    getCarItems().then((items) => {
-      dispatch(addListItem(items.data));
-      setListItem(items.data.slice(0, 6));
-    });
+    count === 0 &&
+      getCarItems().then((items) => {
+        dispatch(addListItem(items.data));
+      });
   }, []);
 
-  function addCarSelect(item: IItemCar, index: number) {
-    listItem.forEach((el, i) => {
-      if (index === i && el.active !== true) {
-        dispatch(addCar(item));
-        setListItem(
-          listItem.map((el, i) => {
-            if (index === i) {
-              return { ...el, active: true };
-            }
-            return el;
-          }),
-        );
-      }
+  useEffect(() => {
+    if (count === 0) count += 6;
+    setListItem(listItemHome.slice(0, count));
+  }, [listItemHome]);
 
-      if (index === i && el.active === true) {
-        dispatch(removeCar());
-        setListItem(
-          listItem.map((el, i) => {
-            if (index === i) {
-              return { ...el, active: false };
-            }
-            return el;
-          }),
-        );
-      }
-    });
+  function addCarSelect(item: IItemCar, id: number) {
+    dispatch(addCar(id));
   }
 
   function showMore() {
@@ -66,7 +45,7 @@ export default function CarAvailable() {
       <div className={s.wrapper__items}>
         {Boolean(listItem.length)
           ? listItem.map((el, i) => {
-              return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={i} />;
+              return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={el.id} />;
             })
           : [1, 2, 3, 4, 5, 6].map((el, i) => {
               return (

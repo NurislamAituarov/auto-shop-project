@@ -131,8 +131,10 @@
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
+    max-width: 100%;
     p {
       border: none;
+      width: 100%;
     }
     div:nth-child(1) {
       display: flex;

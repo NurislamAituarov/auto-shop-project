@@ -10,14 +10,15 @@ import fon from '../../Images/first.png';
 import rio from '../../Images/rio.png';
 import tiguan from '../../Images/tiguan.png';
 import suzuki from '../../Images/suzuki.png';
+import camry from '../../Images/camry-white.png';
 
 interface IProps {
   title: string[];
-  trigger: string;
+  popUpBlock: string;
   button: string;
 }
 
-export default function BasicModal({ trigger, title, button }: IProps) {
+export default function BasicModal({ popUpBlock, title, button }: IProps) {
   const [open, setOpen] = React.useState(false);
   const [sent, setSent] = React.useState(false);
   const dispatch = useDispatch();
@@ -29,10 +30,23 @@ export default function BasicModal({ trigger, title, button }: IProps) {
   };
 
   React.useEffect(() => {
-    trigger && setOpen(true);
-  }, [trigger]);
+    popUpBlock && setOpen(true);
+  }, [popUpBlock]);
 
-  const img = trigger === 'back call' ? girl : suzuki;
+  function getImg(name: string) {
+    switch (name) {
+      case 'back call':
+        return girl;
+      case 'a discount':
+        return suzuki;
+      case 'offer':
+        return camry;
+      default:
+        return;
+    }
+  }
+  const img = popUpBlock && getImg(popUpBlock);
+
   return (
     <div className={s.container}>
       <Modal

@@ -104,6 +104,9 @@
   .block__map {
     margin-top: 30px;
     margin-bottom: 40px;
+    section {
+      padding: 0;
+    }
   }
   .block__company {
     display: block;
@@ -129,8 +132,7 @@
       line-height: 21px;
     }
   }
-  .block__map {
-  }
+
   .block__connections {
     grid-template-columns: 1fr;
     .block__connections_items {

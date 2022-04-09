@@ -1,5 +1,6 @@
 import s from './AboutCompany.module.scss';
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import imgSalon from '../../Images/foto-salon.png';
@@ -31,6 +32,11 @@ export default function AboutCompany() {
 
   return (
     <section className={s.section}>
+      <Helmet>
+        <title>About Company</title>
+        <meta name="description" content="О компании" />
+      </Helmet>
+
       <CompanyTitle title="О компании" />
 
       <div className={s.company__title}>

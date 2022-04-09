@@ -1,12 +1,14 @@
 import s from './AboutCompanyHome.module.scss';
 import cn from 'classnames';
-import company from '../../Images/company-img.png';
-import play from '../Svg/play.svg';
+import { useRef, useState } from 'react';
+
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { onNext, onPrev } from '../../Hooks/direction';
-import { useRef, useState } from 'react';
 import { sum6 } from '../../Hooks/useCustomCounter';
+
 import blog from '../../Images/blog.png';
+import company from '../../Images/company-img.png';
+import play from '../Svg/play.svg';
 
 const blogList = [
   { date: '25 октября', title: 'Тест Skoda Karoq Scout - городской карлик или настоящий скаут' },

@@ -1,6 +1,7 @@
 import s from './Main.module.scss';
 import { lazy, Suspense } from 'react';
 import Partners from '../Partners';
+import { Helmet } from 'react-helmet-async';
 
 const SectionSelect = lazy(() => import('../Section-selection/SectionSelection'));
 const QuickSelection = lazy(() => import('../Quick-selection'));
@@ -15,6 +16,10 @@ const SimpleMap = lazy(() => import('../Maps'));
 export default function Main() {
   return (
     <main className={s.main}>
+      <Helmet>
+        <title>Auto-Shop</title>
+        <meta name="description" content="О компании" />
+      </Helmet>
       <section className={s.section}>
         <Suspense fallback={<></>}>
           <CustomCarousel />

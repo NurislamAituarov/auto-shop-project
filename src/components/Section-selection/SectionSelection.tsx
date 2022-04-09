@@ -11,6 +11,8 @@ import { SpecialOffers } from '../Special-offers/SpecialOffers';
 import { OurSelection } from '../Our-selection';
 import { sum1, sum2 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
+import { popUpBackCall } from '../../Actions/action';
+import { useDispatch } from 'react-redux';
 
 export const arrSpecificOffers = [
   'Первый автомобиль',
@@ -35,6 +37,8 @@ const arrOurSelection = [
 export default function SectionSelect() {
   const refSpecialOff = useRef<(HTMLDivElement | any)[]>([]);
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
+
+  const dispatch = useDispatch();
 
   return (
     <section className={s.section}>
@@ -62,7 +66,7 @@ export default function SectionSelect() {
           </p>
           <div className={s.selection__sentence_btn}>
             <input type="text" placeholder="Ваш телефон" />
-            <Button title="Получить предложение" />
+            <Button title="Получить предложение" click={() => dispatch(popUpBackCall('offer'))} />
           </div>
           <span>
             Нажимая кнопку “Отправить” Вы даете согласие на обработку своих персональных данных

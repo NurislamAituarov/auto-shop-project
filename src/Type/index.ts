@@ -8,11 +8,12 @@ interface ICharacteristic {
 }
 
 export interface IItemCar {
-  active: boolean;
+  active: boolean | string;
   price: string;
   name_car: string;
   url_img: string;
   characteristics: ICharacteristic;
+  id: number;
 }
 
 export interface IItem {
@@ -34,6 +35,7 @@ export interface IInitialState {
   reviewsUser: IItem[];
   popUpBackCall: string;
   brandList: IlistCarr[];
+  location: string;
 }
 export interface IAction {
   type: string;

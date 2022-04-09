@@ -4,6 +4,8 @@ import { Date, Phone } from '../Svg';
 import s from './Footer.module.scss';
 import watch from '../Svg/watch.svg';
 import rating_all from '../Svg/rating_all.svg';
+import { useAppSelector } from '../../Hooks/Hooks';
+import { IItemCar } from '../../Type';
 
 const navMenu = [
   'Каталог авто',
@@ -70,6 +72,7 @@ export default function Footer() {
 }
 
 export function Contacts() {
+  const location = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.location);
   return (
     <div className={s.footer__catalog_contacts}>
       <h4>Контакты</h4>
@@ -93,7 +96,7 @@ export function Contacts() {
           <Date color="white" />
         </div>
         <div>
-          <p>Россия, Москва, 38КМ МКАД, 6Бс1 </p>
+          {location ? <p>{location}</p> : <p>Россия, Москва, 38КМ МКАД, 6Бс1 </p>}
           <span>Схема проезда</span>
         </div>
       </div>

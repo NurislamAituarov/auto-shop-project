@@ -2,7 +2,7 @@ import cn from 'classnames';
 interface IHeart {
   sum?: number;
   addCarSelect?: () => void;
-  active?: boolean;
+  active?: boolean | string;
   width?: number | string;
   height?: number | string;
 }

@@ -1,6 +1,7 @@
 import { CompanyTitle } from '../Company-title';
 import s from './TechnicalCenter.module.scss';
 import red from '../../Images/red.png';
+import { Helmet } from 'react-helmet-async';
 const techCenter = [
   {
     name: 'Кузовной ремонт',
@@ -51,6 +52,10 @@ const techCenter = [
 export default function TechnicalCenter() {
   return (
     <section className={s.section}>
+      <Helmet>
+        <title>Technical Center</title>
+        <meta name="description" content="Технический центер" />
+      </Helmet>
       <CompanyTitle title="Техцентр" />
       <p className={s.subtitle}>
         Специалисты нашего автосервиса имеют огромный опыт в обслуживании автомобилей разных

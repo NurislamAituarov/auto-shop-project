@@ -38,6 +38,7 @@ const initialState: IInitialState = {
   reviewsUser: reviewUser,
   popUpBackCall: '',
   brandList: [],
+  location: '',
 };
 
 export default function render(state = initialState, action: IAction) {
@@ -48,14 +49,20 @@ export default function render(state = initialState, action: IAction) {
         listItems: action.payload,
       };
     case 'ADD_CAR':
+      const newArr = state.listItems.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, active: item.active !== 'false' ? 'false' : true };
+        }
+        return item;
+      });
       return {
         ...state,
-        selected: [...state.selected, action.payload],
+        listItems: newArr,
       };
-    case 'REMOVE_CAR':
+    case 'ADD_LOCATION':
       return {
         ...state,
-        selected: state.selected.slice(0, state.selected.length - 1),
+        location: action.payload,
       };
     case 'ADD_PRICE':
       return {

@@ -18,7 +18,8 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
   const [size, setSize] = useState(false);
   const refLabel = useRef<HTMLLabelElement>(null);
   const refInput = useRef<HTMLInputElement>(null);
-
+  // console.log(trigger + 'trigger');
+  // console.log(refInput.current?.checked);
   useEffect(() => {
     function onResize() {
       if (window.innerWidth <= 768) {
@@ -34,11 +35,19 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [setTrigger]);
+  }, []);
+
+  useEffect(() => {
+    if (!trigger && refInput.current) {
+      refInput.current.checked = false;
+    }
+  }, [trigger]);
 
   function showMenu() {
-    if (size) {
-      refInput.current?.checked ? setTrigger(false) : setTrigger(true);
+    if (size && refInput.current?.checked) {
+      setTrigger(false);
+    } else {
+      setTrigger(true);
     }
   }
 
@@ -88,7 +97,12 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
           {listMenu.map((el, i) => {
             return (
               <motion.div key={i} variants={variantsChildren}>
-                <NavList el={el} activeClass={activeClass} setActiveClass={setActiveClass} />
+                <NavList
+                  el={el}
+                  activeClass={activeClass}
+                  setActiveClass={setActiveClass}
+                  setTrigger={setTrigger}
+                />
               </motion.div>
             );
           })}

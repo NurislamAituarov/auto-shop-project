@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-
 import s from './Reviews.module.scss';
+import { Helmet } from 'react-helmet-async';
 
 import { Button } from '../Btn/Button';
 import { useAppSelector } from '../../Hooks/Hooks';
@@ -43,6 +43,10 @@ export default function Reviews() {
 
   return (
     <section className={s.section}>
+      <Helmet>
+        <title>Reviews</title>
+        <meta name="description" content="Отзывы наших клиентов" />
+      </Helmet>
       <CompanyTitle title="Отзывы" />
       <div className={s.block__review}>
         {state.map((item: IItem, i: number) => {

@@ -1,11 +1,13 @@
 import cn from 'classnames';
+import s from './Search.module.scss';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+
 import { IlistCarr } from '../../Type';
 import { Button } from '../Btn/Button';
 import { listCarr } from '../Quick-selection';
 import { arrSpecificOffers } from '../Section-selection/SectionSelection';
 import { Search } from '../Svg';
-import s from './Search.module.scss';
 
 interface IBlock {
   name: string;
@@ -47,6 +49,10 @@ export default function ToFind() {
 
   return (
     <section className={s.section}>
+      <Helmet>
+        <title>Search</title>
+        <meta name="description" content="Поиск нужной информации " />
+      </Helmet>
       <div className={s.search__wrapper}>
         <Search />
         <input

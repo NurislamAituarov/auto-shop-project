@@ -54,9 +54,12 @@
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.5",
+    "@types/react-helmet": "^6.1.5",
     "@types/react-lazy-load-image-component": "^1.5.2",
     "classnames": "^2.3.1",
     "google-map-react": "^2.1.10",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.2.3",
     "sass": "^1.49.8",
     "typed-scss-modules": "^6.2.0"
   }

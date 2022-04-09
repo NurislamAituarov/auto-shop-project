@@ -11,7 +11,7 @@ export function HeaderSelect({ title }: IHeaderSelect) {
 
   useEffect(() => {
     function onResize() {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
         setSize(true);
       } else {
         setSize(false);
