@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ss from './Favorites.module.scss';
-import s from '../CarAvailable/CarAvailable.module.scss';
 import { Helmet } from 'react-helmet-async';
 
 import { addCar } from '../../Actions/action';
@@ -34,7 +33,7 @@ export default function Favorites() {
         <CompanyTitle title="Избранное" favorites={listItem.length} />
       </div>
       {Boolean(listItem.length) ? (
-        <div className={s.wrapper__items}>
+        <div className={ss.favorites__items}>
           {listItem.map((el, i) => {
             return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={el.id} />;
           })}

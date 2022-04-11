@@ -8,6 +8,16 @@
     line-height: 18px;
     margin-right: 10px;
   }
+  &:hover {
+    svg {
+      transition: all 0.3s;
+      fill: red;
+      transform: translateY(2px);
+    }
+  }
+  &:active {
+    color: var(--red);
+  }
 }
 
 .header__select_svg {

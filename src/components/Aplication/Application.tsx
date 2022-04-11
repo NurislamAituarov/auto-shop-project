@@ -118,7 +118,7 @@ export default function Application() {
               <input type="text" placeholder="Ваш телефон" />
               <Button
                 title="Получить предложение"
-                click={() => dispatch(popUpBackCall('a discount'))}
+                click={() => brandList.name_car && dispatch(popUpBackCall('a discount'))}
               />
             </div>
             <p>

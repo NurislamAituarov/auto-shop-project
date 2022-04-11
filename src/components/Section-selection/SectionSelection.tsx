@@ -37,7 +37,6 @@ const arrOurSelection = [
 export default function SectionSelect() {
   const refSpecialOff = useRef<(HTMLDivElement | any)[]>([]);
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
-
   const dispatch = useDispatch();
 
   return (

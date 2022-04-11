@@ -19,6 +19,7 @@ const Favorites = lazy(() => import('../Favorites/Favorites'));
 
 function App() {
   const popUpBlock = useAppSelector((state: any) => state.reducer.popUpBackCall);
+  const { brandList } = useAppSelector((state: any) => state.reducer);
 
   return (
     <HelmetProvider>
@@ -42,6 +43,8 @@ function App() {
             <Route path="search" element={<Search />} />
             <Route path="favorites" element={<Favorites />} />
           </Routes>
+        </Suspense>
+        <Suspense fallback={<></>}>
           {popUpBlock === 'back call' && (
             <BasicModal
               popUpBlock={popUpBlock}
@@ -52,7 +55,7 @@ function App() {
           {popUpBlock === 'a discount' && (
             <BasicModal
               popUpBlock={popUpBlock}
-              title={['Зафиксировать скидку до 300 000 ₽', 'на автомобиль Brilliance V3']}
+              title={['Зафиксировать скидку до 300 000 ₽', `на автомобиль ${brandList.name_car}`]}
               button="Отправить"
             />
           )}

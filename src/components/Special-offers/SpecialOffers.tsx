@@ -6,6 +6,7 @@ import specialOff3 from '../../Images/specialOff3.png';
 import specialOff4 from '../../Images/specialOff4.png';
 import specialOff5 from '../../Images/specialOff5.png';
 import specialOff6 from '../../Images/specialOff6.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface IProps {
   index: number;
@@ -43,7 +44,7 @@ export function SpecialOffers({ index, value, refSpecialOff }: IProps) {
         <h3>{value}</h3>
         <p>1,9% по льготной ставке</p>
       </div>
-      <img src={img} alt="фото семьи" />
+      <LazyLoadImage effect="blur" src={img} alt="фото семьи" />
       <Button title="Узнать больше" size="small" />
     </div>
   );

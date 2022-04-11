@@ -20,6 +20,7 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
   const refInput = useRef<HTMLInputElement>(null);
   // console.log(trigger + 'trigger');
   // console.log(refInput.current?.checked);
+
   useEffect(() => {
     function onResize() {
       if (window.innerWidth <= 768) {
@@ -44,10 +45,8 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
   }, [trigger]);
 
   function showMenu() {
-    if (size && refInput.current?.checked) {
-      setTrigger(false);
-    } else {
-      setTrigger(true);
+    if (size) {
+      refInput.current?.checked ? setTrigger(false) : setTrigger(true);
     }
   }
 

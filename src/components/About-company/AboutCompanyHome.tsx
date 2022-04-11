@@ -9,6 +9,7 @@ import { sum6 } from '../../Hooks/useCustomCounter';
 import blog from '../../Images/blog.png';
 import company from '../../Images/company-img.png';
 import play from '../Svg/play.svg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const blogList = [
   { date: '25 октября', title: 'Тест Skoda Karoq Scout - городской карлик или настоящий скаут' },
@@ -34,7 +35,7 @@ export default function AboutCompanyHome() {
         конкретного автомобиля.
       </p>
       <div className={s.img}>
-        <img className={s.img__fon} src={company} alt="фото компаний" />
+        <LazyLoadImage effect="blur" className={s.img__fon} src={company} alt="фото компаний" />
         <img className={s.img__play} src={play} alt="play" />
       </div>
 
@@ -51,7 +52,7 @@ export default function AboutCompanyHome() {
           {blogList.map((el, i) => {
             return (
               <div ref={(el) => (refBlock.current[i] = el)} className={s.blog__item} key={i}>
-                <img src={blog} alt="blog" />
+                <LazyLoadImage effect="blur" src={blog} alt="blog" />
                 <span>{el.date}</span>
                 <p>{el.title}</p>
               </div>

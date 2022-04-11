@@ -9,8 +9,8 @@ import girl from '../../Images/girl.png';
 import fon from '../../Images/first.png';
 import rio from '../../Images/rio.png';
 import tiguan from '../../Images/tiguan.png';
-import suzuki from '../../Images/suzuki.png';
 import camry from '../../Images/camry-white.png';
+import { useAppSelector } from '../../Hooks/Hooks';
 
 interface IProps {
   title: string[];
@@ -19,6 +19,7 @@ interface IProps {
 }
 
 export default function BasicModal({ popUpBlock, title, button }: IProps) {
+  const { brandList } = useAppSelector((state: any) => state.reducer);
   const [open, setOpen] = React.useState(false);
   const [sent, setSent] = React.useState(false);
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
       case 'back call':
         return girl;
       case 'a discount':
-        return suzuki;
+        return brandList.url_img;
       case 'offer':
         return camry;
       default:
@@ -69,7 +70,7 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
                 <span> персональных данных</span>
               </p>
             </div>
-            <img className={s.modal__content_img} src={img} alt="фото девушки" />
+            <img className={s.modal__content_img} src={img} alt="фото контента" width="344" />
             <img className={s.modal__content_fon} src={fon} alt="задний фон" />
             <div onClick={handleClose} className={s.modal__close}>
               <p></p>

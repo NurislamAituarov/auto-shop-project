@@ -6,7 +6,8 @@ import { HeaderSelectSVG } from './HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addLocation } from '../../Actions/action';
+import { location } from '../../Actions/action';
+import { useAppSelector } from '../../Hooks/Hooks';
 
 const text: string[] = [
   'Страна, Город, 38КМ МКАД, 6Бс1',
@@ -23,15 +24,17 @@ export const listSelect: string[] = [
 ];
 
 export default function Header() {
+  const locationAddress = useAppSelector((state: any) => state.reducer.location);
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
+    // dispatch(location());
+    if (window.innerWidth <= 768) {
       setSize('normal');
     }
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       setSize('desktop');
     }
     if (window.innerWidth < 525) {
@@ -39,10 +42,10 @@ export default function Header() {
     }
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
         setSize('normal');
       }
-      if (window.innerWidth > 768) {
+      if (window.innerWidth >= 768) {
         setSize('desktop');
       }
       if (window.innerWidth < 525) {
@@ -50,20 +53,8 @@ export default function Header() {
       }
     });
   }, []);
-  // useEffect(() => {
-  //   const successfulLookup = (position: any) => {
-  //     const { latitude, longitude } = position.coords;
-  //     fetch(
-  //       `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_OPENCAGE_DATA_KEY}`,
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         dispatch(addLocation(data.results[0].formatted));
-  //         setArrTitle(arrTitle.splice(0, 1, data.results[0].formatted));
-  //       });
-  //   };
-  //   navigator.geolocation.getCurrentPosition(successfulLookup);
-  // }, [arrTitle]);
+
+  locationAddress && setArrTitle(arrTitle.splice(0, 1, locationAddress));
 
   return (
     <header className="header">

@@ -48,7 +48,7 @@ export default function Contacts() {
           </div>
           <div className={s.block__connections_title}>
             <h5>Адрес</h5>
-            {location ? <p>{location}</p> : <p>Россия, Москва, 38КМ МКАД, 6Бс1</p>}
+            {location ? <p>{location}</p> : <p>Страна, Город, 38КМ МКАД, 6Бс1</p>}
             <p className={s.address}>GPS: 55.597068, 37.511805</p>
           </div>
         </div>

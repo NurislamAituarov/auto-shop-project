@@ -96,7 +96,7 @@ export function Contacts() {
           <Date color="white" />
         </div>
         <div>
-          {location ? <p>{location}</p> : <p>Россия, Москва, 38КМ МКАД, 6Бс1 </p>}
+          {location ? <p>{location}</p> : <p>Страна, Город, 38КМ МКАД, 6Бс1</p>}
           <span>Схема проезда</span>
         </div>
       </div>

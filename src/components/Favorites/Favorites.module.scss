@@ -2,16 +2,23 @@
   margin-top: 60px;
   margin-bottom: 60px;
 }
+.favorites__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
 .favorites__notSelect {
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
   .section {
+    padding: 0 20px;
     margin-top: 20px;
-    .company__title {
-      padding: 0 20px;
-    }
+  }
+  .favorites__items {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -20,15 +27,12 @@
     h2 {
       margin-left: 15px;
     }
-    .company__title {
-      padding: 0 15px;
-    }
-    hr {
-      margin-bottom: 10px;
-    }
     div:last-child {
       margin-top: 0;
     }
+  }
+  .favorites__items {
+    grid-template-columns: 1fr;
   }
   .favorites__notSelect {
     text-align: start;

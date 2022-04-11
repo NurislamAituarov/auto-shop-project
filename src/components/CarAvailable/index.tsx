@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { Button } from '../Btn/Button';
 import { addCar, addListItem } from '../../Actions/action';
 import { IItemCar } from '../../Type';
-import { getCarItems } from '../../Api/client';
 import { ReactContentLoader } from '../Loader/ContentLoader';
 import { useAppSelector } from '../../Hooks/Hooks';
 
@@ -18,22 +17,31 @@ export default function CarAvailable() {
   const [listItem, setListItem] = useState<Array<IItemCar>>(listItemHome);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    count === 0 &&
-      getCarItems().then((items) => {
-        dispatch(addListItem(items.data));
-      });
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
-    if (count === 0) count += 6;
-    setListItem(listItemHome.slice(0, count));
+    if (count === 0) {
+      count += 6;
+      dispatch(addListItem());
+    }
+
+    const onResize = () => {
+      if (window.innerWidth <= 768) {
+        setListItem(listItemHome);
+      } else {
+        setListItem(listItemHome.slice(0, count));
+      }
+    };
+    onResize();
+    document.addEventListener('click', onResize, true);
+    return () => {
+      document.removeEventListener('click', onResize, true);
+    };
   }, [listItemHome]);
 
   function addCarSelect(item: IItemCar, id: number) {
     dispatch(addCar(id));
   }
-
   function showMore() {
     count += 6;
     setListItem(listItemHome.slice(0, count));

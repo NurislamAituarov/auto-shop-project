@@ -23,6 +23,7 @@ export function HeaderSelect({ title }: IHeaderSelect) {
       window.removeEventListener('resize', onResize);
     };
   }, []);
+
   return (
     <div className="header__select_item flex">
       {size && <Down />}
