@@ -20,7 +20,7 @@ export function NavList({ activeClass, setActiveClass, el, setTrigger }: IPropsN
       case 'Контакты':
         return 'contacts';
       default:
-        return '';
+        return 'auto-shop-project';
     }
   }
 

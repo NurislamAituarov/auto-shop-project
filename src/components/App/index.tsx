@@ -38,7 +38,7 @@ function App() {
             <Route path="technical-center" element={<TechnicalCenter />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="contacts" element={<Contacts />} />
-            <Route path="our-selections" element={<AllOurSelection />} />
+            <Route path="auto-shop-project/our-selections" element={<AllOurSelection />} />
             <Route path="search" element={<Search />} />
             <Route path="favorites" element={<Favorites />} />
           </Routes>

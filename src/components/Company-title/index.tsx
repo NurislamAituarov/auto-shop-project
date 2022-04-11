@@ -12,7 +12,7 @@ export function CompanyTitle({ title, favorites }: IProps) {
   return (
     <>
       <div className={s.company__sub}>
-        <NavLink to="/">
+        <NavLink to="/auto-shop-project">
           <p onClick={() => localStorage.setItem('active', 'Подбор авто')}>Главная /</p>
         </NavLink>
         <p>{title}</p>
