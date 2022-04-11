@@ -24,7 +24,6 @@ function App() {
   return (
     <HelmetProvider>
       <Header />
-
       <div className="wrapper">
         <Suspense
           fallback={
@@ -34,7 +33,7 @@ function App() {
             </h2>
           }>
           <Routes>
-            <Route path="" element={<Main />} />
+            <Route path="auto-shop-project" element={<Main />} />
             <Route path="about-company" element={<AboutCompany />} />
             <Route path="technical-center" element={<TechnicalCenter />} />
             <Route path="reviews" element={<Reviews />} />

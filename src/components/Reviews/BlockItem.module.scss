@@ -79,3 +79,10 @@
     }
   }
 }
+@media screen and (max-width: 378px) {
+  .block__review_item {
+    .block__review_img {
+      height: 345px;
+    }
+  }
+}
