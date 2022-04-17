@@ -17,8 +17,6 @@ export default function CarAvailable() {
   const [listItem, setListItem] = useState<Array<IItemCar>>(listItemHome);
   const dispatch = useDispatch();
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     if (count === 0) {
       count += 6;

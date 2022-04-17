@@ -4,7 +4,7 @@ export function ReactContentLoader() {
   return (
     <ContentLoader
       speed={2}
-      width={460}
+      width={450}
       height={456}
       viewBox="0 0 460 456"
       backgroundColor="#f3f3f3"

@@ -16,6 +16,7 @@ const AllOurSelection = lazy(() => import('../Our-selection/AllOurSelection'));
 const Search = lazy(() => import('../Search/Search'));
 const BasicModal = lazy(() => import('../PopUp-back-call/PopUpBackCall'));
 const Favorites = lazy(() => import('../Favorites/Favorites'));
+const MoreAboutCar = lazy(() => import('../MoreAboutCar/MoreAboutCar'));
 
 function App() {
   const popUpBlock = useAppSelector((state: any) => state.reducer.popUpBackCall);
@@ -25,13 +26,7 @@ function App() {
     <HelmetProvider>
       <Header />
       <div className="wrapper">
-        <Suspense
-          fallback={
-            <h2 className="App__loading">
-              <Spinner />
-              Loading Content...
-            </h2>
-          }>
+        <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="auto-shop-project" element={<Main />} />
             <Route path="about-company" element={<AboutCompany />} />
@@ -41,6 +36,7 @@ function App() {
             <Route path="auto-shop-project/our-selections" element={<AllOurSelection />} />
             <Route path="search" element={<Search />} />
             <Route path="favorites" element={<Favorites />} />
+            <Route path="auto-shop-project/:carId" element={<MoreAboutCar />} />
           </Routes>
         </Suspense>
         <Suspense fallback={<></>}>

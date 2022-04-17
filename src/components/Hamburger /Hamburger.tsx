@@ -18,8 +18,6 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
   const [size, setSize] = useState(false);
   const refLabel = useRef<HTMLLabelElement>(null);
   const refInput = useRef<HTMLInputElement>(null);
-  // console.log(trigger + 'trigger');
-  // console.log(refInput.current?.checked);
 
   useEffect(() => {
     function onResize() {
@@ -37,12 +35,6 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
       window.removeEventListener('resize', onResize);
     };
   }, []);
-
-  useEffect(() => {
-    if (!trigger && refInput.current) {
-      refInput.current.checked = false;
-    }
-  }, [trigger]);
 
   function showMenu() {
     if (size) {
@@ -101,6 +93,7 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
                   activeClass={activeClass}
                   setActiveClass={setActiveClass}
                   setTrigger={setTrigger}
+                  refInput={refInput}
                 />
               </motion.div>
             );

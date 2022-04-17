@@ -2,6 +2,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import cn from 'classnames';
 import s from './CarAvailable.module.scss';
 import { memo } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { IItemCar } from '../../Type';
 import gift from '../Svg/gift.svg';
@@ -89,9 +90,11 @@ export default memo(function ListItem({ el, i, addCarSelect }: IListItem) {
       </div>
 
       <div className={s.footer__btn}>
-        <button>Резерв онлайн</button>
-        <button>Купить</button>
-        <button>Подробнее</button>
+        <button className={s.footer__btn_item}>Резерв онлайн</button>
+        <button className={s.footer__btn_item}>Купить</button>
+        <NavLink className={s.footer__btn_item} to={`/auto-shop-project/${el.id}`}>
+          <p>Подробнее</p>
+        </NavLink>
       </div>
     </div>
   );

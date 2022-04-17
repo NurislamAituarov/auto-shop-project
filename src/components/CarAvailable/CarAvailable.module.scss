@@ -127,7 +127,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     border-radius: 6px;
     overflow: hidden;
-    button {
+    .footer__btn_item {
       padding: 10px;
       font-size: 14px;
       line-height: 18px;
@@ -135,13 +135,16 @@
       color: white;
       background-color: var(--red);
       transition: all 0.3s;
+      p {
+        text-align: center;
+      }
       &:hover,
       &:focus,
       &:active {
         background-color: rgb(177, 0, 0);
       }
     }
-    button:nth-child(2) {
+    .footer__btn_item:nth-child(2) {
       background-color: rgba(38, 38, 38, 1);
       &:hover,
       &:focus,
@@ -149,7 +152,7 @@
         background-color: black;
       }
     }
-    button:nth-child(3) {
+    .footer__btn_item:nth-child(3) {
       background-color: rgba(115, 115, 115, 1);
       &:hover,
       &:focus,
@@ -163,6 +166,10 @@
 .content_loader {
   box-shadow: 0px 0px 15px 5px rgba(133, 147, 159, 0.3);
   border-radius: 25px;
+  margin: 0 auto;
+  svg {
+    width: 100%;
+  }
 }
 .item__svg {
   display: flex;
