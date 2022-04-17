@@ -148,9 +148,11 @@
       padding: 6px;
     }
     div:nth-child(2) {
-      span {
-        color: var(--red);
-        border-bottom: 1px solid var(--red);
+      a {
+        color: var(--grey);
+        p {
+          margin-bottom: 5px;
+        }
       }
     }
   }

@@ -81,8 +81,12 @@ export function Contacts() {
           <Phone color="white" />
         </div>
         <div>
-          <p>+7 (800) 551-94-31</p>
-          <p>+7 (495) 292-18-67</p>
+          <a href="tel:+7 (705) 304-76-62">
+            <p>+7 (705) 304-76-62</p>
+          </a>
+          <a href="tel:+7 (707) 363-68-94">
+            <p>+7 (707) 363-68-94</p>
+          </a>
         </div>
       </div>
       <div className={s.contact__phone}>

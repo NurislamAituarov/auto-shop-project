@@ -30,18 +30,9 @@ export default function Header() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(location());
-    if (window.innerWidth <= 768) {
-      setSize('normal');
-    }
-    if (window.innerWidth >= 768) {
-      setSize('desktop');
-    }
-    if (window.innerWidth < 525) {
-      setSize('mobile');
-    }
+    dispatch(location());
 
-    window.addEventListener('resize', () => {
+    function onResize() {
       if (window.innerWidth <= 768) {
         setSize('normal');
       }
@@ -51,10 +42,17 @@ export default function Header() {
       if (window.innerWidth < 525) {
         setSize('mobile');
       }
-    });
+    }
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
-  locationAddress && setArrTitle(arrTitle.splice(0, 1, locationAddress));
+  useEffect(() => {
+    locationAddress && setArrTitle(arrTitle.splice(0, 1, locationAddress));
+  }, [locationAddress]);
 
   return (
     <header className="header">

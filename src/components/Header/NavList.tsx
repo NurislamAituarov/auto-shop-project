@@ -32,7 +32,9 @@ export function NavList({ activeClass, setActiveClass, el, setTrigger, refInput 
           setActiveClass(el);
           localStorage.setItem('active', el);
           setTrigger(false);
-          refInput.current.checked = false;
+          if (refInput) {
+            refInput.current.checked = false;
+          }
         }}>
         {el}
       </li>
