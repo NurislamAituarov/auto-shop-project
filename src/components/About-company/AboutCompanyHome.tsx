@@ -10,6 +10,7 @@ import blog from '../../Images/blog.png';
 import company from '../../Images/company-img.png';
 import play from '../Svg/play.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import BasicTabs from './ComponentAbout';
 
 const blogList = [
   { date: '25 октября', title: 'Тест Skoda Karoq Scout - городской карлик или настоящий скаут' },
@@ -22,7 +23,6 @@ const blogList = [
 const linkList = ['Автосалон', 'Трейд-ин', 'Покупка'];
 
 export default function AboutCompanyHome() {
-  const [active, setActive] = useState('Автосалон');
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
 
   return (
@@ -60,36 +60,42 @@ export default function AboutCompanyHome() {
           })}
         </div>
       </div>
-
-      <div className={s.aboutTheAutoShop}>
-        <div className={s.aboutTheAutoShop__link}>
-          {linkList.map((el, i) => {
-            return (
-              <p
-                onClick={() => setActive(el)}
-                className={cn({ [s.active]: active === el })}
-                tabIndex={0}
-                key={i}>
-                {el}
-              </p>
-            );
-          })}
-        </div>
-        <div className={s.aboutTheAutoShop__title}>
-          <h2>Об автосалоне ABC</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
-            tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
-            dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula
-            justo. Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
-            vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
-            vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada
-            sit amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in
-            faucibus. Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra
-            faucibus. Phasellus id enim libero.
-          </p>
-        </div>
-      </div>
+      <BasicTabs />
     </section>
+  );
+}
+
+function AboutTheAutoShop() {
+  const [active, setActive] = useState('Автосалон');
+  return (
+    <div className={s.aboutTheAutoShop}>
+      <div className={s.aboutTheAutoShop__link}>
+        {linkList.map((el, i) => {
+          return (
+            <p
+              onClick={() => setActive(el)}
+              className={cn({ [s.active]: active === el })}
+              tabIndex={0}
+              key={i}>
+              {el}
+            </p>
+          );
+        })}
+      </div>
+      <div className={s.aboutTheAutoShop__title}>
+        <h2>Об автосалоне ABC</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
+          tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
+          dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
+          Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
+          vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
+          vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada sit
+          amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+          Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra faucibus.
+          Phasellus id enim libero.
+        </p>
+      </div>
+    </div>
   );
 }
