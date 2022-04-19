@@ -52,6 +52,7 @@ export default function RangeSlider() {
       </div>
       <div className="slider">
         <Slider
+          sx={{ color: '#CA0100' }}
           getAriaLabel={() => 'Temperature range'}
           value={value}
           onChange={dfunc}

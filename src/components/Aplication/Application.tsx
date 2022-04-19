@@ -13,7 +13,7 @@ import { useDebounce } from '../../Hooks/useDebounce';
 
 const values = {
   value1: 0,
-  value2: 6,
+  value2: 12,
   value3: 0,
 };
 type IHandleChange = (event: any) => void;
@@ -75,6 +75,7 @@ export default function Application() {
               </div>
               <div className={s.setting__price_slider}>
                 <Slider
+                  sx={{ color: '#CA0100' }}
                   max={3000000}
                   onChange={(e: any) => {
                     dfunc(e);
@@ -94,7 +95,14 @@ export default function Application() {
                 <strong>{value.value2} мес.</strong>
               </div>
               <div className={s.setting__price_slider}>
-                <Slider onChange={dfunc2} max={84} aria-label="Default" defaultValue={6} />
+                <Slider
+                  sx={{ color: '#CA0100' }}
+                  onChange={dfunc2}
+                  min={6}
+                  max={84}
+                  aria-label="Default"
+                  defaultValue={12}
+                />
                 <div>
                   {[6, 12, 24, 36, 48, 60, 72, 84].map((el) => {
                     return <p key={el}>{el}</p>;

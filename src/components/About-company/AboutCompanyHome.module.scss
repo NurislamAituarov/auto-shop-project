@@ -58,56 +58,18 @@
   }
 }
 
-.aboutTheAutoShop {
-  .aboutTheAutoShop__link {
-    display: flex;
-    margin-bottom: 45px;
-    p {
-      position: relative;
-      margin-right: 50px;
-      padding-bottom: 10px;
-      line-height: 18px;
-      overflow: hidden;
-      font-weight: 700;
-      cursor: pointer;
-
-      &::before {
-        width: 100%;
-        height: 2px;
-        position: absolute;
-        content: '';
-        bottom: 0;
-        left: -100%;
-        background-color: var(--red);
-      }
-      &:hover,
-      &:focus {
-        &::before {
-          transition: all 0.5s;
-          left: 0;
-        }
-      }
-    }
-    .active {
-      transition: all 0.3s;
-      color: var(--red);
-      &::before {
-        transition: all 0.5s;
-        left: 0;
-      }
-    }
+.tabpanel {
+  div {
+    padding: 0;
   }
-  .aboutTheAutoShop__title {
-    text-align: start;
-    h2 {
-      font-size: 40px;
-      line-height: 46px;
-      font-weight: 700;
-    }
-    p {
-      line-height: 24px;
-      color: var(--grey);
-    }
+  strong {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  span {
+    line-height: 24px;
+    color: #737373;
   }
 }
 
@@ -144,22 +106,6 @@
       grid-column-gap: 15px;
     }
   }
-
-  .aboutTheAutoShop {
-    .aboutTheAutoShop__link {
-      margin-bottom: 30px;
-    }
-    .aboutTheAutoShop__title {
-      h2 {
-        font-size: 30px;
-        line-height: 35px;
-      }
-      p {
-        font-size: 14px;
-        line-height: 21px;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 378px) {
@@ -175,17 +121,14 @@
     grid-template-columns: repeat(6, 290px);
     grid-column-gap: 10px;
   }
-
-  .aboutTheAutoShop {
-    .aboutTheAutoShop__link {
-      p {
-        margin-right: 25px;
-      }
+  .tabpanel {
+    strong {
+      font-size: 30px;
+      line-height: 35px;
     }
-    .aboutTheAutoShop__title {
-      h2 {
-        margin-bottom: 15px;
-      }
+    span {
+      font-size: 14px;
+      line-height: 21px;
     }
   }
 }

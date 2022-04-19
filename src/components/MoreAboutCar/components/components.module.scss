@@ -1,0 +1,123 @@
+.block__application {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 38px;
+  padding-top: 33px;
+  background-color: #262626;
+  border-radius: 11px;
+  min-height: 140px;
+  margin-bottom: 80px;
+  color: white;
+  grid-column-gap: 40px;
+}
+.block__slider {
+  width: 360px;
+  .initial__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+    p:nth-child(2) {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .initial__slider {
+    text-align: center;
+    div {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    .initial__slider_credit {
+      span:nth-child(1) {
+        margin-right: -25px;
+      }
+    }
+  }
+}
+.block__apply {
+  width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .block__apply_title {
+    width: 290px;
+    margin-right: 20px;
+    p {
+      line-height: 24px;
+      font-weight: 500;
+    }
+    div {
+      p {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      span {
+        font-size: 12px;
+
+        color: var(--grey);
+      }
+    }
+  }
+  button {
+    width: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .block__application {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 35px;
+    padding: 35px;
+  }
+  .block__slider {
+    width: 100%;
+  }
+  .block__apply {
+    grid-column: 1/3;
+    width: 100%;
+    .block__apply_title {
+      // margin: 0;
+      display: flex;
+      width: 50%;
+      div {
+        width: 208px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .block__application {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    grid-row-gap: 25px;
+  }
+  .block__slider {
+    .initial__title {
+      margin-bottom: 6px;
+    }
+    .initial__slider {
+      div {
+        margin-top: 0;
+      }
+    }
+  }
+  .block__apply {
+    grid-column: 1;
+    display: block;
+    .block__apply_title {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}

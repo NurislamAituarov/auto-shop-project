@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import s from './AboutCompanyHome.module.scss';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -15,6 +16,7 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
+      className={s.tabpanel}
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -52,48 +54,51 @@ export default function BasicTabs() {
           <Tab label="Покупка" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        <h2>Об автосалоне ABC</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
-          tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
-          dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
-          Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
-          vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
-          vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada sit
-          amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-          Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra faucibus.
-          Phasellus id enim libero.
-        </p>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <h2>Об трейд-ин</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
-          tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
-          dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
-          Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
-          vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
-          vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada sit
-          amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-          Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra faucibus.
-          Phasellus id enim libero.
-        </p>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <h2>О Покупке</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
-          tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
-          dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
-          Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
-          vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
-          vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada sit
-          amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-          Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra faucibus.
-          Phasellus id enim libero.
-        </p>
-      </TabPanel>
+
+      {arrBox.map((el, i) => {
+        return (
+          <TabPanel key={i} value={value} index={i}>
+            <strong>{el.title}</strong>
+            <span>{el.subtitle}</span>
+          </TabPanel>
+        );
+      })}
     </Box>
   );
 }
+
+const arrBox = [
+  {
+    title: ' Об автосалоне ABC',
+    subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
+  tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
+  dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
+  Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
+  vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
+  vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada sit
+  amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+  Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra faucibus.
+  Phasellus id enim libero.`,
+  },
+  {
+    title: '  Об трейд-ин',
+    subtitle: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
+  tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
+  dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
+  Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
+  vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
+  vel, rhoncus nec sem. Phasellus at mollis magna, in bibendum massa. Praesent malesuada sit
+  amet nibh ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+  Nulla iaculis a orci sit amet iaculis. Nulla in magna posuere nunc pharetra faucibus.
+  Phasellus id enim libero.`,
+  },
+  {
+    title: ' О Покупке',
+    subtitle: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar auctor
+  tellus, id volutpat dui dictum vitae. Sed ac mauris nisi. Maecenas quis sollicitudin
+  dolor, eget molestie dolor. Vivamus sed magna euismod, iaculis eros vitae, vehicula justo.
+  Ut id consequat risus, vitae accumsan ligula. Proin egestas odio sit amet laoreet
+  vulputate. Suspendisse vitae vestibulum quam. Vivamus lectus justo, bibendum at laoreet
+  vel, rhoncus nec sem. Pha`,
+  },
+];

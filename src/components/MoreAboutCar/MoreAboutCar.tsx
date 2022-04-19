@@ -17,6 +17,7 @@ import { Diagram, Heart } from '../Svg';
 import service from '../../Images/beautiful-girl.png';
 import service1 from '../../Images/couple.png';
 import service2 from '../../Images/studio-shot.png';
+import { BlockApplication } from './components/Block-application';
 
 const services = [
   { title: 'Рассрочка от ВТБ', subtitle: 'Рассрочка 0%', tag: 'Рассрочка', img: service },
@@ -32,11 +33,13 @@ const services = [
 export default function MoreAboutCar() {
   const [carItem, setCarItem] = useState<IItemCar>();
   const [resize, setResize] = useState(false);
+
   const { carId } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
     carId && getCarItem(carId).then((item) => setCarItem(item.data[0]));
+
     function onResize() {
       if (window.innerWidth <= 768) {
         setResize(true);
@@ -238,6 +241,7 @@ export default function MoreAboutCar() {
           );
         })}
       </div>
+      <BlockApplication />
     </section>
   );
 }
