@@ -18,6 +18,7 @@ import service from '../../Images/beautiful-girl.png';
 import service1 from '../../Images/couple.png';
 import service2 from '../../Images/studio-shot.png';
 import { BlockApplication } from './components/Block-application';
+import { Advantageous } from './components/Advantageous';
 
 const services = [
   { title: 'Рассрочка от ВТБ', subtitle: 'Рассрочка 0%', tag: 'Рассрочка', img: service },
@@ -242,6 +243,8 @@ export default function MoreAboutCar() {
         })}
       </div>
       <BlockApplication />
+
+      <Advantageous name={carItem?.name_car} />
     </section>
   );
 }

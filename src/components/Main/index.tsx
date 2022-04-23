@@ -32,18 +32,40 @@ export default function Main() {
           <CustomCarousel />
         </Suspense>
       </section>
-
       <Suspense fallback={<></>}>
         <QuickSelection />
+      </Suspense>
+
+      <Suspense fallback={<></>}>
+        {' '}
         <CarAvailable />
+      </Suspense>
+      <Suspense fallback={<></>}>
+        {' '}
         <SectionSelect />
+      </Suspense>
+      <Suspense fallback={<></>}>
+        {' '}
         <Application />
+      </Suspense>
+      <Suspense fallback={<></>}>
         <section className={s.section__partners}>
           <Partners />
         </section>
+      </Suspense>
+      <Suspense fallback={<></>}>
+        {' '}
         <WeAreTrusted />
+      </Suspense>
+      <Suspense fallback={<></>}>
+        {' '}
         <ReviewHome />
+      </Suspense>
+      <Suspense fallback={<></>}>
+        {' '}
         <AboutCompanyHome />
+      </Suspense>
+      <Suspense fallback={<></>}>
         <SimpleMap />
       </Suspense>
     </main>

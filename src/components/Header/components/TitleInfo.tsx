@@ -1,5 +1,5 @@
-import './Header.scss';
-import { Label, Date, Whatsapp } from '../Svg';
+import '../Header.scss';
+import { Label, Date, Whatsapp } from '../../Svg';
 
 interface ITitleInfo {
   text: string;

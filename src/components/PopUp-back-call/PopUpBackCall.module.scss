@@ -83,7 +83,12 @@
     transform: rotate(45deg);
     cursor: pointer;
     z-index: 10;
-
+    &:hover {
+      p {
+        transition: 0.3s;
+        background-color: var(--red);
+      }
+    }
     p {
       display: block;
       width: 26px;

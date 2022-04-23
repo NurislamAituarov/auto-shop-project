@@ -19,7 +19,6 @@
     margin-bottom: 45px;
   }
 }
-
 .wrapper__settings {
   display: grid;
   grid-template-columns: 923px 1fr;
@@ -331,11 +330,6 @@
       }
       .setting__price_slider {
         margin-bottom: 30px;
-      }
-      :nth-child(4) {
-        div {
-          margin-left: 20px;
-        }
       }
     }
   }

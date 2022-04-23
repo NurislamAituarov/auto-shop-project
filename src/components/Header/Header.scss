@@ -89,9 +89,12 @@
       font-size: 24px;
       line-height: 28px;
       font-weight: 700;
-      transition: all 0.3s;
       a {
         color: rgba(38, 38, 38, 1);
+        &:hover {
+          transition: all 0.1s;
+          color: red;
+        }
       }
     }
     span {
@@ -121,9 +124,11 @@
     padding: 0 15px;
   }
   .header__nav_logo {
-    svg:nth-child(3) {
-      width: 127px;
-      height: 36px;
+    a:nth-child(3) {
+      svg {
+        width: 127px;
+        height: 36px;
+      }
     }
   }
 

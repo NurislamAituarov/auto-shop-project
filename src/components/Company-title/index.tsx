@@ -21,9 +21,9 @@ export function CompanyTitle({ title, favorites }: IProps) {
         <h1>{title}</h1>
         {!!favorites && favorites > 0 && (
           <>
-            <Tag title={`Новые авто ${favorites}`} size="m" />
-            <Tag title="С пробегом 0" size="m" />
-            <Tag title="Такси 0" size="m" />
+            <Tag title={`Новые авто ${favorites}`} size="m" link="" />
+            <Tag title="С пробегом 0" size="m" link="" />
+            <Tag title="Такси 0" size="m" link="" />
             <p className={s.favorites__info}>
               В избранном <span>{favorites} авто</span>
             </p>

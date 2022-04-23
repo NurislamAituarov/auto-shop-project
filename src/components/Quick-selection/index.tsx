@@ -44,11 +44,11 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useEffect, useState } from 'react';
 
 import { Button } from '../Btn/Button';
-import { Selected } from './Select';
-import DiscreteSlider from '../Slider';
+import { Selected } from './components/Select';
 import { useAppSelector } from '../../Hooks/Hooks';
-import PositionedTooltips from './Tooltip';
+import PositionedTooltips from './components/Tooltip';
 import { IlistCarr } from '../../Type';
+import { RangeSlider } from './components/Slider';
 
 export const listCarr: IlistCarr[] = [
   { name: 'Kia', svg: one, price: 1200000 },
@@ -130,7 +130,7 @@ export default function QuickSelection() {
       </div>
       <div className={s.block__selected}>
         <h3>Быстрый подбор авто</h3>
-        <DiscreteSlider />
+        <RangeSlider />
         <div className={s.block__selects_wrapper}>
           <Selected title="Тип кузова" items={['Седан', 'Хэтчбек', 'Универсал']} />
           <Selected title="Коробка" items={['Автомат', 'Механическая']} />

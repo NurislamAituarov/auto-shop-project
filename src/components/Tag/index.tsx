@@ -8,10 +8,11 @@ interface ITag {
   link?: string;
 }
 
-export function Tag({ title, size = 's', link = '' }: ITag) {
+export function Tag({ title, size = 's', link = 'auto-shop-project' }: ITag) {
   return (
     <NavLink to={link}>
       <span
+        onClick={() => localStorage.setItem('active', 'Подбор авто')}
         className={cn('tag', {
           s: size === 's',
           m: size === 'm',

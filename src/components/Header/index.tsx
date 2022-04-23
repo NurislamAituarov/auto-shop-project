@@ -1,8 +1,8 @@
 import './Header.scss';
-import { TitleInfo } from './TitleInfo';
+import { TitleInfo } from './components/TitleInfo';
 import { HeaderNav } from './HeaderNav';
-import { HeaderSelect } from './Header-select';
-import { HeaderSelectSVG } from './HeaderSelectSVG';
+import { HeaderSelect } from './components/Header-select';
+import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';

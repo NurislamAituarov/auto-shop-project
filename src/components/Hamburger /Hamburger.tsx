@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { HeaderSelect } from '../Header/Header-select';
+import { HeaderSelect } from '../Header/components/Header-select';
 import { NavList } from '../Header/NavList';
 import { Logo } from '../Svg';
 import './Hamburger.scss';
 import '../Header/Header.scss';
 import { listMenu, listSelect } from '../Header';
 import { motion } from 'framer-motion';
-import { Contacts } from '../Footer';
+import { Contacts } from '../Footer/Contacts';
 
 interface IProps {
   trigger: boolean;

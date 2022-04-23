@@ -3,8 +3,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useDispatch } from 'react-redux';
-import { addPriceCar } from '../../Actions/action';
-import { useDebounce } from '../../Hooks/useDebounce';
+import { addPriceCar } from '../../../../Actions/action';
+import { useDebounce } from '../../../../Hooks/useDebounce';
 
 function valuetext(value: number) {
   return `${value}°C`;
@@ -17,14 +17,15 @@ interface Imark {
 
 type IHandleChange = (event: any, newValue: number | any) => void;
 
-export default function RangeSlider() {
-  const dispatch = useDispatch();
+export const RangeSlider = React.memo(() => {
   const [value, setValue] = React.useState<number[]>([0, 500]);
+  const dispatch = useDispatch();
 
   const handleChange: IHandleChange = (event, newValue) => {
     setValue(newValue);
     dispatch(addPriceCar(newValue));
   };
+
   const mark: Imark[] = [
     { value: 0, label: '0' },
     { value: 300000, label: '300т' },
@@ -65,4 +66,4 @@ export default function RangeSlider() {
       </div>
     </Box>
   );
-}
+});

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Down } from '../Svg';
-import './HeaderSelect.scss';
+import { Down } from '../../Svg';
+import '../HeaderSelect.scss';
 
 interface IHeaderSelect {
   title: string;

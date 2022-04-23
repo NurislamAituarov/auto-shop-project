@@ -2,7 +2,7 @@ import { Hamburger } from '../Hamburger /Hamburger';
 import { Whatsapp } from '../Svg';
 import { useRef, useState } from 'react';
 import { Button } from '../Btn/Button';
-import { HeaderSelectSVG } from './HeaderSelectSVG';
+import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { Tag } from '../Tag';
 import { NavList } from './NavList';
 import cn from 'classnames';
