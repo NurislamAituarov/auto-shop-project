@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './Header.scss';
+
 import { TitleInfo } from './components/TitleInfo';
 import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/Header-select';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { location } from '../../Actions/action';
 import { useAppSelector } from '../../Hooks/Hooks';
 
@@ -36,7 +37,7 @@ export default function Header() {
       if (window.innerWidth <= 768) {
         setSize('normal');
       }
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth > 768) {
         setSize('desktop');
       }
       if (window.innerWidth < 525) {

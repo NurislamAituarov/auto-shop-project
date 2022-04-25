@@ -11,8 +11,9 @@ import { SpecialOffers } from '../Special-offers/SpecialOffers';
 import { OurSelection } from '../Our-selection';
 import { sum1, sum2 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
-import { popUpBackCall } from '../../Actions/action';
+import { addPopUpBackCall } from '../../Actions/action';
 import { useDispatch } from 'react-redux';
+import { useValueValidate } from '../../Hooks/useValueValidate';
 
 export const arrSpecificOffers = [
   'Первый автомобиль',
@@ -37,7 +38,16 @@ const arrOurSelection = [
 export default function SectionSelect() {
   const refSpecialOff = useRef<(HTMLDivElement | any)[]>([]);
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
+  const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const dispatch = useDispatch();
+
+  function onSubmit(e: any) {
+    e.preventDefault();
+    if (valuePhone) {
+      dispatch(addPopUpBackCall('offer'));
+      setValuePhone('');
+    }
+  }
 
   return (
     <section className={s.section}>
@@ -63,10 +73,18 @@ export default function SectionSelect() {
           <p>
             Скидки от <span>10 до 25%</span> на стоимость автомобиля{' '}
           </p>
-          <div className={s.selection__sentence_btn}>
-            <input type="text" placeholder="Ваш телефон" />
-            <Button title="Получить предложение" click={() => dispatch(popUpBackCall('offer'))} />
-          </div>
+          <form onSubmit={onSubmit} className={s.selection__sentence_btn}>
+            <input
+              type="tel"
+              placeholder="Ваш телефон"
+              value={valuePhone}
+              onChange={(e) => onChange(e.target.value)}
+            />
+            <Button
+              title="Получить предложение"
+              click={() => valuePhone && dispatch(addPopUpBackCall('offer'))}
+            />
+          </form>
           <span>
             Нажимая кнопку “Отправить” Вы даете согласие на обработку своих персональных данных
           </span>

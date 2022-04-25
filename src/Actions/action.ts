@@ -11,7 +11,7 @@ export const addListItem = () => async (dispatch: Dispatch) => {
 
 export const addCar = (index: number) => ({ type: 'ADD_CAR', payload: index });
 export const addPriceCar = (item: number[]) => ({ type: 'ADD_PRICE', payload: item });
-export const popUpBackCall = (value: string) => ({ type: 'POP_UP_BACK_CALL', payload: value });
+export const addPopUpBackCall = (value: string) => ({ type: 'POP_UP_BACK_CALL', payload: value });
 export const addBrandItem = (item: IItemCar) => ({ type: 'ADD_BRAND', payload: item });
 
 export const addLocation = (value: string) => ({ type: 'ADD_LOCATION', payload: value });

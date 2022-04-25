@@ -4,7 +4,7 @@ import cn from 'classnames';
 interface IButton {
   size?: string;
   title: string;
-  click?: () => void;
+  click?: (e: any) => void;
 }
 
 export function Button({ size, title, click }: IButton) {

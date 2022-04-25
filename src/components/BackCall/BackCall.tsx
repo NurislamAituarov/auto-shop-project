@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { popUpBackCall } from '../../Actions/action';
+import { addPopUpBackCall } from '../../Actions/action';
 import { Phone } from '../Svg';
 import './BackCall.scss';
 
@@ -9,7 +9,7 @@ export function BackCall() {
     <>
       <div className="back-call flex">
         <p>+7 (800) 551-94-31</p>
-        <p onClick={() => dispatch(popUpBackCall('back call'))} className="flex">
+        <p onClick={() => dispatch(addPopUpBackCall('back call'))} className="flex">
           <Phone />
           Обратный звонок
         </p>

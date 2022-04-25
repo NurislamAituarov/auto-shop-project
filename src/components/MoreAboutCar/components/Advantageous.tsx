@@ -8,6 +8,9 @@ import { useOutsideAlerter } from '../../../Hooks/useOutsideAlerter';
 import { useAppSelector } from '../../../Hooks/Hooks';
 import { IItemCar } from '../../../Type';
 import { Button } from '../../Btn/Button';
+import { useValueValidate } from '../../../Hooks/useValueValidate';
+import { addPopUpBackCall } from '../../../Actions/action';
+import { useDispatch } from 'react-redux';
 
 interface IAdvantageous {
   name: string | undefined;
@@ -15,6 +18,14 @@ interface IAdvantageous {
 
 export function Advantageous({ name }: IAdvantageous) {
   const listItems = useAppSelector((state: any) => state.reducer.listItems);
+  const { valuePhone, setValuePhone, onChange } = useValueValidate();
+  const dispatch = useDispatch();
+
+  function onSubmit(e: any) {
+    e.preventDefault();
+    valuePhone && dispatch(addPopUpBackCall('offer'));
+    setValuePhone('');
+  }
 
   return (
     <div className={s.wrapper}>
@@ -27,7 +38,7 @@ export function Advantageous({ name }: IAdvantageous) {
           <h3>Оценим вашу машину за 10 минут</h3>
         </div>
 
-        <div className={s.block__select}>
+        <form onSubmit={onSubmit} className={s.block__select}>
           <Select listItems={listItems} name={name} />
           <Select arr={['1', '2', '3']} name="Модeль" />
           <Select
@@ -36,10 +47,15 @@ export function Advantageous({ name }: IAdvantageous) {
           />
           <Select arr={['Седан', 'Хэтчбек', 'Универсал', 'Купе', 'Кроссовер']} name="Тип кузова" />
           <label>
-            <input type="text" placeholder="Ваш телефон" />
+            <input
+              type="tel"
+              placeholder="Ваш телефон"
+              value={valuePhone}
+              onChange={(e) => onChange(e.target.value)}
+            />
           </label>
-          <Button title="Обратный звонок" size="big" />
-        </div>
+          <Button title="Обратный звонок" size="big" click={onSubmit} />
+        </form>
         <p className={s.block__bottomTitle}>
           Нажимая кнопку «Получить предложение», Вы соглашаетесь{' '}
           <span> с политикой конфиденциальности и правилами обработки персональных данных</span>

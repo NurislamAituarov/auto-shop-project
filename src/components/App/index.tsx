@@ -3,9 +3,9 @@ import Header from '../Header';
 import { lazy, Suspense } from 'react';
 import { Spinner } from '../Loader/Spinner';
 import { Route, Routes } from 'react-router-dom';
-// import Footer from '../Footer';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { HelmetProvider } from 'react-helmet-async';
+import { Up } from '../Up';
 
 const Main = lazy(() => import('../Main'));
 const AboutCompany = lazy(() => import('../About-company/AboutCompany'));
@@ -18,6 +18,7 @@ const BasicModal = lazy(() => import('../PopUp-back-call/PopUpBackCall'));
 const Favorites = lazy(() => import('../Favorites/Favorites'));
 const MoreAboutCar = lazy(() => import('../MoreAboutCar/MoreAboutCar'));
 const Footer = lazy(() => import('../Footer'));
+const CallMe = lazy(() => import('../Call-me/CallMe'));
 
 function App() {
   const popUpBlock = useAppSelector((state: any) => state.reducer.popUpBackCall);
@@ -66,6 +67,11 @@ function App() {
       </div>
       <Suspense fallback={<></>}>
         <Footer />
+      </Suspense>
+
+      <Suspense fallback={<></>}>
+        <CallMe />
+        <Up />
       </Suspense>
     </HelmetProvider>
   );

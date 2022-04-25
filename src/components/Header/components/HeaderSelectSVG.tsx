@@ -11,7 +11,6 @@ interface IHeaderSelectSVG {
 export function HeaderSelectSVG({ width, height }: IHeaderSelectSVG) {
   const listItems = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.listItems);
   const sumFilter = listItems.length && listItems.filter((el) => el.active !== 'false');
-  // console.log('render');
 
   return (
     <div className="header__select_svg flex header__select_mobile">

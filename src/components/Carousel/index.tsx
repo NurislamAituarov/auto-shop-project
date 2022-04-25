@@ -12,6 +12,7 @@ import camry1 from '../../Images/camry-black.png';
 import camry2 from '../../Images/camry-white.png';
 
 export default function CustomCarousel() {
+  // console.log('render');
   return (
     <div className="section__slider">
       <div className="wrapper__slider">

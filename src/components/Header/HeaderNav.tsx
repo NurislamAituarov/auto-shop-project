@@ -7,7 +7,7 @@ import { Tag } from '../Tag';
 import { NavList } from './NavList';
 import cn from 'classnames';
 import { useDispatch } from 'react-redux';
-import { popUpBackCall } from '../../Actions/action';
+import { addPopUpBackCall } from '../../Actions/action';
 
 interface IHeaderNav {
   listMenu: string[];
@@ -31,7 +31,10 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
 
   return (
     <>
-      <div ref={refHeaderNav} className={cn('header__nav flex ', { trigger: trigger })}>
+      <div
+        id="header-nav"
+        ref={refHeaderNav}
+        className={cn('header__nav flex ', { trigger: trigger })}>
         <Hamburger trigger={trigger} setTrigger={setTrigger} />
         <hr id="hr" />
         <p className="header__nav_subtitle">
@@ -72,7 +75,7 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
             <span>+7 (495) 292-18-67</span>
           </div>
           {(size === 'normal' || size === 'mobile') && <HeaderSelectSVG width="15" height="15" />}
-          <Button title="Обратный звонок" click={() => dispatch(popUpBackCall('back call'))} />
+          <Button title="Обратный звонок" click={() => dispatch(addPopUpBackCall('back call'))} />
         </div>
       </div>
     </>

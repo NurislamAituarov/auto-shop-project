@@ -1,6 +1,5 @@
 import s from './Main.module.scss';
-import { lazy, Suspense } from 'react';
-// import Partners from '../Partners';
+import { lazy, memo, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SectionSelect = lazy(() => import('../Section-selection/SectionSelection'));
@@ -14,7 +13,7 @@ const AboutCompanyHome = lazy(() => import('../About-company/AboutCompanyHome'))
 const SimpleMap = lazy(() => import('../Maps'));
 const Partners = lazy(() => import('../Partners'));
 
-export default function Main() {
+const Main = () => {
   return (
     <main className={s.main}>
       <Helmet>
@@ -35,17 +34,13 @@ export default function Main() {
       <Suspense fallback={<></>}>
         <QuickSelection />
       </Suspense>
-
       <Suspense fallback={<></>}>
-        {' '}
         <CarAvailable />
       </Suspense>
       <Suspense fallback={<></>}>
-        {' '}
         <SectionSelect />
       </Suspense>
       <Suspense fallback={<></>}>
-        {' '}
         <Application />
       </Suspense>
       <Suspense fallback={<></>}>
@@ -54,15 +49,12 @@ export default function Main() {
         </section>
       </Suspense>
       <Suspense fallback={<></>}>
-        {' '}
         <WeAreTrusted />
       </Suspense>
       <Suspense fallback={<></>}>
-        {' '}
         <ReviewHome />
       </Suspense>
       <Suspense fallback={<></>}>
-        {' '}
         <AboutCompanyHome />
       </Suspense>
       <Suspense fallback={<></>}>
@@ -70,4 +62,6 @@ export default function Main() {
       </Suspense>
     </main>
   );
-}
+};
+
+export default memo(Main);

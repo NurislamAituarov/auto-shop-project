@@ -8,19 +8,22 @@ import car from '../../Images/car-skeleton.png';
 import { Slider } from '@mui/material';
 import { SettingSelect } from './SettingSelect';
 import { useDispatch } from 'react-redux';
-import { popUpBackCall } from '../../Actions/action';
+import { addPopUpBackCall } from '../../Actions/action';
 import { useDebounce } from '../../Hooks/useDebounce';
+import { useValueValidate } from '../../Hooks/useValueValidate';
 
 const values = {
   value1: 0,
   value2: 12,
   value3: 0,
+  name: '',
 };
 type IHandleChange = (event: any) => void;
 
 export default function Application() {
   const { brandList } = useAppSelector((state: any) => state.reducer);
   const [value, setValue] = useState(values);
+  const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const dispatch = useDispatch();
 
   const handleChange: IHandleChange = (event) => {
@@ -30,6 +33,14 @@ export default function Application() {
   const handleChangeMonth: IHandleChange = (event) => {
     setValue({ ...value, value2: event.target.value });
   };
+  function onSubmit(e: any) {
+    e.preventDefault();
+    if (valuePhone && brandList.name_car) {
+      dispatch(addPopUpBackCall('a discount'));
+      setValue({ ...value, name: '' });
+      setValuePhone('');
+    }
+  }
 
   const dfunc = useDebounce<typeof handleChange>(handleChange, 200);
   const dfunc2 = useDebounce<typeof handleChangeMonth>(handleChangeMonth, 200);
@@ -121,14 +132,21 @@ export default function Application() {
             <h2>
               Получить выгоду <br className={s.br} /> <span>300 000 ₽</span>
             </h2>
-            <div>
-              <input type="text" placeholder="Ваше имя" />
-              <input type="text" placeholder="Ваш телефон" />
-              <Button
-                title="Получить предложение"
-                click={() => brandList.name_car && dispatch(popUpBackCall('a discount'))}
+            <form onSubmit={onSubmit}>
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                value={value.name}
+                onChange={(e) => setValue({ ...value, name: e.target.value })}
               />
-            </div>
+              <input
+                type="tel"
+                placeholder="Ваш телефон"
+                value={valuePhone}
+                onChange={(e) => onChange(e.target.value)}
+              />
+              <Button title="Получить предложение" click={(e) => onSubmit(e)} />
+            </form>
             <p>
               Нажимая кнопку “Получить скидку” Вы даете согласие на обработку своих персональных
               данных
