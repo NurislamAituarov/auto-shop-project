@@ -1,5 +1,5 @@
 import s from './Application.module.scss';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useAppSelector } from '../../Hooks/Hooks';
 import cn from 'classnames';
 
@@ -23,6 +23,7 @@ type IHandleChange = (event: any) => void;
 export default function Application() {
   const { brandList } = useAppSelector((state: any) => state.reducer);
   const [value, setValue] = useState(values);
+  const refInput = useRef<HTMLInputElement | null>(null);
   const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const dispatch = useDispatch();
 
@@ -39,6 +40,8 @@ export default function Application() {
       dispatch(addPopUpBackCall('a discount'));
       setValue({ ...value, name: '' });
       setValuePhone('');
+    } else {
+      refInput.current?.focus();
     }
   }
 
@@ -140,6 +143,7 @@ export default function Application() {
                 onChange={(e) => setValue({ ...value, name: e.target.value })}
               />
               <input
+                ref={refInput}
                 type="tel"
                 placeholder="Ваш телефон"
                 value={valuePhone}

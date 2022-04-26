@@ -8,7 +8,7 @@ interface ITag {
   link?: string;
 }
 
-export function Tag({ title, size = 's', link = 'auto-shop-project' }: ITag) {
+export function Tag({ title, size = 's', link = '' }: ITag) {
   return (
     <NavLink to={link}>
       <span

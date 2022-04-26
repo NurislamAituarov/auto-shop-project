@@ -182,6 +182,12 @@
     width: 18;
     margin-left: 12px;
     cursor: pointer;
+    &:hover {
+      transition: all 0.3s;
+      path {
+        stroke: black;
+      }
+    }
   }
 }
 

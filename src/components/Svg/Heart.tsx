@@ -8,8 +8,6 @@ interface IHeart {
 }
 
 export function Heart({ sum, addCarSelect, active, width = 26, height = 23 }: IHeart) {
-  // console.log(active);
-
   return (
     <div
       onClick={addCarSelect}

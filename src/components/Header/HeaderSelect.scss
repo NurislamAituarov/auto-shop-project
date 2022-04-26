@@ -25,6 +25,15 @@
     margin-left: 40px;
     cursor: pointer;
     fill: white;
+    &:hover {
+      transition: all 0.1s;
+      path {
+        stroke: black;
+      }
+    }
+    &:active {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -91,7 +100,7 @@
   }
 }
 
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 414px) {
   .header__select_item {
     width: max-content;
     svg {

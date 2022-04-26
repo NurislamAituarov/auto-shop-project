@@ -38,7 +38,7 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
         <Hamburger trigger={trigger} setTrigger={setTrigger} />
         <hr id="hr" />
         <p className="header__nav_subtitle">
-          <Tag title="10 лет" /> превосходим ваши ожидания
+          <Tag title="10 лет" link="auto-shop-project" /> превосходим ваши ожидания
         </p>
         <nav className="nav">
           <ul className="flex">

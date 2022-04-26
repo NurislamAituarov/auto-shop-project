@@ -23,6 +23,7 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
   const { brandList } = useAppSelector((state: any) => state.reducer);
   const [open, setOpen] = React.useState(false);
   const [sent, setSent] = React.useState(false);
+  const refInput = React.useRef<HTMLInputElement | null>(null);
   const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const dispatch = useDispatch();
 
@@ -35,6 +36,8 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
     e.preventDefault();
     if (valuePhone) {
       setSent(true);
+    } else {
+      refInput.current?.focus();
     }
   }
 
@@ -76,6 +79,7 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
               </div>
               <input type="text" placeholder="Ваше имя" />
               <input
+                ref={refInput}
                 type="tel"
                 placeholder="Ваш телефон"
                 value={valuePhone}

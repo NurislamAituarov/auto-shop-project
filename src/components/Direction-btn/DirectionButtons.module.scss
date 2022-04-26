@@ -62,7 +62,7 @@
   }
 }
 
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 414px) {
   .selection__title {
     padding: 0 15px;
     align-items: flex-start;
@@ -78,14 +78,5 @@
   }
   .selection__title_btn {
     display: none;
-    // button {
-    //   border-radius: 5px;
-    //   padding: 9px;
-    //   width: 30px;
-    //   height: 30px;
-    // }
-    // button:nth-child(2) {
-    //   margin: 0;
-    // }
   }
 }

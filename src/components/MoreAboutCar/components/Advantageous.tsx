@@ -11,6 +11,7 @@ import { Button } from '../../Btn/Button';
 import { useValueValidate } from '../../../Hooks/useValueValidate';
 import { addPopUpBackCall } from '../../../Actions/action';
 import { useDispatch } from 'react-redux';
+import { useRef } from 'react';
 
 interface IAdvantageous {
   name: string | undefined;
@@ -19,12 +20,17 @@ interface IAdvantageous {
 export function Advantageous({ name }: IAdvantageous) {
   const listItems = useAppSelector((state: any) => state.reducer.listItems);
   const { valuePhone, setValuePhone, onChange } = useValueValidate();
+  const refInput = useRef<HTMLInputElement | null>(null);
   const dispatch = useDispatch();
 
   function onSubmit(e: any) {
     e.preventDefault();
-    valuePhone && dispatch(addPopUpBackCall('offer'));
-    setValuePhone('');
+    if (valuePhone) {
+      dispatch(addPopUpBackCall('offer'));
+      setValuePhone('');
+    } else {
+      refInput.current?.focus();
+    }
   }
 
   return (
@@ -48,6 +54,7 @@ export function Advantageous({ name }: IAdvantageous) {
           <Select arr={['Седан', 'Хэтчбек', 'Универсал', 'Купе', 'Кроссовер']} name="Тип кузова" />
           <label>
             <input
+              ref={refInput}
               type="tel"
               placeholder="Ваш телефон"
               value={valuePhone}

@@ -38,6 +38,7 @@ const arrOurSelection = [
 export default function SectionSelect() {
   const refSpecialOff = useRef<(HTMLDivElement | any)[]>([]);
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
+  const refInput = useRef<HTMLInputElement | null>(null);
   const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const dispatch = useDispatch();
 
@@ -46,6 +47,8 @@ export default function SectionSelect() {
     if (valuePhone) {
       dispatch(addPopUpBackCall('offer'));
       setValuePhone('');
+    } else {
+      refInput.current?.focus();
     }
   }
 
@@ -75,6 +78,7 @@ export default function SectionSelect() {
           </p>
           <form onSubmit={onSubmit} className={s.selection__sentence_btn}>
             <input
+              ref={refInput}
               type="tel"
               placeholder="Ваш телефон"
               value={valuePhone}

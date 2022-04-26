@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import s from './CallMe.module.scss';
 import { motion } from 'framer-motion';
 import { addPopUpBackCall } from '../../Actions/action';
@@ -8,20 +8,27 @@ import { useAppSelector } from '../../Hooks/Hooks';
 export default function CallMe() {
   const popUpBackCall = useAppSelector((state: any) => state.reducer.popUpBackCall);
   const [hover, setHover] = useState(false);
-
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    animate();
+  }, []);
+
+  function animate() {
+    setTimeout(() => {
+      setHover(true);
+      setTimeout(() => {
+        setHover(false);
+      }, 400);
+    }, 400);
+  }
 
   function onHover(str: string) {
     if (str === 'enter') {
       setHover(true);
     } else {
       setHover(false);
-      setTimeout(() => {
-        setHover(true);
-        setTimeout(() => {
-          setHover(false);
-        }, 400);
-      }, 400);
+      animate();
     }
   }
 
