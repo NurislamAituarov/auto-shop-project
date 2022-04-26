@@ -31,7 +31,7 @@ export default function Header() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(location());
+    dispatch(location());
 
     function onResize() {
       if (window.innerWidth <= 768) {
