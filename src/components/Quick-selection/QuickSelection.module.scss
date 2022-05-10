@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 768px) {
   .block__listCar {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   .section {
     padding: 0 30px;
@@ -88,6 +88,16 @@
   }
   .block__selected_item {
     margin: 0;
+  }
+}
+@media screen and (max-width: 748px) {
+  .block__listCar {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 668px) {
+  .block__listCar {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

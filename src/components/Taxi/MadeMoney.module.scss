@@ -1,0 +1,153 @@
+.block__madeMoney {
+  position: relative;
+  color: white;
+  border-radius: 25px;
+  background-color: #262626;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 570px 1fr 1fr;
+  margin-bottom: 150px;
+  h2 {
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: bold;
+    margin-right: 94px;
+  }
+}
+.block__madeMoney_img {
+  position: absolute;
+  bottom: -126px;
+  left: -192px;
+  img {
+    width: 100%;
+  }
+}
+.block__madeMoney_advantage,
+.block__madeMoney_flaw {
+  span {
+    background-color: #298f2d;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 0 15px;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 25px;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background-color: #298f2d;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    p {
+      color: #737373;
+      line-height: 18px;
+    }
+  }
+}
+.block__madeMoney_advantage {
+  span:hover {
+    background-color: #217b24;
+  }
+  .item {
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(6) {
+      p {
+        width: 250px;
+      }
+    }
+  }
+}
+.block__madeMoney_flaw {
+  span {
+    background-color: var(--red);
+  }
+  .item {
+    div {
+      background-color: var(--red);
+    }
+    &:nth-child(2),
+    &:nth-child(5) {
+      p {
+        width: 260px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .block__madeMoney {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    h2 {
+      font-size: 35px;
+      line-height: 40px;
+      margin: 0;
+    }
+  }
+  .block__madeMoney_img {
+    width: 700px;
+  }
+}
+@media (max-width: 1040px) {
+  .block__madeMoney {
+    padding: 30px;
+    margin-bottom: 80px;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .block__madeMoney_advantage,
+  .block__madeMoney_flaw {
+    h2 {
+      font-size: 20px;
+    }
+    .item {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+  .block__madeMoney_img {
+    width: 500px;
+    bottom: -65px;
+    left: -140px;
+  }
+}
+@media (max-width: 768px) {
+  .block__madeMoney {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .block__madeMoney_advantage,
+  .block__madeMoney_flaw {
+    h2 {
+      margin-bottom: 5px;
+    }
+  }
+  .block__madeMoney_img {
+    display: none;
+  }
+}
+@media (max-width: 415px) {
+  .block__madeMoney {
+    margin-bottom: 30px;
+    padding: 20px;
+    h2 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+}

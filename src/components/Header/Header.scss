@@ -109,13 +109,19 @@
 
 //media =========================================================================
 
-@media screen and(max-width: 1440px) {
+@media screen and(max-width: 1740px) {
   .header {
     padding: 0 50px;
     padding-top: 43px;
   }
   .title_info {
     padding: 0 50px;
+  }
+}
+@media screen and(max-width: 1440px) {
+  .header {
+    padding: 0 20px;
+    padding-top: 43px;
   }
 }
 

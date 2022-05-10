@@ -68,7 +68,7 @@ export default function SectionSelect() {
           })}
         </div>
       </div>
-      <div className={s.selection__sentence}>
+      <div id="SpecialOffers" className={s.selection__sentence}>
         <LazyLoadImage effect="blur" src={wing} alt="перчатки " />
         <img src={ellipse} alt="ellipse" />
         <div className={s.selection__sentence_title}>

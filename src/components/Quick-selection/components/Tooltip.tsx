@@ -15,7 +15,7 @@ export default function PositionedTooltips({ name, price }: IProps) {
     <Grid container justifyContent="center">
       <Grid item>
         <Tooltip title={priceStr} placement="top">
-          <Button>{name}</Button>
+          <Button sx={{ fontSize: '14px' }}>{name}</Button>
         </Tooltip>
       </Grid>
     </Grid>

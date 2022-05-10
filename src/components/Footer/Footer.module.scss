@@ -195,9 +195,14 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1668px) {
   .container {
-    max-width: 708px;
+    padding: 0 35px;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .container {
     margin: 0 auto;
     padding: 0 35px;
   }

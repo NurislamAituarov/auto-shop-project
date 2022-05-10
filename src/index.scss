@@ -3,6 +3,22 @@ body {
   font-family: 'Roboto';
 }
 
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: auto;
+  background-color: var(--lite-grey);
+}
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+}
+
 * {
   margin: 0;
   padding: 0;

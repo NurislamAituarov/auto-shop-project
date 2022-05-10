@@ -81,7 +81,7 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
           {listSelect.map((el, i) => {
             return (
               <motion.div key={i} variants={variantsChildren}>
-                <HeaderSelect title={el} />
+                <HeaderSelect title={el} setTrigger={setTrigger} refInput={refInput} />
               </motion.div>
             );
           })}

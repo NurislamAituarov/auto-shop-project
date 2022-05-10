@@ -4,7 +4,7 @@ export function Search({ link = false }) {
   return (
     <>
       {link ? (
-        <NavLink to="search">
+        <NavLink to="auto-shop-project/search">
           <svg
             width="23"
             height="23"

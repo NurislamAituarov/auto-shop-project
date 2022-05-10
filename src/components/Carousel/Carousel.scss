@@ -1,6 +1,6 @@
 .section__slider {
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #eff0f0;
   width: 1870px;
   height: 600px;
   left: -213px;
@@ -13,10 +13,12 @@
   right: 0;
   top: 0;
   width: 1222px;
+  background: #eff0f0;
   background-image: url('../../Images/first.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-blend-mode: multiply;
   .carousel.carousel-slider .control-arrow {
     top: 50%;
     height: max-content;

@@ -46,7 +46,7 @@ export default function CarAvailable() {
   }
 
   return (
-    <section className={s.section}>
+    <section id="CarAvailable" className={s.section}>
       <h2>Автомобили в наличии с ПТС</h2>
       <div className={s.wrapper__items}>
         {Boolean(listItem.length)

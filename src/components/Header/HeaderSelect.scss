@@ -2,11 +2,13 @@
   position: relative;
   justify-content: flex-start;
   cursor: pointer;
+
   h3 {
     text-transform: uppercase;
     font-size: 16px;
     line-height: 18px;
     margin-right: 10px;
+    color: black;
   }
   &:hover {
     svg {
@@ -19,7 +21,12 @@
     color: var(--red);
   }
 }
-
+.header__select_link {
+  &:active {
+    transition: all 0.2s;
+    transform: scale(1.08);
+  }
+}
 .header__select_svg {
   svg {
     margin-left: 40px;

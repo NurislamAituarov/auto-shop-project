@@ -49,7 +49,7 @@ export default function Application() {
   const dfunc2 = useDebounce<typeof handleChangeMonth>(handleChangeMonth, 200);
 
   return (
-    <section className={s.section}>
+    <section id="Application" className={s.section}>
       <div className={s.wrapper}>
         <h2>Заявка на автокредит</h2>
         <div className={s.wrapper__settings}>

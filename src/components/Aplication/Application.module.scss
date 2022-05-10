@@ -372,7 +372,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 528px) {
   .section {
     height: 1399px;
     .hr__mobile {
@@ -404,7 +404,7 @@
         .setting__view {
           width: 100%;
           .setting__view__container {
-            width: 274px;
+            width: 100%;
           }
         }
         .setting__price {
