@@ -10,6 +10,7 @@ import fon from '../../Images/first.png';
 import rio from '../../Images/rio.png';
 import tiguan from '../../Images/tiguan.png';
 import camry from '../../Images/camry-white.png';
+import credit from '../../Images/credit.png';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { useValueValidate } from '../../Hooks/useValueValidate';
 
@@ -56,6 +57,8 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
         return brandList.url_img;
       case 'offer':
         return camry;
+      case 'credit':
+        return credit;
       default:
         return;
     }
@@ -91,7 +94,7 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
                 <span> персональных данных</span>
               </p>
             </form>
-            <img className={s.modal__content_img} src={img} alt="фото контента" width="344" />
+            <img className={s.modal__content_img} src={img} alt="фото контента" />
             <img className={s.modal__content_fon} src={fon} alt="задний фон" />
             <div onClick={handleClose} className={s.modal__close}>
               <p></p>

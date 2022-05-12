@@ -1,5 +1,7 @@
 import { Slider } from '@mui/material';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addPopUpBackCall } from '../../../Actions/action';
 import { Button } from '../../Btn/Button';
 import s from './components.module.scss';
 
@@ -9,6 +11,7 @@ const creditTerm = [6, 12, 24, 36, 48, 60, 72, 84];
 export function BlockApplication() {
   const [fee, setFee] = useState(20);
   const [credit, setCredit] = useState(24);
+  const dispatch = useDispatch();
 
   function onChange(e: any, title: string) {
     if (title === 'fee') {
@@ -68,7 +71,11 @@ export function BlockApplication() {
             <span>* Предварительный расчет</span>
           </div>
         </div>
-        <Button title="Подать заявку на кредит" size="big" />
+        <Button
+          title="Подать заявку на кредит"
+          size="big"
+          click={() => dispatch(addPopUpBackCall('credit'))}
+        />
       </div>
     </div>
   );

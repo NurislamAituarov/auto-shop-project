@@ -6,6 +6,7 @@ import taxi from '../../Images/taxi.png';
 import { BlockCart } from './BlockCart';
 import { MadeMoney } from './MadeMoney';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { CreditCalculator } from './CreditCalculator';
 
 const additional = [
   'Льготный автокредит от 1,9%',
@@ -61,6 +62,7 @@ export default function Taxi() {
       </div>
       <BlockCart />
       <MadeMoney />
+      <CreditCalculator />
     </section>
   );
 }

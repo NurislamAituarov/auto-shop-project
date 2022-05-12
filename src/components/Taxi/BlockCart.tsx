@@ -41,8 +41,9 @@ export function BlockCart() {
         </div>
         <div className={s.offer__form_wrapper}>
           <div className={s.offer__form}>
-            <Input placeholder="Ваше имя" value={valueName} onChange={setValueName} />
+            <Input type="text" placeholder="Ваше имя" value={valueName} onChange={setValueName} />
             <Input
+              type="tel"
               placeholder="Ваш телефон"
               value={valuePhone}
               onChange={onChange}

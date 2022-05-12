@@ -78,7 +78,7 @@ interface ISelect {
   arr?: string[];
 }
 
-function Select({ name, listItems, arr }: ISelect) {
+export function Select({ name, listItems, arr }: ISelect) {
   const { ref, isShow, setIsShow } = useOutsideAlerter(false);
 
   return (

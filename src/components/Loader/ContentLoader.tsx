@@ -5,24 +5,20 @@ export function ReactContentLoader() {
     <ContentLoader
       speed={2}
       width={450}
-      height={456}
-      viewBox="0 0 460 456"
+      height={450}
+      viewBox="0 0 450 450"
       backgroundColor="#f3f3f3"
-      foregroundColor="#b0b0b0">
-      <rect x="97" y="95" rx="0" ry="0" width="0" height="1" />
-      <rect x="96" y="96" rx="0" ry="0" width="1" height="0" />
-      <rect x="100" y="283" rx="0" ry="0" width="10" height="2" />
-      <rect x="89" y="281" rx="0" ry="0" width="21" height="1" />
-      <rect x="167" y="237" rx="0" ry="0" width="0" height="1" />
-      <rect x="289" y="130" rx="0" ry="0" width="0" height="1" />
-      <rect x="265" y="257" rx="0" ry="0" width="2" height="0" />
-      <rect x="195" y="121" rx="0" ry="0" width="218" height="145" />
-      <rect x="46" y="50" rx="0" ry="0" width="171" height="20" />
-      <rect x="50" y="173" rx="0" ry="0" width="103" height="14" />
-      <rect x="50" y="207" rx="0" ry="0" width="103" height="14" />
-      <rect x="50" y="238" rx="0" ry="0" width="103" height="14" />
-      <rect x="81" y="324" rx="0" ry="0" width="326" height="37" />
-      <rect x="80" y="384" rx="0" ry="0" width="325" height="44" />
+      foregroundColor="#ecebeb">
+      <rect x="25" y="39" rx="0" ry="0" width="215" height="24" />
+      <rect x="25" y="74" rx="0" ry="0" width="270" height="30" />
+      <circle cx="373" cy="40" r="13" />
+      <rect x="397" y="30" rx="0" ry="0" width="20" height="22" />
+      <circle cx="331" cy="214" r="101" />
+      <rect x="25" y="252" rx="0" ry="0" width="174" height="51" />
+      <rect x="25" y="343" rx="0" ry="0" width="389" height="30" />
+      <rect x="25" y="382" rx="0" ry="0" width="390" height="34" />
+      <rect x="25" y="195" rx="0" ry="0" width="174" height="51" />
+      <rect x="25" y="135" rx="0" ry="0" width="174" height="51" />
     </ContentLoader>
   );
 }

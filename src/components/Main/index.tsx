@@ -1,6 +1,7 @@
 import s from './Main.module.scss';
 import { lazy, memo, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Spinner } from '../Loader/Spinner';
 
 const SectionSelect = lazy(() => import('../Section-selection/SectionSelection'));
 const QuickSelection = lazy(() => import('../Quick-selection'));
@@ -27,16 +28,18 @@ const Main = () => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Helmet>
       <section className={s.section}>
-        <Suspense fallback={<></>}>
+        <Suspense fallback={<Spinner />}>
           <CustomCarousel />
         </Suspense>
       </section>
       <Suspense fallback={<></>}>
         <QuickSelection />
       </Suspense>
+
       <Suspense fallback={<></>}>
         <CarAvailable />
       </Suspense>
+
       <Suspense fallback={<></>}>
         <SectionSelect />
       </Suspense>

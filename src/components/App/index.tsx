@@ -6,8 +6,9 @@ import { Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Up } from '../Up';
+import Main from '../Main';
 
-const Main = lazy(() => import('../Main'));
+// const Main = lazy(() => import('../Main'));
 const AboutCompany = lazy(() => import('../About-company/AboutCompany'));
 const TechnicalCenter = lazy(() => import('../Technical-center/TechnicalCenter'));
 const Reviews = lazy(() => import('../Reviews/Reviews'));
@@ -32,9 +33,11 @@ function App() {
       </Helmet>
       <Header />
       <div className="wrapper">
+        <Routes>
+          <Route path="auto-shop-project" element={<Main />} />
+        </Routes>
         <Suspense fallback={<Spinner />}>
           <Routes>
-            <Route path="auto-shop-project" element={<Main />} />
             <Route path="auto-shop-project/about-company" element={<AboutCompany />} />
             <Route path="auto-shop-project/technical-center" element={<TechnicalCenter />} />
             <Route path="auto-shop-project/reviews" element={<Reviews />} />
@@ -66,6 +69,13 @@ function App() {
               popUpBlock={popUpBlock}
               title={['Получить предложение']}
               button="Получить предложение"
+            />
+          )}
+          {popUpBlock === 'credit' && (
+            <BasicModal
+              popUpBlock={popUpBlock}
+              title={['Выгодный автокредит']}
+              button="Оставить заявку"
             />
           )}
         </Suspense>
