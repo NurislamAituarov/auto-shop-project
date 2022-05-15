@@ -7,7 +7,7 @@ import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/Header-select';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
-import { location } from '../../Actions/action';
+import { addListItem, location } from '../../Actions/action';
 import { useAppSelector } from '../../Hooks/Hooks';
 
 const text: string[] = [
@@ -32,6 +32,7 @@ export default function Header() {
 
   useEffect(() => {
     dispatch(location());
+    dispatch(addListItem());
 
     function onResize() {
       if (window.innerWidth <= 768) {

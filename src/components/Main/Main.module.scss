@@ -20,12 +20,9 @@
   .section {
     height: 360px;
   }
-  .section__partners {
-    padding: 0 15px;
-  }
 }
 
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 415px) {
   .section__partners {
     margin: 0;
     margin-bottom: 40px;

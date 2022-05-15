@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Error } from './404';
+
 class ErrorBoundary extends Component {
   state = {
     error: false,

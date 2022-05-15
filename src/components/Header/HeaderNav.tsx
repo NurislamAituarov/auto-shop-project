@@ -1,12 +1,13 @@
-import { Hamburger } from '../Hamburger /Hamburger';
-import { Whatsapp } from '../Svg';
 import { useRef, useState } from 'react';
+import cn from 'classnames';
+import { useDispatch } from 'react-redux';
+
+import { Hamburger } from '../Hamburger /Hamburger';
+import { Phone, Whatsapp } from '../Svg';
 import { Button } from '../Btn/Button';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { Tag } from '../Tag';
 import { NavList } from './NavList';
-import cn from 'classnames';
-import { useDispatch } from 'react-redux';
 import { addPopUpBackCall } from '../../Actions/action';
 
 interface IHeaderNav {
@@ -65,7 +66,7 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
             {size !== 'mobile' ? (
               <div className="phones flex">
                 <div onMouseEnter={() => onMouse('enter')} onMouseLeave={() => onMouse('leave')}>
-                  <Whatsapp color="rgba(202, 1, 0, 1)" width="31" height="31" />
+                  <Phone color="white" />
                 </div>
                 <p ref={refPhone}>
                   <a href="tel:+7 (705) 304-76-62">+7 (705) 304-76-62</a>

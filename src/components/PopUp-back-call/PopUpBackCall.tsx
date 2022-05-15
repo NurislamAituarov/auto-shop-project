@@ -13,6 +13,7 @@ import camry from '../../Images/camry-white.png';
 import credit from '../../Images/credit.png';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { useValueValidate } from '../../Hooks/useValueValidate';
+import { Input } from '../Input';
 
 interface IProps {
   title: string[];
@@ -81,12 +82,12 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
                 <p>{title[1]}</p>
               </div>
               <input type="text" placeholder="Ваше имя" />
-              <input
-                ref={refInput}
-                type="tel"
+              <Input
                 placeholder="Ваш телефон"
+                type="tel"
+                refInput={refInput}
                 value={valuePhone}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
               <Button click={handleSubmit} title={button} />
               <p>

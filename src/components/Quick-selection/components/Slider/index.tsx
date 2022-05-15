@@ -3,6 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useDispatch } from 'react-redux';
+
 import { addPriceCar } from '../../../../Actions/action';
 import { useDebounce } from '../../../../Hooks/useDebounce';
 

@@ -1,6 +1,6 @@
 import s from './Footer.module.scss';
 import { listCarr } from '../Quick-selection';
-import rating_all from '../Svg/rating_all.svg';
+import rating_all from '../../Assets/Svg/rating_all.svg';
 import { Contacts } from './Contacts';
 
 const navMenu = [

@@ -164,6 +164,12 @@
     padding-bottom: 30px;
     margin-top: 25px;
     margin-bottom: 40px;
+    span:nth-child(1) {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
     .selection__sentence_title {
       width: 100%;
       padding: 0 20px;

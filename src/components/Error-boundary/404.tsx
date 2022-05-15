@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './404.scss';
+
 import error from '../../Images/404.png';
 import fon from '../../Images/error-fon.jpg';
 import { Button } from '../Btn/Button';
@@ -30,7 +31,11 @@ export function Error() {
         </p>
 
         <NavLink to="/auto-shop-project">
-          <Button title="на главную" size="normal" />
+          <Button
+            title="на главную"
+            size="normal"
+            click={() => localStorage.setItem('active', 'Подбор авто')}
+          />
         </NavLink>
       </div>
     </div>

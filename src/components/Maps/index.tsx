@@ -19,8 +19,8 @@ const defaultOptions = {
 
 const SimpleMap = () => {
   const [center, setCenter] = useState({
-    lat: 0,
-    lng: 0,
+    lat: 53.21435,
+    lng: 63.62463,
   });
 
   useEffect(() => {

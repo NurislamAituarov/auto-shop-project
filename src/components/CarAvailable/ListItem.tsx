@@ -5,11 +5,11 @@ import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { IItemCar } from '../../Type';
-import gift from '../Svg/gift.svg';
-import sec from '../Svg/sec.svg';
-import speed from '../Svg/speed.svg';
-import petrol from '../Svg/petrol.svg';
-import power from '../Svg/power.svg';
+import gift from '../../Assets/Svg/gift.svg';
+import sec from '../../Assets/Svg/sec.svg';
+import speed from '../../Assets/Svg/speed.svg';
+import petrol from '../../Assets/Svg/petrol.svg';
+import power from '../../Assets/Svg/power.svg';
 import { Diagram, Heart } from '../Svg';
 import car_skeleton from '../../Images/car-skeleton.png';
 
@@ -92,7 +92,7 @@ export default memo(function ListItem({ el, i, addCarSelect }: IListItem) {
       <div className={s.footer__btn}>
         <button className={s.footer__btn_item}>Резерв онлайн</button>
         <button className={s.footer__btn_item}>Купить</button>
-        <NavLink className={s.footer__btn_item} to={`/auto-shop-project/${el.id}`}>
+        <NavLink className={s.footer__btn_item} to={`/auto-shop-project/item${el.id}`}>
           <p>Подробнее</p>
         </NavLink>
       </div>

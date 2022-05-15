@@ -26,18 +26,18 @@ export function NavList({ activeClass, setActiveClass, el, setTrigger, refInput 
   }
 
   return (
-    <NavLink to={route()} className={cn({ active_: el === activeClass })}>
-      <li
-        onClick={() => {
-          setActiveClass(el);
-          localStorage.setItem('active', el);
-          setTrigger(false);
-          if (refInput) {
-            refInput.current.checked = false;
-          }
-        }}>
-        {el}
-      </li>
+    <NavLink
+      onClick={() => {
+        setActiveClass(el);
+        localStorage.setItem('active', el);
+        setTrigger(false);
+        if (refInput) {
+          refInput.current.checked = false;
+        }
+      }}
+      to={route()}
+      className={cn({ active_: el === activeClass })}>
+      <li>{el}</li>
     </NavLink>
   );
 }

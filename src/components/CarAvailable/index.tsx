@@ -20,7 +20,7 @@ export default function CarAvailable() {
   useEffect(() => {
     if (count === 0) {
       count += 6;
-      dispatch(addListItem());
+      // dispatch(addListItem());
     }
 
     const onResize = () => {
@@ -47,20 +47,19 @@ export default function CarAvailable() {
 
   return (
     <section id="CarAvailable" className={s.section}>
-      <h2>Автомобили в наличии с ПТС</h2>
-      <div className={s.wrapper__items}>
-        {Boolean(listItem.length)
-          ? listItem.map((el, i) => {
+      {Boolean(listItem.length) ? (
+        <>
+          <h2>Автомобили в наличии с ПТС</h2>
+          <div className={s.wrapper__items}>
+            {listItem.map((el, i) => {
               return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={el.id} />;
-            })
-          : [1, 2, 3, 4, 5, 6].map((el, i) => {
-              return (
-                <div className={s.content_loader} key={i}>
-                  <ReactContentLoader />
-                </div>
-              );
             })}
-      </div>
+          </div>
+        </>
+      ) : (
+        <ReactContentLoader />
+      )}
+
       {listItemHome.length !== listItem.length && (
         <div className={s.btn__showMore}>
           <Button click={showMore} title="Показать  еще" />

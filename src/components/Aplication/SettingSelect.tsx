@@ -24,12 +24,20 @@ export const SettingSelect = memo(function SettingSelect() {
   const [activeList, setActiveList] = useState('');
   const [state, setState] = useState(blockSelect);
   const refItem = useRef<(HTMLUListElement | null)[]>([]);
+  const ref = useRef<HTMLDivElement | null>(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const newItem = { name: 'Марка', list: listItems };
     setState([newItem, ...blockSelect.slice(1)]);
   }, [listItems]);
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  });
 
   const variants = {
     visible: {
@@ -62,8 +70,14 @@ export const SettingSelect = memo(function SettingSelect() {
     }
   }
 
+  const handleClickOutside = (event: any) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setActiveList('');
+    }
+  };
+
   return (
-    <div className={s.setting__select}>
+    <div className={s.setting__select} ref={ref}>
       {state.map((el, index) => {
         return (
           <motion.div

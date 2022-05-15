@@ -156,6 +156,12 @@
       }
     }
   }
+  div:last-child {
+    width: 100%;
+    p {
+      border: none;
+    }
+  }
 }
 
 .footer__bottom {

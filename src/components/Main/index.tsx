@@ -2,6 +2,7 @@ import s from './Main.module.scss';
 import { lazy, memo, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Spinner } from '../Loader/Spinner';
+import { ReactContentLoader } from '../Loader/ContentLoader';
 
 const SectionSelect = lazy(() => import('../Section-selection/SectionSelection'));
 const QuickSelection = lazy(() => import('../Quick-selection'));
@@ -9,8 +10,8 @@ const CarAvailable = lazy(() => import('../CarAvailable'));
 const CustomCarousel = lazy(() => import('../Carousel'));
 const Application = lazy(() => import('../Aplication/Application'));
 const WeAreTrusted = lazy(() => import('../We-are-trusted/WeAreTrusted'));
-const ReviewHome = lazy(() => import('../Reviews/ReviewHome'));
-const AboutCompanyHome = lazy(() => import('../About-company/AboutCompanyHome'));
+const ReviewHome = lazy(() => import('../../Pages/Reviews/ReviewHome'));
+const AboutCompanyHome = lazy(() => import('../../Pages/About-company/AboutCompanyHome'));
 const SimpleMap = lazy(() => import('../Maps'));
 const Partners = lazy(() => import('../Partners'));
 
@@ -19,8 +20,6 @@ const Main = () => {
     <main className={s.main}>
       <Helmet>
         <title>Auto-Shop</title>
-        <meta name="description" content="О компании" />
-        <link rel="icon" href="favicon.ico" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -36,7 +35,7 @@ const Main = () => {
         <QuickSelection />
       </Suspense>
 
-      <Suspense fallback={<></>}>
+      <Suspense fallback={<ReactContentLoader />}>
         <CarAvailable />
       </Suspense>
 

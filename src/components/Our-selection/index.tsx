@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import { Button } from '../Btn/Button';
-import s from './OurSelection.module.scss';
 import img1 from '../../Images/img1.png';
 import img2 from '../../Images/img2.png';
 import img3 from '../../Images/img3.png';
@@ -11,6 +11,7 @@ import img7 from '../../Images/img7.png';
 import img8 from '../../Images/img8.png';
 import img9 from '../../Images/img9.png';
 
+import s from './OurSelection.module.scss';
 interface IProps {
   i: number;
   el?: string;

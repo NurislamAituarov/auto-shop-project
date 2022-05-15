@@ -1,11 +1,13 @@
 import { useRef } from 'react';
+
 import { onNext, onPrev } from '../../Hooks/direction';
 import { sum5 } from '../../Hooks/useCustomCounter';
-import s from './We-are-trusted.module.scss';
-import yandex from '../Svg/yandex-maps.svg';
-import google from '../Svg/Google_Maps.svg';
+import yandex from '../../Assets/Svg/yandex-maps.svg';
+import google from '../../Assets/Svg/Google_Maps.svg';
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { Rating } from '../Rating';
+
+import s from './We-are-trusted.module.scss';
 
 const listBlock = [
   { title: 'Сайт oтзовик', subtitle: 'Название автосалона' },
@@ -70,7 +72,7 @@ function ListItem({ el, refBlock, i }: IListItem) {
   return (
     <div ref={(el) => (refBlock.current[i] = el)} className={s.item}>
       <h2>{el.title}</h2>
-      <p>{el.subtitle}</p>
+      <p className={s.item__subtitle}>{el.subtitle}</p>
       <Rating />
     </div>
   );

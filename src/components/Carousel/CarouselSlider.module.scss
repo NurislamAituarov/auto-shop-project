@@ -53,6 +53,9 @@
   }
 }
 @media screen and (max-width: 414px) {
+  .block {
+    padding: 0 15px;
+  }
   .company__carfoto_wrapper {
     grid-template-columns: repeat(6, 342px);
     .company__carfoto_item {

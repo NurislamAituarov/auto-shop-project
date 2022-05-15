@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { addPopUpBackCall } from '../../Actions/action';
 import { useDebounce } from '../../Hooks/useDebounce';
 import { useValueValidate } from '../../Hooks/useValueValidate';
+import { Input } from '../Input';
 
 const values = {
   value1: 0,
@@ -142,12 +143,12 @@ export default function Application() {
                 value={value.name}
                 onChange={(e) => setValue({ ...value, name: e.target.value })}
               />
-              <input
-                ref={refInput}
-                type="tel"
+              <Input
                 placeholder="Ваш телефон"
+                type="tel"
+                refInput={refInput}
                 value={valuePhone}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={onChange}
               />
               <Button title="Получить предложение" click={(e) => onSubmit(e)} />
             </form>

@@ -1,5 +1,10 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { useEffect, useState } from 'react';
+
 import cn from 'classnames';
 import s from './QuickSelection.module.scss';
+
 import {
   Suzuki,
   Opel,
@@ -39,9 +44,6 @@ import {
   GAC,
   Honda,
 } from './svg';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import { useEffect, useState } from 'react';
 
 import { Button } from '../Btn/Button';
 import { Selected } from './components/Select';

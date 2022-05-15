@@ -3,8 +3,8 @@ import s from './Footer.module.scss';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { IItemCar } from '../../Type';
 import { Date, Phone } from '../Svg';
-import watch from '../Svg/watch.svg';
-import { Selected } from '../Quick-selection/components/Select';
+import watch from '../../Assets/Svg/watch.svg';
+import { Select } from '../Select';
 
 export function Contacts() {
   const location = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.location);
@@ -39,8 +39,7 @@ export function Contacts() {
           <span>Схема проезда</span>
         </div>
       </div>
-
-      <Selected title="Москва" items={['Aстана', 'Костанай']} width={306} />
+      <Select name="Москва" arr={['Aстана', 'Костанай', 'Алматы']} />
     </div>
   );
 }

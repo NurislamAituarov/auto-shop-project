@@ -2,6 +2,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import s from './SectionSelect.module.scss';
 import { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 
 import wing from '../../Images/pngwing.png';
 import ellipse from '../../Images/Ellipse.png';
@@ -12,8 +13,8 @@ import { OurSelection } from '../Our-selection';
 import { sum1, sum2 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
 import { addPopUpBackCall } from '../../Actions/action';
-import { useDispatch } from 'react-redux';
 import { useValueValidate } from '../../Hooks/useValueValidate';
+import { Input } from '../Input';
 
 export const arrSpecificOffers = [
   'Первый автомобиль',
@@ -69,7 +70,7 @@ export default function SectionSelect() {
         </div>
       </div>
       <div id="SpecialOffers" className={s.selection__sentence}>
-        <LazyLoadImage effect="blur" src={wing} alt="перчатки " />
+        <LazyLoadImage effect="blur" src={wing} alt="перчатки" />
         <img src={ellipse} alt="ellipse" />
         <div className={s.selection__sentence_title}>
           <h2>Перебьем предложения от конкурентов!</h2>
@@ -77,13 +78,14 @@ export default function SectionSelect() {
             Скидки от <span>10 до 25%</span> на стоимость автомобиля{' '}
           </p>
           <form onSubmit={onSubmit} className={s.selection__sentence_btn}>
-            <input
-              ref={refInput}
-              type="tel"
+            <Input
               placeholder="Ваш телефон"
+              type="tel"
+              refInput={refInput}
               value={valuePhone}
-              onChange={(e) => onChange(e.target.value)}
+              onChange={onChange}
             />
+
             <Button
               title="Получить предложение"
               click={() => valuePhone && dispatch(addPopUpBackCall('offer'))}

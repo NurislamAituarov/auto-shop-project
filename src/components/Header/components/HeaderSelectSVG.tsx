@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
+
 import { Diagram, Heart, Search } from '../../Svg';
 import { useAppSelector } from '../../../Hooks/Hooks';
-import { NavLink } from 'react-router-dom';
 import { IItemCar } from '../../../Type';
 
 interface IHeaderSelectSVG {

@@ -2,25 +2,26 @@ import './App.css';
 import Header from '../Header';
 import { lazy, Suspense } from 'react';
 import { Spinner } from '../Loader/Spinner';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Up } from '../Up';
 import Main from '../Main';
+import ErrorBoundary from '../Error-boundary/ErrorBoundary';
 
 // const Main = lazy(() => import('../Main'));
-const AboutCompany = lazy(() => import('../About-company/AboutCompany'));
-const TechnicalCenter = lazy(() => import('../Technical-center/TechnicalCenter'));
-const Reviews = lazy(() => import('../Reviews/Reviews'));
-const Contacts = lazy(() => import('../Contacts/Contacts'));
+const AboutCompany = lazy(() => import('../../Pages/About-company/AboutCompany'));
+const TechnicalCenter = lazy(() => import('../../Pages/Technical-center/TechnicalCenter'));
+const Reviews = lazy(() => import('../../Pages/Reviews/Reviews'));
+const Contacts = lazy(() => import('../../Pages/Contacts/Contacts'));
 const AllOurSelection = lazy(() => import('../Our-selection/AllOurSelection'));
-const Search = lazy(() => import('../Search/Search'));
+const Search = lazy(() => import('../../Pages/Search/Search'));
 const BasicModal = lazy(() => import('../PopUp-back-call/PopUpBackCall'));
-const Favorites = lazy(() => import('../Favorites/Favorites'));
-const MoreAboutCar = lazy(() => import('../MoreAboutCar/MoreAboutCar'));
+const Favorites = lazy(() => import('../../Pages/Favorites/Favorites'));
+const MoreAboutCar = lazy(() => import('../../Pages/MoreAboutCar/MoreAboutCar'));
 const Footer = lazy(() => import('../Footer'));
 const CallMe = lazy(() => import('../Call-me/CallMe'));
-const Taxi = lazy(() => import('../Taxi'));
+const Taxi = lazy(() => import('../../Pages/Taxi'));
 
 function App() {
   const popUpBlock = useAppSelector((state: any) => state.reducer.popUpBackCall);
@@ -33,20 +34,22 @@ function App() {
       </Helmet>
       <Header />
       <div className="wrapper">
-        <Routes>
-          <Route path="auto-shop-project" element={<Main />} />
-        </Routes>
         <Suspense fallback={<Spinner />}>
           <Routes>
-            <Route path="auto-shop-project/about-company" element={<AboutCompany />} />
-            <Route path="auto-shop-project/technical-center" element={<TechnicalCenter />} />
-            <Route path="auto-shop-project/reviews" element={<Reviews />} />
-            <Route path="auto-shop-project/contacts" element={<Contacts />} />
-            <Route path="auto-shop-project/our-selections" element={<AllOurSelection />} />
-            <Route path="auto-shop-project/search" element={<Search />} />
-            <Route path="auto-shop-project/favorites" element={<Favorites />} />
-            <Route path="auto-shop-project/:carId" element={<MoreAboutCar />} />
-            <Route path="auto-shop-project/taxi" element={<Taxi />} />
+            <Route path="auto-shop-project">
+              <Route path="" element={<Main />} />
+              <Route path="about-company" element={<AboutCompany />} />
+              <Route path="technical-center" element={<TechnicalCenter />} />
+              <Route path="reviews" element={<Reviews />} />
+              <Route path="contacts" element={<Contacts />} />
+              <Route path="our-selections" element={<AllOurSelection />} />
+              <Route path="search" element={<Search />} />
+              <Route path="favorites" element={<Favorites />} />
+              <Route path="item:carId" element={<MoreAboutCar />} />
+              <Route path="taxi" element={<Taxi />} />
+            </Route>
+            <Route path="error" element={<ErrorBoundary />} />
+            <Route path="*" element={<Navigate to="error" />} />
           </Routes>
         </Suspense>
         <Suspense fallback={<></>}>

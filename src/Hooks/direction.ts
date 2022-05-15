@@ -7,15 +7,17 @@ export const onNext: TProps = (value, refBlock, sum) => {
   // console.log(index);
 
   node[index] &&
-    node[index + 1].scrollIntoView({ block: 'end', inline: 'start', behavior: 'smooth' });
+    node[index + 1].scrollIntoView({ block: 'nearest', inline: 'start', behavior: 'smooth' });
 };
 
 export const onPrev: TProps = (value, refBlock, sum) => {
   let node = refBlock.current;
   let index = sum(value, 'prev');
+
   const inline = value === 'trusted' ? 'end' : 'start';
 
   // console.log(index);
 
-  node[index] && node[index].scrollIntoView({ block: 'end', inline: inline, behavior: 'smooth' });
+  node[index] &&
+    node[index].scrollIntoView({ block: 'nearest', inline: inline, behavior: 'smooth' });
 };
