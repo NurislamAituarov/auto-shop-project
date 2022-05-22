@@ -30,7 +30,7 @@ export function Error() {
           помощь наших специалистов»
         </p>
 
-        <NavLink to="/auto-shop-project">
+        <NavLink to="/">
           <Button
             title="на главную"
             size="normal"

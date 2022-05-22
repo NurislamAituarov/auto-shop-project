@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { Down } from '../Svg';
 import s from './Block.module.scss';
 
-export function Up() {
+export function Up({ scrollToSection, refHeader }: any) {
   const [size, setSize] = useState(false);
+
   useEffect(() => {
     function onResize() {
       if (window.pageYOffset > 500) {
@@ -23,11 +24,9 @@ export function Up() {
   return (
     <>
       {size && (
-        <a href="#header-nav">
-          <div className={s.block}>
-            <Down />
-          </div>
-        </a>
+        <div onClick={() => scrollToSection(refHeader)} className={s.block}>
+          <Down />
+        </div>
       )}
     </>
   );

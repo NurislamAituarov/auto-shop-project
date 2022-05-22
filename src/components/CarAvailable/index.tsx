@@ -11,8 +11,11 @@ import { useAppSelector } from '../../Hooks/Hooks';
 
 const ListItem = lazy(() => import('./ListItem'));
 let count = 0;
+interface IProps {
+  refCarAvailable: any;
+}
 
-export default function CarAvailable() {
+export default function CarAvailable({ refCarAvailable }: IProps) {
   const listItemHome = useAppSelector((state: any) => state.reducer.listItems);
   const [listItem, setListItem] = useState<Array<IItemCar>>(listItemHome);
   const dispatch = useDispatch();
@@ -46,7 +49,7 @@ export default function CarAvailable() {
   }
 
   return (
-    <section id="CarAvailable" className={s.section}>
+    <section ref={refCarAvailable} id="CarAvailable" className={s.section}>
       {Boolean(listItem.length) ? (
         <>
           <h2>Автомобили в наличии с ПТС</h2>

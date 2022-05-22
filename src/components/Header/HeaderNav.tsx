@@ -13,9 +13,20 @@ import { addPopUpBackCall } from '../../Actions/action';
 interface IHeaderNav {
   listMenu: string[];
   size: string;
+  refCarAvailable: any;
+  refSpecialOffers: any;
+  refApplication: any;
+  scrollToSection: any;
 }
 
-export function HeaderNav({ listMenu, size }: IHeaderNav) {
+export function HeaderNav({
+  listMenu,
+  size,
+  refCarAvailable,
+  refSpecialOffers,
+  refApplication,
+  scrollToSection,
+}: IHeaderNav) {
   const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [trigger, setTrigger] = useState(false);
   const refPhone = useRef<HTMLParagraphElement>(null);
@@ -32,14 +43,18 @@ export function HeaderNav({ listMenu, size }: IHeaderNav) {
 
   return (
     <>
-      <div
-        id="header-nav"
-        ref={refHeaderNav}
-        className={cn('header__nav flex ', { trigger: trigger })}>
-        <Hamburger trigger={trigger} setTrigger={setTrigger} />
+      <div ref={refHeaderNav} className={cn('header__nav flex ', { trigger: trigger })}>
+        <Hamburger
+          trigger={trigger}
+          setTrigger={setTrigger}
+          refCarAvailable={refCarAvailable}
+          refSpecialOffers={refSpecialOffers}
+          refApplication={refApplication}
+          scrollToSection={scrollToSection}
+        />
         <hr id="hr" />
         <p className="header__nav_subtitle">
-          <Tag title="10 лет" link="auto-shop-project" /> превосходим ваши ожидания
+          <Tag title="10 лет" link="/" /> превосходим ваши ожидания
         </p>
         <nav className="nav">
           <ul className="flex">

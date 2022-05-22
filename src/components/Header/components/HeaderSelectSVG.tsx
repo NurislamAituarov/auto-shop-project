@@ -15,7 +15,7 @@ export function HeaderSelectSVG({ width, height }: IHeaderSelectSVG) {
 
   return (
     <div className="header__select_svg flex header__select_mobile">
-      <NavLink to="auto-shop-project/favorites">
+      <NavLink to="/favorites">
         <Heart sum={sumFilter && sumFilter.length} width={width} height={height} />
       </NavLink>
       <Diagram sum="18" width={width} height={height} />

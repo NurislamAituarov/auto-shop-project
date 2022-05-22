@@ -13,15 +13,15 @@ export function NavList({ activeClass, setActiveClass, el, setTrigger, refInput 
   function route() {
     switch (el) {
       case 'О компании':
-        return 'auto-shop-project/about-company';
+        return '/about-company';
       case 'Техцентр':
-        return 'auto-shop-project/technical-center';
+        return '/technical-center';
       case 'Отзывы':
-        return 'auto-shop-project/reviews';
+        return '/reviews';
       case 'Контакты':
-        return 'auto-shop-project/contacts';
+        return '/contacts';
       default:
-        return 'auto-shop-project';
+        return '';
     }
   }
 

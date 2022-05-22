@@ -8,11 +8,19 @@ interface IDirectionButtons {
   onPrev: () => void;
   onNext: () => void;
   link?: string;
+  refSpecialOffers?: any;
 }
 
-export function DirectionButtons({ title, subtitle, onPrev, onNext, link }: IDirectionButtons) {
+export function DirectionButtons({
+  title,
+  subtitle,
+  onPrev,
+  onNext,
+  link,
+  refSpecialOffers,
+}: IDirectionButtons) {
   return (
-    <div className={s.selection__title}>
+    <div ref={refSpecialOffers} className={s.selection__title}>
       <div className={s.selection__title_subtitle}>
         <h3>{title}</h3>
         {subtitle && <Tag title={subtitle} size="direction" link={link} />}

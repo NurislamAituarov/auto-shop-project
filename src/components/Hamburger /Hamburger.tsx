@@ -13,9 +13,20 @@ import '../Header/Header.scss';
 interface IProps {
   trigger: boolean;
   setTrigger: (value: boolean) => void;
+  refCarAvailable: any;
+  refSpecialOffers: any;
+  refApplication: any;
+  scrollToSection: any;
 }
 
-export function Hamburger({ trigger, setTrigger }: IProps) {
+export function Hamburger({
+  trigger,
+  setTrigger,
+  refCarAvailable,
+  refSpecialOffers,
+  refApplication,
+  scrollToSection,
+}: IProps) {
   const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [size, setSize] = useState(false);
   const refLabel = useRef<HTMLLabelElement>(null);
@@ -83,7 +94,15 @@ export function Hamburger({ trigger, setTrigger }: IProps) {
           {listSelect.map((el, i) => {
             return (
               <motion.div key={i} variants={variantsChildren}>
-                <HeaderSelect title={el} setTrigger={setTrigger} refInput={refInput} />
+                <HeaderSelect
+                  title={el}
+                  setTrigger={setTrigger}
+                  refInput={refInput}
+                  refCarAvailable={refCarAvailable}
+                  refSpecialOffers={refSpecialOffers}
+                  refApplication={refApplication}
+                  scrollToSection={scrollToSection}
+                />
               </motion.div>
             );
           })}

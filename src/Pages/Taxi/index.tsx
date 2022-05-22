@@ -25,7 +25,7 @@ export default function Taxi() {
         </div>
         <div className={s.banner}>
           <div className={s.routing__title}>
-            <NavLink to="/auto-shop-project">
+            <NavLink to="/">
               <p onClick={() => localStorage.setItem('active', 'Подбор авто')}>Главная</p>
             </NavLink>
             <Down />

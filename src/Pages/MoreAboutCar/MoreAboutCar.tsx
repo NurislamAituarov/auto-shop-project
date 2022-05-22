@@ -68,7 +68,7 @@ export default function MoreAboutCar() {
   return (
     <section className={s.section__moreAboutCar}>
       <div className={s.title__nav}>
-        <NavLink to="/auto-shop-project">
+        <NavLink to="/">
           <p>Главная</p>
         </NavLink>
         <span>/ {carItem?.name_car}</span>

@@ -15,16 +15,18 @@ const AboutCompanyHome = lazy(() => import('../../Pages/About-company/AboutCompa
 const SimpleMap = lazy(() => import('../Maps'));
 const Partners = lazy(() => import('../Partners'));
 
-const Main = () => {
+interface IProps {
+  refCarAvailable: any;
+  refSpecialOffers: any;
+  refApplication: any;
+}
+
+const Main = ({ refCarAvailable, refSpecialOffers, refApplication }: IProps) => {
   return (
     <main className={s.main}>
       <Helmet>
         <title>Auto-Shop</title>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="icon" href="favicon.ico" />
       </Helmet>
       <section className={s.section}>
         <Suspense fallback={<Spinner />}>
@@ -36,14 +38,14 @@ const Main = () => {
       </Suspense>
 
       <Suspense fallback={<ReactContentLoader />}>
-        <CarAvailable />
+        <CarAvailable refCarAvailable={refCarAvailable} />
       </Suspense>
 
       <Suspense fallback={<></>}>
-        <SectionSelect />
+        <SectionSelect refSpecialOffers={refSpecialOffers} />
       </Suspense>
       <Suspense fallback={<></>}>
-        <Application />
+        <Application refApplication={refApplication} />
       </Suspense>
       <Suspense fallback={<></>}>
         <section className={s.section__partners}>

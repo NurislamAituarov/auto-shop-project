@@ -21,7 +21,7 @@ const values = {
 };
 type IHandleChange = (event: any) => void;
 
-export default function Application() {
+export default function Application({ refApplication }: any) {
   const { brandList } = useAppSelector((state: any) => state.reducer);
   const [value, setValue] = useState(values);
   const refInput = useRef<HTMLInputElement | null>(null);
@@ -50,7 +50,7 @@ export default function Application() {
   const dfunc2 = useDebounce<typeof handleChangeMonth>(handleChangeMonth, 200);
 
   return (
-    <section id="Application" className={s.section}>
+    <section ref={refApplication} className={s.section}>
       <div className={s.wrapper}>
         <h2>Заявка на автокредит</h2>
         <div className={s.wrapper__settings}>

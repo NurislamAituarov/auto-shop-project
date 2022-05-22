@@ -92,7 +92,7 @@ export default memo(function ListItem({ el, i, addCarSelect }: IListItem) {
       <div className={s.footer__btn}>
         <button className={s.footer__btn_item}>Резерв онлайн</button>
         <button className={s.footer__btn_item}>Купить</button>
-        <NavLink className={s.footer__btn_item} to={`/auto-shop-project/item${el.id}`}>
+        <NavLink className={s.footer__btn_item} to={`/item${el.id}`}>
           <p>Подробнее</p>
         </NavLink>
       </div>

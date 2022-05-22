@@ -7,9 +7,21 @@ interface IHeaderSelect {
   title: string;
   setTrigger?: (v: boolean) => void;
   refInput?: any;
+  scrollToSection?: any;
+  refCarAvailable?: any;
+  refSpecialOffers?: any;
+  refApplication?: any;
 }
 
-export function HeaderSelect({ title, setTrigger, refInput }: IHeaderSelect) {
+export function HeaderSelect({
+  title,
+  setTrigger,
+  refInput,
+  scrollToSection,
+  refCarAvailable,
+  refSpecialOffers,
+  refApplication,
+}: IHeaderSelect) {
   const [size, setSize] = useState(false);
 
   useEffect(() => {
@@ -30,13 +42,13 @@ export function HeaderSelect({ title, setTrigger, refInput }: IHeaderSelect) {
   function createHref(title: string) {
     switch (title) {
       case 'Кредит и рассрочка':
-        return '#Application';
+        return refApplication;
       case 'Спецпредложения':
-        return '#SpecialOffers';
+        return refSpecialOffers;
       case 'Авто с пробегом':
-        return '#CarAvailable';
+        return refCarAvailable;
       default:
-        return '#';
+        return '';
     }
   }
 
@@ -52,14 +64,14 @@ export function HeaderSelect({ title, setTrigger, refInput }: IHeaderSelect) {
       {title !== 'Такси в кредит' ? (
         <div className="header__select_item flex">
           {size && <Down />}
-          <a href={`${createHref(title)}`}>
+          <li onClick={() => scrollToSection(createHref(title))}>
             <h3>{title}</h3>
-          </a>
+          </li>
           {!size && <Down />}
         </div>
       ) : (
         <div className="header__select_item header__select_link flex">
-          <NavLink to="auto-shop-project/taxi">
+          <NavLink to="/taxi">
             <h3 onClick={onClick}>{title}</h3>
           </NavLink>
         </div>

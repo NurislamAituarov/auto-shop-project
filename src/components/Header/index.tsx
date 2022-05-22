@@ -24,7 +24,13 @@ export const listSelect: string[] = [
   'Такси в кредит',
 ];
 
-export default function Header() {
+export default function Header({
+  scrollToSection,
+  refCarAvailable,
+  refSpecialOffers,
+  refApplication,
+  refHeader,
+}: any) {
   const locationAddress = useAppSelector((state: any) => state.reducer.location);
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
@@ -57,7 +63,7 @@ export default function Header() {
   }, [locationAddress]);
 
   return (
-    <header className="header">
+    <header ref={refHeader} className="header">
       {size === 'mobile' && <BackCall />}
       <div className="title_info flex">
         {text.map((el, i) => {
@@ -65,11 +71,27 @@ export default function Header() {
         })}
       </div>
 
-      <HeaderNav listMenu={listMenu} size={size} />
+      <HeaderNav
+        listMenu={listMenu}
+        size={size}
+        refCarAvailable={refCarAvailable}
+        refSpecialOffers={refSpecialOffers}
+        refApplication={refApplication}
+        scrollToSection={scrollToSection}
+      />
 
       <div className="header__select flex">
         {listSelect.map((el, i) => {
-          return <HeaderSelect key={i} title={el} />;
+          return (
+            <HeaderSelect
+              key={i}
+              title={el}
+              scrollToSection={scrollToSection}
+              refCarAvailable={refCarAvailable}
+              refSpecialOffers={refSpecialOffers}
+              refApplication={refApplication}
+            />
+          );
         })}
         <HeaderSelectSVG />
       </div>

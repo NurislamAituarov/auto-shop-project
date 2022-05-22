@@ -5,11 +5,11 @@ import App from './components/App';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import ErrorBoundary from './components/Error-boundary/ErrorBoundary';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 // import { Error } from './components/Error-boundary/404';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <React.StrictMode>
       <Provider store={store}>
         <ErrorBoundary>
@@ -21,6 +21,6 @@ ReactDOM.render(
         </ErrorBoundary>
       </Provider>
     </React.StrictMode>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );

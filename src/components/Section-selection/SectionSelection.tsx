@@ -36,7 +36,7 @@ const arrOurSelection = [
   'Внедорожники',
 ];
 
-export default function SectionSelect() {
+export default function SectionSelect({ refSpecialOffers }: any) {
   const refSpecialOff = useRef<(HTMLDivElement | any)[]>([]);
   const refBlock = useRef<(HTMLDivElement | any)[]>([]);
   const refInput = useRef<HTMLInputElement | null>(null);
@@ -97,6 +97,7 @@ export default function SectionSelect() {
         </div>
       </div>
       <DirectionButtons
+        refSpecialOffers={refSpecialOffers}
         title="Спецпредложения"
         onPrev={() => onPrev('спецпредложения', refSpecialOff, sum2)}
         onNext={() => onNext('спецпредложения', refSpecialOff, sum2)}

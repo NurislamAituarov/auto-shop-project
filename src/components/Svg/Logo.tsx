@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export function Logo() {
   return (
-    <NavLink to="auto-shop-project">
+    <NavLink to="/">
       <svg
         onClick={() => localStorage.setItem('active', 'Подбор авто')}
         width="198"
