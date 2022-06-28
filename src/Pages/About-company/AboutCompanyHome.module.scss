@@ -16,6 +16,7 @@
 }
 
 .img {
+  height: 573px;
   position: relative;
   margin-bottom: 100px;
   .img__play {
@@ -89,6 +90,7 @@
     }
   }
   .img {
+    height: 473px;
     margin-bottom: 40px;
     .img__fon {
       width: 100%;
@@ -130,5 +132,8 @@
       font-size: 14px;
       line-height: 21px;
     }
+  }
+  .img {
+    height: 215px;
   }
 }

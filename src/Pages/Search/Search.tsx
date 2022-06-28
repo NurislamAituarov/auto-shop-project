@@ -3,15 +3,15 @@ import s from './Search.module.scss';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import { IlistCarr } from '../../Type';
+import { IListCarr } from '../../Type';
 import { Button } from '../../components/Btn/Button';
-import { listCarr } from '../../components/Quick-selection';
+import { listCarr } from '../../components/Quick-selection/list-car';
 import { arrSpecificOffers } from '../../components/Section-selection/SectionSelection';
 import { Search } from '../../components/Svg';
 
 interface IBlock {
   name: string;
-  result: string[] | IlistCarr[];
+  result: string[] | IListCarr[];
 }
 
 const block = [

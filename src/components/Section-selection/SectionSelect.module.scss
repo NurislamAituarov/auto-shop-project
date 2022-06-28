@@ -77,6 +77,10 @@
     }
   }
 }
+.selection__sentence-imgWing {
+  width: 474px;
+  height: 320px;
+}
 .selection__specialOffers {
 }
 .selection__specialOffers_wrapper {
@@ -147,6 +151,10 @@
       }
     }
   }
+  .selection__sentence-imgWing {
+    width: 286px;
+    height: 227px;
+  }
 }
 
 @media screen and (max-width: 528px) {
@@ -170,6 +178,9 @@
         width: 100%;
       }
     }
+    img:nth-child(2) {
+      top: 0;
+    }
     .selection__sentence_title {
       width: 100%;
       padding: 0 20px;
@@ -179,5 +190,8 @@
         line-height: 13px;
       }
     }
+  }
+  .selection__sentence-imgWing {
+    width: 100%;
   }
 }

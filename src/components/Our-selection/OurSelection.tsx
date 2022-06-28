@@ -44,10 +44,11 @@ export function OurSelection({ i, el, refBlock = null }: IProps) {
     }
   }
   const img = getBlockImg(i);
+
   return (
     <>
       {refBlock ? (
-        <div ref={(el) => (refBlock.current[i] = el)} key={i} className={s.selection__block_item}>
+        <div ref={(el) => (refBlock.current[i] = el)} className={s.selection__block_item}>
           <LazyLoadImage effect="blur" src={img} alt="картинка" />
           <div className={s.selection__block_title}>
             <p>{el}</p>
@@ -55,7 +56,7 @@ export function OurSelection({ i, el, refBlock = null }: IProps) {
           </div>
         </div>
       ) : (
-        <div key={i} className={s.selection__block_item}>
+        <div className={s.selection__block_item}>
           <LazyLoadImage effect="blur" src={img} alt="картинка" />
           <div className={s.selection__block_title}>
             <p>{el}</p>

@@ -1,101 +1,21 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useEffect, useState } from 'react';
-
 import cn from 'classnames';
 import s from './QuickSelection.module.scss';
-
-import {
-  Suzuki,
-  Opel,
-  Lada,
-  GreatWall,
-  FAW,
-  Chevrolet,
-  Toyota,
-  SsangYong,
-  Nissan,
-  JAC,
-  Geely,
-  DWHower,
-  CheryExeed,
-  Volkswagen,
-  Mitsubishi,
-  Renault,
-  one,
-  two,
-  three,
-  four,
-  five,
-  six,
-  seven,
-  eight,
-  nine,
-  ten,
-  eleven,
-  twelve,
-  thirteen,
-  fourteen,
-  fifteen,
-  sixteen,
-  Skoda,
-  Chery,
-  Dongfeng,
-  GAC,
-  Honda,
-} from './svg';
 
 import { Button } from '../Btn/Button';
 import { Selected } from './components/Select';
 import { useAppSelector } from '../../Hooks/Hooks';
 import PositionedTooltips from './components/Tooltip';
-import { IlistCarr } from '../../Type';
+import { IListCarr } from '../../Type';
 import { RangeSlider } from './components/Slider';
-
-export const listCarr: IlistCarr[] = [
-  { name: 'Kia', svg: one, price: 1200000 },
-  { name: 'Brilliance', svg: two, price: 2600000 },
-  { name: ' Citroen', svg: three, price: 2700000 },
-  { name: 'Ford', svg: four, price: 2800000 },
-  { name: 'Haima', svg: five, price: 2300000 },
-  { name: 'Lifan', svg: six, price: 1900000 },
-  { name: 'Peugeot', svg: seven, price: 1300000 },
-  { name: 'UAZ', svg: eight, price: 1200000 },
-  { name: 'Hyundai', svg: nine, price: 1300000 },
-  { name: 'Changan', svg: ten, price: 1700000 },
-  { name: 'Datsun', svg: eleven, price: 1900000 },
-  { name: 'Foton', svg: twelve, price: 2000000 },
-  { name: 'Haval', svg: thirteen, price: 2500000 },
-  { name: 'Mazda', svg: fourteen, price: 2300000 },
-  { name: 'Ravon', svg: fifteen, price: 2200000 },
-  { name: 'Zotye', svg: sixteen, price: 2900000 },
-  { name: 'Skoda', svg: Skoda, price: 2600000 },
-  { name: 'Chery', svg: Chery, price: 2200000 },
-  { name: 'Dongfeng', svg: Dongfeng, price: 950000 },
-  { name: 'GAC', svg: GAC, price: 450000 },
-  { name: 'Honda', svg: Honda, price: 350000 },
-  { name: 'Mitsubishi', svg: Mitsubishi, price: 750000 },
-  { name: 'Renault', svg: Renault, price: 750000 },
-  { name: 'Volkswagen', svg: Volkswagen, price: 750000 },
-  { name: 'CheryExeed', svg: CheryExeed, price: 150000 },
-  { name: 'DWHower', svg: DWHower, price: 150000 },
-  { name: 'Geely', svg: Geely, price: 250000 },
-  { name: 'JAC', svg: JAC, price: 750000 },
-  { name: 'Nissan', svg: Nissan, price: 950000 },
-  { name: 'SsangYong', svg: SsangYong, price: 350000 },
-  { name: 'Toyota', svg: Toyota, price: 750000 },
-  { name: 'Chevrolet', svg: Chevrolet, price: 750000 },
-  { name: 'FAW', svg: FAW, price: 850000 },
-  { name: 'GreatWall', svg: GreatWall, price: 750000 },
-  { name: 'Lada', svg: Lada, price: 150000 },
-  { name: 'Opel', svg: Opel, price: 550000 },
-  { name: 'Suzuki', svg: Suzuki, price: 750000 },
-];
+import { listCarr } from './list-car';
 
 export default function QuickSelection() {
   const price = useAppSelector((state: any) => state.reducer.priceCar);
   const [numCar, setNumCar] = useState<number>(0);
-  const [listCarrArr, setListCarrArr] = useState<IlistCarr[]>();
+  const [listCarrArr, setListCarrArr] = useState<IListCarr[]>();
 
   useEffect(() => {
     setListCarrArr(listCarr);

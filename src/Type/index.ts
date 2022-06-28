@@ -21,7 +21,7 @@ export interface IItem {
   title: string;
 }
 
-export interface IlistCarr {
+export interface IListCarr {
   name: string;
   svg: ReactSVGElement | any;
   price: number;
@@ -34,7 +34,7 @@ export interface IInitialState {
   priceCar: number[];
   reviewsUser: IItem[];
   popUpBackCall: string;
-  brandList: IlistCarr[];
+  brandList: IListCarr[];
   location: string;
 }
 export interface IAction {

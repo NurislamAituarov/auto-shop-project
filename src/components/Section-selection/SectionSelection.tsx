@@ -9,7 +9,7 @@ import ellipse from '../../Images/Ellipse.png';
 import { Button } from '../Btn/Button';
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { SpecialOffers } from '../Special-offers/SpecialOffers';
-import { OurSelection } from '../Our-selection';
+import { OurSelection } from '../Our-selection/OurSelection';
 import { sum1, sum2 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
 import { addPopUpBackCall } from '../../Actions/action';
@@ -70,7 +70,9 @@ export default function SectionSelect({ refSpecialOffers }: any) {
         </div>
       </div>
       <div id="SpecialOffers" className={s.selection__sentence}>
-        <LazyLoadImage effect="blur" src={wing} alt="перчатки" />
+        <div className={s['selection__sentence-imgWing']}>
+          <LazyLoadImage effect="blur" src={wing} alt="перчатки" width="100%" height="100%" />
+        </div>
         <img src={ellipse} alt="ellipse" />
         <div className={s.selection__sentence_title}>
           <h2>Перебьем предложения от конкурентов!</h2>

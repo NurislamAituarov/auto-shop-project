@@ -43,11 +43,26 @@ export const Rating = () => {
     setArrayRating(updatedArray);
   };
 
+  function getPercentage() {
+    switch (assessment) {
+      case 1:
+        return '20%';
+      case 2:
+        return '40%';
+      case 3:
+        return '70%';
+      case 4:
+        return '90%';
+      case 5:
+        return '100%';
+    }
+  }
+
   return (
     <>
       <div className={s.item__rating}>
         <div className={s.item__rating_title}>
-          <span>Рекомендуют 90%</span>
+          <span>Рекомендуют {getPercentage()}</span>
           <div className={cn(s.wrapper__rating)}>
             {arrayRating.map((item, i) => {
               return <span key={i}>{item}</span>;

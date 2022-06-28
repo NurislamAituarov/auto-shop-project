@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import { getCarItem } from '../../Api/client';
 import { useDispatch } from 'react-redux';
-import { addCar } from '../../Actions/action';
-import s from './MoreAboutCar.module.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { IItemCar } from '../../Type';
+import s from './MoreAboutCar.module.scss';
 
+import { getCarItem } from '../../Api/client';
+import { addCar } from '../../Actions/action';
 import { Button } from '../../components/Btn/Button';
+import { BlockApplication } from './components/Block-application';
+import { Advantageous } from './components/Advantageous';
+
 import eye from '../../Assets/Svg/eye-open.svg';
 import characteristic1 from '../../Assets/Svg/characteristic1.svg';
 import characteristic2 from '../../Assets/Svg/characteristic2.svg';
@@ -17,8 +20,6 @@ import { Diagram, Heart } from '../../components/Svg';
 import service from '../../Images/beautiful-girl.png';
 import service1 from '../../Images/couple.png';
 import service2 from '../../Images/studio-shot.png';
-import { BlockApplication } from './components/Block-application';
-import { Advantageous } from './components/Advantageous';
 
 const services = [
   { title: 'Рассрочка от ВТБ', subtitle: 'Рассрочка 0%', tag: 'Рассрочка', img: service },
@@ -34,11 +35,11 @@ const services = [
 export default function MoreAboutCar() {
   const [carItem, setCarItem] = useState<IItemCar>();
   const [resize, setResize] = useState(false);
-
   const { carId } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     carId && getCarItem(carId).then((item) => setCarItem(item.data[0]));
 
     function onResize() {

@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import s from '../AboutCompanyHome.module.scss';
+import styled from '@emotion/styled';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -55,14 +56,12 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
 
-      {arrBox.map((el, i) => {
-        return (
-          <TabPanel key={i} value={value} index={i}>
-            <strong>{el.title}</strong>
-            <span>{el.subtitle}</span>
-          </TabPanel>
-        );
-      })}
+      {arrBox.map((el, i) => (
+        <TabPanel key={i} value={value} index={i}>
+          <strong>{el.title}</strong>
+          <span>{el.subtitle}</span>
+        </TabPanel>
+      ))}
     </Box>
   );
 }

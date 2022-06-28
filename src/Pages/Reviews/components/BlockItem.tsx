@@ -72,7 +72,7 @@ export function BlockItemReview({ item, i, refElement }: IProps) {
         {index === i ? (
           <p>{item.title}</p>
         ) : (
-          <motion.div variants={variantsChildren}>
+          <motion.div>
             <p>{item.title.slice(0, 204) + ' ...'}</p>{' '}
           </motion.div>
         )}

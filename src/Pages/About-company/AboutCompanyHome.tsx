@@ -33,7 +33,13 @@ export default function AboutCompanyHome() {
         конкретного автомобиля.
       </p>
       <div className={s.img}>
-        <LazyLoadImage effect="blur" className={s.img__fon} src={company} alt="фото компаний" />
+        <LazyLoadImage
+          effect="blur"
+          className={s.img__fon}
+          src={company}
+          alt="фото компаний"
+          height="100%"
+        />
         <img className={s.img__play} src={play} alt="play" />
       </div>
 

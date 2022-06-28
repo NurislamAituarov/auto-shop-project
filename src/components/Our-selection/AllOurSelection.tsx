@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button } from '../Btn/Button';
 import { CompanyTitle } from '../Company-title';
-import { OurSelection } from './index';
+import { OurSelection } from './OurSelection';
 import s from './AllOurSelection.module.scss';
 
 const nameBlock = [
@@ -19,6 +19,10 @@ const nameBlock = [
 
 export default function AllOurSelection() {
   const [state, setState] = useState(nameBlock);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function moreBlock() {
     const newArr = state.concat(nameBlock.slice(0, 3));
