@@ -1,5 +1,5 @@
 import s from './MadeMoney.module.scss';
-import taxi from '../../../Images/taxi1.png';
+import taxi from '../../../Assets/Images/taxi1.png';
 import { Tag } from '../../../components/Tag';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 

@@ -6,7 +6,7 @@ import { memo, useEffect, useRef, useState } from 'react';
 
 import { Down } from '../Svg';
 import { IItemCar } from '../../Type';
-import { addBrandItem } from '../../Actions/action';
+import { addBrandItem } from '../../Redux/Actions/action';
 import { useAppSelector } from '../../Hooks/Hooks';
 
 export interface IItem {
@@ -19,10 +19,28 @@ const blockSelect: IItem[] = [
   { name: 'Комплектация', list: ['Базовая', 'Средняя', 'Максимальная'] },
 ];
 
+const variants = {
+  visible: {
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.1,
+    },
+  },
+  hidden: {},
+};
+const variantsChildren = {
+  visible: {
+    opacity: 1,
+  },
+  hidden: { opacity: 0 },
+};
+
 export const SettingSelect = memo(function SettingSelect() {
   const { listItems } = useAppSelector((state: any) => state.reducer);
+
   const [activeList, setActiveList] = useState('');
   const [state, setState] = useState(blockSelect);
+
   const refItem = useRef<(HTMLUListElement | null)[]>([]);
   const ref = useRef<HTMLDivElement | null>(null);
   const dispatch = useDispatch();
@@ -38,22 +56,6 @@ export const SettingSelect = memo(function SettingSelect() {
       document.removeEventListener('click', handleClickOutside, true);
     };
   });
-
-  const variants = {
-    visible: {
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.1,
-      },
-    },
-    hidden: {},
-  };
-  const variantsChildren = {
-    visible: {
-      opacity: 1,
-    },
-    hidden: { opacity: 0 },
-  };
 
   function selectedList(value: string, i: number) {
     state.forEach((el, index) => {

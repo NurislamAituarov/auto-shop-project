@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { myContext } from '../../App';
 import { Down } from '../../Svg';
 import '../HeaderSelect.scss';
 
@@ -7,7 +8,6 @@ interface IHeaderSelect {
   title: string;
   setTrigger?: (v: boolean) => void;
   refInput?: any;
-  scrollToSection?: any;
   refCarAvailable?: any;
   refSpecialOffers?: any;
   refApplication?: any;
@@ -17,13 +17,12 @@ export function HeaderSelect({
   title,
   setTrigger,
   refInput,
-  scrollToSection,
   refCarAvailable,
   refSpecialOffers,
   refApplication,
 }: IHeaderSelect) {
   const [size, setSize] = useState(false);
-
+  const context = useContext(myContext);
   useEffect(() => {
     function onResize() {
       if (window.innerWidth <= 768) {
@@ -64,7 +63,7 @@ export function HeaderSelect({
       {title !== 'Такси в кредит' ? (
         <div className="header__select_item flex">
           {size && <Down />}
-          <li onClick={() => scrollToSection(createHref(title))}>
+          <li onClick={() => context(createHref(title))}>
             <h3>{title}</h3>
           </li>
           {!size && <Down />}

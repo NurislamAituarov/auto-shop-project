@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './Header.scss';
 
@@ -7,7 +7,7 @@ import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/Header-select';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
-import { addListItem, location } from '../../Actions/action';
+import { addListItem, location } from '../../Redux/Actions/action';
 import { useAppSelector } from '../../Hooks/Hooks';
 
 const text: string[] = [
@@ -24,13 +24,7 @@ export const listSelect: string[] = [
   'Такси в кредит',
 ];
 
-export default function Header({
-  scrollToSection,
-  refCarAvailable,
-  refSpecialOffers,
-  refApplication,
-  refHeader,
-}: any) {
+const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHeader }: any) => {
   const locationAddress = useAppSelector((state: any) => state.reducer.location);
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
@@ -77,7 +71,6 @@ export default function Header({
         refCarAvailable={refCarAvailable}
         refSpecialOffers={refSpecialOffers}
         refApplication={refApplication}
-        scrollToSection={scrollToSection}
       />
 
       <div className="header__select flex">
@@ -86,7 +79,6 @@ export default function Header({
             <HeaderSelect
               key={i}
               title={el}
-              scrollToSection={scrollToSection}
               refCarAvailable={refCarAvailable}
               refSpecialOffers={refSpecialOffers}
               refApplication={refApplication}
@@ -97,4 +89,6 @@ export default function Header({
       </div>
     </header>
   );
-}
+});
+
+export default Header;

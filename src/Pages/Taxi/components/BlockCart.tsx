@@ -2,20 +2,12 @@ import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import s from './BlockCart.module.scss';
 
-import svg1 from '../../../Assets/Svg/taxiSVG1.svg';
-import svg2 from '../../../Assets/Svg/taxiSVG2.svg';
-import svg3 from '../../../Assets/Svg/taxiSVG3.svg';
-import svg4 from '../../../Assets/Svg/taxiSVG4.svg';
-import svg5 from '../../../Assets/Svg/taxiSVG5.svg';
-import svg6 from '../../../Assets/Svg/taxiSVG6.svg';
-import svg7 from '../../../Assets/Svg/taxiSVG7.svg';
-import svg8 from '../../../Assets/Svg/taxiSVG8.svg';
-import svg9 from '../../../Assets/Svg/taxiSVG9.svg';
 import { Tag } from '../../../components/Tag';
 import { Input } from '../../../components/Input';
 import { Button } from '../../../components/Btn/Button';
-import { addPopUpBackCall } from '../../../Actions/action';
+import { addPopUpBackCall } from '../../../Redux/Actions/action';
 import { useValueValidate } from '../../../Hooks/useValueValidate';
+import { svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9 } from '../../../Assets';
 
 export function BlockCart() {
   const dispatch = useDispatch();

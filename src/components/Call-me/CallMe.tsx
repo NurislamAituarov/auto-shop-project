@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import s from './CallMe.module.scss';
-import { motion } from 'framer-motion';
-import { addPopUpBackCall } from '../../Actions/action';
 import { useDispatch } from 'react-redux';
+import { motion } from 'framer-motion';
+
+import s from './CallMe.module.scss';
+import { addPopUpBackCall } from '../../Redux/Actions/action';
 import { useAppSelector } from '../../Hooks/Hooks';
 
 export default function CallMe() {

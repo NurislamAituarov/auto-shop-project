@@ -1,7 +1,8 @@
 import s from './Footer.module.scss';
 import { listCarr } from '../Quick-selection/list-car';
-import rating_all from '../../Assets/Svg/rating_all.svg';
+
 import { Contacts } from './Contacts';
+import { rating_all } from '../../Assets';
 
 const navMenu = [
   'Каталог авто',

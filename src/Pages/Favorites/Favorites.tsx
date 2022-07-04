@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import ss from './Favorites.module.scss';
 import { Helmet } from 'react-helmet-async';
 
-import { addCar } from '../../Actions/action';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { IItemCar } from '../../Type';
 import ListItem from '../../components/CarAvailable/ListItem';
@@ -11,17 +10,13 @@ import { CompanyTitle } from '../../components/Company-title';
 
 export default function Favorites() {
   const item = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.listItems);
-  const [listItem, setListItem] = useState<Array<IItemCar>>(item);
+  const [listItem, setListItem] = useState<Array<IItemCar>>([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const filterItem = item.filter((item) => item.active !== 'false');
     setListItem(filterItem);
   }, [item]);
-
-  function addCarSelect(item: IItemCar, id: number) {
-    dispatch(addCar(id));
-  }
 
   return (
     <section className={ss.section}>
@@ -35,7 +30,7 @@ export default function Favorites() {
       {Boolean(listItem.length) ? (
         <div className={ss.favorites__items}>
           {listItem.map((el, i) => {
-            return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={el.id} />;
+            return <ListItem key={i} el={el} dispatch={dispatch} i={el.id} />;
           })}
         </div>
       ) : (

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from '../Header';
-import { lazy, Suspense, useRef } from 'react';
+import { createContext, lazy, Suspense, useRef } from 'react';
 import { Spinner } from '../Loader/Spinner';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../../Hooks/Hooks';
@@ -22,21 +22,21 @@ const Footer = lazy(() => import('../Footer'));
 const CallMe = lazy(() => import('../Call-me/CallMe'));
 const Taxi = lazy(() => import('../../Pages/Taxi'));
 
+const scrollToSection = (elementRef: any) => {
+  window.scrollTo({
+    top: elementRef?.current.offsetTop,
+    behavior: 'smooth',
+  });
+};
+export const myContext = createContext(scrollToSection);
+
 function App() {
   const popUpBlock = useAppSelector((state: any) => state.reducer.popUpBackCall);
   const { brandList } = useAppSelector((state: any) => state.reducer);
-
   const refCarAvailable = useRef<any>(null);
   const refSpecialOffers = useRef<any>(null);
   const refApplication = useRef<any>(null);
   const refHeader = useRef<any>(null);
-
-  const scrollToSection = (elementRef: any) => {
-    window.scrollTo({
-      top: elementRef?.current.offsetTop,
-      behavior: 'smooth',
-    });
-  };
 
   return (
     <HelmetProvider>
@@ -44,13 +44,14 @@ function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Helmet>
-      <Header
-        scrollToSection={scrollToSection}
-        refCarAvailable={refCarAvailable}
-        refSpecialOffers={refSpecialOffers}
-        refApplication={refApplication}
-        refHeader={refHeader}
-      />
+      <myContext.Provider value={scrollToSection}>
+        <Header
+          refCarAvailable={refCarAvailable}
+          refSpecialOffers={refSpecialOffers}
+          refApplication={refApplication}
+          refHeader={refHeader}
+        />
+      </myContext.Provider>
       <div className="wrapper">
         <Suspense fallback={<Spinner />}>
           <Routes>

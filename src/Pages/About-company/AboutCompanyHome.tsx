@@ -1,15 +1,13 @@
 import s from './AboutCompanyHome.module.scss';
 import { useRef } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { DirectionButtons } from '../../components/Direction-btn/DirectionButtons';
 import { onNext, onPrev } from '../../Hooks/direction';
 import { sum6 } from '../../Hooks/useCustomCounter';
 
-import blog from '../../Images/blog.png';
-import company from '../../Images/company-img.png';
-import play from '../../Assets/Svg/play.svg';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import BasicTabs from './components/ComponentAbout';
+import { blog, company, play } from '../../Assets';
 
 const blogList = [
   { date: '25 октября', title: 'Тест Skoda Karoq Scout - городской карлик или настоящий скаут' },

@@ -34,7 +34,7 @@ export interface IInitialState {
   priceCar: number[];
   reviewsUser: IItem[];
   popUpBackCall: string;
-  brandList: IListCarr[];
+  brandList: IItemCar | null;
   location: string;
 }
 export interface IAction {

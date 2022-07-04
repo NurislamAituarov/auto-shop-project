@@ -5,11 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import { Tag } from '../Tag';
-import rio from '../../Images/rio.png';
-import tiguan from '../../Images/tiguan.png';
-import rapid from '../../Images/rapid.png';
-import camry1 from '../../Images/camry-black.png';
-import camry2 from '../../Images/camry-white.png';
+import { camry1, camry2, rapid, rio, tiguan } from '../../Assets';
 
 export default function CustomCarousel() {
   // console.log('render');
@@ -42,6 +38,7 @@ export default function CustomCarousel() {
               <LazyLoadImage effect="blur" alt="" src={camry2} />
             </div>
           </div>
+
           <div className="item list1">
             <div className="wrapper__rio">
               <LazyLoadImage effect="blur" alt="" src={rio} />

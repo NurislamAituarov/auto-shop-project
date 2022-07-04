@@ -1,4 +1,4 @@
-import { IAction, IInitialState } from '../Type';
+import { IAction, IInitialState } from '../../Type';
 const reviewUser = [
   {
     name: 'Сергей Васильев',
@@ -37,7 +37,7 @@ const initialState: IInitialState = {
   priceCar: [],
   reviewsUser: reviewUser,
   popUpBackCall: '',
-  brandList: [],
+  brandList: null,
   location: '',
 };
 

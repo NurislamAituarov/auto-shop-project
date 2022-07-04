@@ -1,7 +1,7 @@
 import { Slider } from '@mui/material';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addPopUpBackCall } from '../../../Actions/action';
+import { addPopUpBackCall } from '../../../Redux/Actions/action';
 
 import { Button } from '../../../components/Btn/Button';
 import s from './components.module.scss';
@@ -9,7 +9,7 @@ import s from './components.module.scss';
 const initialFee = [0, 20, 40, 60, 80, 100];
 const creditTerm = [6, 12, 24, 36, 48, 60, 72, 84];
 
-export function BlockApplication() {
+export const BlockApplication = memo(() => {
   const [fee, setFee] = useState(20);
   const [credit, setCredit] = useState(24);
   const dispatch = useDispatch();
@@ -80,4 +80,4 @@ export function BlockApplication() {
       </div>
     </div>
   );
-}
+});

@@ -11,9 +11,7 @@ import SimpleMap from '../../components/Maps';
 import { useAppSelector } from '../../Hooks/Hooks';
 import { IItemCar } from '../../Type';
 import { Phone } from '../../components/Svg';
-import address from '../../Assets/Svg/address.svg';
-import road from '../../Assets/Svg/arrow-two-way-left-right.svg';
-import company_img from '../../Images/company-foto.png';
+import { address, company_img, road } from '../../Assets';
 
 export default function Contacts() {
   const location = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.location);

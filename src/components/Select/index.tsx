@@ -5,7 +5,7 @@ import s from './Select.module.scss';
 import { useOutsideAlerter } from '../../Hooks/useOutsideAlerter';
 import { IItemCar } from '../../Type';
 import { Down } from '../Svg';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 interface ISelect {
   name: string | undefined;
@@ -13,7 +13,7 @@ interface ISelect {
   arr?: string[];
 }
 
-export function Select({ name, listItems, arr }: ISelect) {
+export const Select = memo(({ name, listItems, arr }: ISelect) => {
   const { ref, isShow, setIsShow } = useOutsideAlerter(false);
   const [value, setValue] = useState('');
 
@@ -60,4 +60,4 @@ export function Select({ name, listItems, arr }: ISelect) {
       )}
     </motion.div>
   );
-}
+});

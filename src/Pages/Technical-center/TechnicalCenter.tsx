@@ -1,7 +1,8 @@
+import { Helmet } from 'react-helmet-async';
+import { red } from '../../Assets';
 import { CompanyTitle } from '../../components/Company-title';
 import s from './TechnicalCenter.module.scss';
-import red from '../../Images/red.png';
-import { Helmet } from 'react-helmet-async';
+
 const techCenter = [
   {
     name: 'Кузовной ремонт',

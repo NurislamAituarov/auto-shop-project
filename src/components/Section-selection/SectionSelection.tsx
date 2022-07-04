@@ -4,17 +4,16 @@ import s from './SectionSelect.module.scss';
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import wing from '../../Images/pngwing.png';
-import ellipse from '../../Images/Ellipse.png';
 import { Button } from '../Btn/Button';
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { SpecialOffers } from '../Special-offers/SpecialOffers';
 import { OurSelection } from '../Our-selection/OurSelection';
 import { sum1, sum2 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
-import { addPopUpBackCall } from '../../Actions/action';
+import { addPopUpBackCall } from '../../Redux/Actions/action';
 import { useValueValidate } from '../../Hooks/useValueValidate';
 import { Input } from '../Input';
+import { ellipse, wing } from '../../Assets';
 
 export const arrSpecificOffers = [
   'Первый автомобиль',

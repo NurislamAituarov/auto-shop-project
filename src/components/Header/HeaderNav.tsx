@@ -3,12 +3,12 @@ import cn from 'classnames';
 import { useDispatch } from 'react-redux';
 
 import { Hamburger } from '../Hamburger /Hamburger';
-import { Phone, Whatsapp } from '../Svg';
+import { Phone } from '../Svg';
 import { Button } from '../Btn/Button';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { Tag } from '../Tag';
-import { NavList } from './NavList';
-import { addPopUpBackCall } from '../../Actions/action';
+import { NavList } from './components/NavList';
+import { addPopUpBackCall } from '../../Redux/Actions/action';
 
 interface IHeaderNav {
   listMenu: string[];
@@ -16,7 +16,6 @@ interface IHeaderNav {
   refCarAvailable: any;
   refSpecialOffers: any;
   refApplication: any;
-  scrollToSection: any;
 }
 
 export function HeaderNav({
@@ -25,7 +24,6 @@ export function HeaderNav({
   refCarAvailable,
   refSpecialOffers,
   refApplication,
-  scrollToSection,
 }: IHeaderNav) {
   const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [trigger, setTrigger] = useState(false);
@@ -50,7 +48,6 @@ export function HeaderNav({
           refCarAvailable={refCarAvailable}
           refSpecialOffers={refSpecialOffers}
           refApplication={refApplication}
-          scrollToSection={scrollToSection}
         />
         <hr id="hr" />
         <p className="header__nav_subtitle">

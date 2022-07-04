@@ -8,9 +8,6 @@ let sum = () => {
     if (block === 'подборки' && i >= 6) {
       i = 6;
     }
-    // if ( && i >= 4) {
-    //   i = 4;
-    // }
     if (
       (block === 'partners' ||
         block === 'trusted' ||

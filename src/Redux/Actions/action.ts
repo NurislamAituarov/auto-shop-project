@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
-import { getCarItems } from '../Api/client';
-import { IItemCar } from '../Type';
+import { getCarItems } from '../../Api/client';
+import { IItemCar } from '../../Type';
 
 export const addListItemCar = (item: IItemCar[]) => ({ type: 'ADD_LIST_ITEM', payload: item });
 export const addListItem = () => async (dispatch: Dispatch) => {

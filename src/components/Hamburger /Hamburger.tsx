@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { HeaderSelect } from '../Header/components/Header-select';
-import { NavList } from '../Header/NavList';
+import { NavList } from '../Header/components/NavList';
 import { Logo } from '../Svg';
 import { listMenu, listSelect } from '../Header';
 import { Contacts } from '../Footer/Contacts';
@@ -16,7 +16,6 @@ interface IProps {
   refCarAvailable: any;
   refSpecialOffers: any;
   refApplication: any;
-  scrollToSection: any;
 }
 
 export function Hamburger({
@@ -25,7 +24,6 @@ export function Hamburger({
   refCarAvailable,
   refSpecialOffers,
   refApplication,
-  scrollToSection,
 }: IProps) {
   const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [size, setSize] = useState(false);
@@ -101,7 +99,6 @@ export function Hamburger({
                   refCarAvailable={refCarAvailable}
                   refSpecialOffers={refSpecialOffers}
                   refApplication={refApplication}
-                  scrollToSection={scrollToSection}
                 />
               </motion.div>
             );

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/App';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { store } from './Redux/store';
 import ErrorBoundary from './components/Error-boundary/ErrorBoundary';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 // import { Error } from './components/Error-boundary/404';
 
 ReactDOM.render(

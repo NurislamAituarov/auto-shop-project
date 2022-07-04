@@ -13,6 +13,7 @@
     right: 40px;
     bottom: 0;
     z-index: 10;
+    height: 448px;
   }
   .modal__content_fon {
     position: absolute;
@@ -21,6 +22,7 @@
     width: 680px;
     height: 320px;
     border-radius: 25px;
+    overflow: hidden;
   }
   .modal__content_inf {
     width: 356px;
@@ -192,6 +194,7 @@
     }
     .modal__content_img {
       width: 250px;
+      height: 300px;
     }
     .modal__content_fon {
       top: 224px;

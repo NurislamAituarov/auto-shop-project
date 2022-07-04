@@ -11,7 +11,7 @@ interface ISelected {
   width?: number;
 }
 
-export function Selected({ title, items, width = 237 }: ISelected) {
+export const Selected = React.memo(({ title, items, width = 237 }: ISelected) => {
   const [value, setValue] = React.useState('');
 
   const handleChange = (event: any) => {
@@ -42,4 +42,4 @@ export function Selected({ title, items, width = 237 }: ISelected) {
       </FormControl>
     </div>
   );
-}
+});

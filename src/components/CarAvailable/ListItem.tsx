@@ -5,22 +5,22 @@ import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { IItemCar } from '../../Type';
-import gift from '../../Assets/Svg/gift.svg';
-import sec from '../../Assets/Svg/sec.svg';
-import speed from '../../Assets/Svg/speed.svg';
-import petrol from '../../Assets/Svg/petrol.svg';
-import power from '../../Assets/Svg/power.svg';
 import { Diagram, Heart } from '../Svg';
-import car_skeleton from '../../Images/car-skeleton.png';
+import { addCar } from '../../Redux/Actions/action';
+import { car_skeleton, gift, petrol, power, sec, speed } from '../../Assets';
 
 interface IListItem {
   el: IItemCar;
   i: number;
-  addCarSelect: (item: IItemCar, index: number) => void;
+  dispatch: any;
 }
 
-export default memo(function ListItem({ el, i, addCarSelect }: IListItem) {
+export default memo(function ListItem({ el, i, dispatch }: IListItem) {
   const img = el.url_img ? el.url_img : car_skeleton;
+
+  function addCarSelect(item: IItemCar, id: number) {
+    dispatch(addCar(id));
+  }
 
   return (
     <div className={s.item}>

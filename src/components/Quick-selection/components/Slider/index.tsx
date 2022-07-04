@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useDispatch } from 'react-redux';
 
-import { addPriceCar } from '../../../../Actions/action';
+import { addPriceCar } from '../../../../Redux/Actions/action';
 import { useDebounce } from '../../../../Hooks/useDebounce';
 
 function valuetext(value: number) {
@@ -41,7 +41,7 @@ export const RangeSlider = React.memo(() => {
     { value: 3000000, label: '3м' },
   ];
 
-  const dfunc = useDebounce<typeof handleChange>(handleChange, 100);
+  const dfunc = useDebounce<typeof handleChange>(handleChange, 1);
 
   return (
     <Box sx={{ width: '100%' }}>

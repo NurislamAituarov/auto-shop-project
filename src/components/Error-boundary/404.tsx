@@ -1,10 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import './404.scss';
 
-import error from '../../Images/404.png';
-import fon from '../../Images/error-fon.jpg';
 import { Button } from '../Btn/Button';
-import rio from '../../Images/rio_new.png';
+import { error, fon, rio_new } from '../../Assets';
 
 export function Error() {
   return (
@@ -20,7 +18,7 @@ export function Error() {
       </nav>
       <div className="wrapper__error_img">
         <img src={error} alt="ошибка" />
-        <img src={rio} alt="rio" />
+        <img src={rio_new} alt="rio" />
       </div>
       <div className="wrapper__error_title">
         <h1>Страница не найдена!</h1>

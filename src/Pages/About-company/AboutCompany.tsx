@@ -3,14 +3,13 @@ import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { DirectionButtons } from '../../components/Direction-btn/DirectionButtons';
-import imgSalon from '../../Images/foto-salon.png';
-import map from '../../Images/map.png';
 import { add, reward } from '../../components/Svg';
 import { CarouselSlider } from '../../components/Carousel/Carousel-Slider';
 import { sum3 } from '../../Hooks/useCustomCounter';
 import { onNext, onPrev } from '../../Hooks/direction';
 import { CompanyTitle } from '../../components/Company-title';
 import Partners from '../../components/Partners';
+import { imgSalon, map } from '../../Assets';
 
 let list = `самые выгодные цены на автомобили в Москве; возможность выбора автомобилей более чем из
 двухсот моделей различных цветов и комплектаций; приобретение автомобилей с пробегом,

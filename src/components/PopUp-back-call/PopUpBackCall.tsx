@@ -3,17 +3,12 @@ import Modal from '@mui/material/Modal';
 import { useDispatch } from 'react-redux';
 import s from './PopUpBackCall.module.scss';
 
-import { addPopUpBackCall } from '../../Actions/action';
+import { addPopUpBackCall } from '../../Redux/Actions/action';
 import { Button } from '../Btn/Button';
-import girl from '../../Images/girl.png';
-import fon from '../../Images/first.png';
-import rio from '../../Images/rio.png';
-import tiguan from '../../Images/tiguan.png';
-import camry from '../../Images/camry-white.png';
-import credit from '../../Images/credit.png';
 import { useAppSelector } from '../../Hooks/Hooks';
-import { useValueValidate } from '../../Hooks/useValueValidate';
-import { Input } from '../Input';
+import { PopUpForm } from './components/PopUpForm';
+import { camry, credit, fon2, girl, rio2, tiguan2 } from '../../Assets';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface IProps {
   title: string[];
@@ -25,22 +20,12 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
   const { brandList } = useAppSelector((state: any) => state.reducer);
   const [open, setOpen] = React.useState(false);
   const [sent, setSent] = React.useState(false);
-  const refInput = React.useRef<HTMLInputElement | null>(null);
-  const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const dispatch = useDispatch();
 
   function handleClose() {
     setOpen(false);
     dispatch(addPopUpBackCall(''));
     setSent(false);
-  }
-  function handleSubmit(e: any) {
-    e.preventDefault();
-    if (valuePhone) {
-      setSent(true);
-    } else {
-      refInput.current?.focus();
-    }
   }
 
   React.useEffect(() => {
@@ -76,27 +61,20 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
         aria-describedby="modal-modal-description">
         {!sent ? (
           <div className={s.modal__content}>
-            <form onSubmit={handleSubmit} className={s.modal__content_inf}>
-              <div className={s.modal__content_title}>
-                <h2>{title[0]}</h2>
-                <p>{title[1]}</p>
-              </div>
-              <input type="text" placeholder="Ваше имя" />
-              <Input
-                placeholder="Ваш телефон"
-                type="tel"
-                refInput={refInput}
-                value={valuePhone}
-                onChange={onChange}
+            <PopUpForm setSent={setSent} title={title} button={button} />
+            <div className={s.modal__content_img}>
+              <LazyLoadImage
+                effect="blur"
+                src={img}
+                alt="фото контента"
+                width="100%"
+                height="100%"
               />
-              <Button click={handleSubmit} title={button} />
-              <p>
-                Нажимая кнопку “Получить предложение” Вы даете согласие на обработку своих
-                <span> персональных данных</span>
-              </p>
-            </form>
-            <img className={s.modal__content_img} src={img} alt="фото контента" />
-            <img className={s.modal__content_fon} src={fon} alt="задний фон" />
+            </div>
+            <div className={s.modal__content_fon}>
+              <LazyLoadImage effect="blur" src={fon2} alt="задний фон" width="100%" height="100%" />
+            </div>
+
             <div onClick={handleClose} className={s.modal__close}>
               <p></p>
               <p></p>
@@ -105,8 +83,8 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
         ) : (
           <div className={s.modal__sent}>
             <div>
-              <img src={tiguan} alt="tiguan" width="235" />
-              <img src={rio} alt="rio" width="366" />
+              <img src={tiguan2} alt="tiguan" width="235" />
+              <img src={rio2} alt="rio" width="366" />
             </div>
             <h2>Спасибо за обращение!</h2>
             <p>Наш менеджер свяжется с Вами в ближайшее время</p>

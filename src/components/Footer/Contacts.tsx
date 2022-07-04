@@ -1,13 +1,19 @@
-import s from './Footer.module.scss';
+import { useMemo } from 'react';
 
 import { useAppSelector } from '../../Hooks/Hooks';
 import { IItemCar } from '../../Type';
 import { Date, Phone } from '../Svg';
-import watch from '../../Assets/Svg/watch.svg';
 import { Select } from '../Select';
+import { watch } from '../../Assets';
+import s from './Footer.module.scss';
 
 export function Contacts() {
   const location = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.location);
+
+  const streetArr = useMemo(() => {
+    return ['Aстана', 'Костанай', 'Алматы'];
+  }, []);
+
   return (
     <div className={s.footer__catalog_contacts}>
       <h4>Контакты</h4>
@@ -39,7 +45,7 @@ export function Contacts() {
           <span>Схема проезда</span>
         </div>
       </div>
-      <Select name="Москва" arr={['Aстана', 'Костанай', 'Алматы']} />
+      <Select name="Москва" arr={streetArr} />
     </div>
   );
 }

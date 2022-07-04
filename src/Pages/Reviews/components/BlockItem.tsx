@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 
 import { IItem } from '../../../Type';
 import { Down } from '../../../components/Svg';
-import reviewImg from '../../../Assets/Svg/review-img.svg';
-import play from '../../../Assets/Svg/play.svg';
+import { play, reviewImg } from '../../../Assets';
 
 interface IProps {
   item: IItem;
@@ -45,12 +44,6 @@ export function BlockItemReview({ item, i, refElement }: IProps) {
       },
     },
     hidden: {},
-  };
-  const variantsChildren = {
-    visible: {
-      opacity: 1,
-    },
-    hidden: { opacity: 1 },
   };
 
   return (

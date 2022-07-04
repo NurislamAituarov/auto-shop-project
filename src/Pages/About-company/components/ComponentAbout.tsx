@@ -4,7 +4,6 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import s from '../AboutCompanyHome.module.scss';
-import styled from '@emotion/styled';
 
 interface TabPanelProps {
   children?: React.ReactNode;

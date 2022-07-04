@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import cn from 'classnames';
 import s from './QuickSelection.module.scss';
 
@@ -16,6 +16,13 @@ export default function QuickSelection() {
   const price = useAppSelector((state: any) => state.reducer.priceCar);
   const [numCar, setNumCar] = useState<number>(0);
   const [listCarrArr, setListCarrArr] = useState<IListCarr[]>();
+
+  const itemsTypeCar = useMemo(() => {
+    return ['Седан', 'Хэтчбек', 'Универсал'];
+  }, []);
+  const itemsTransmissionCar = useMemo(() => {
+    return ['Автомат', 'Механическая'];
+  }, []);
 
   useEffect(() => {
     setListCarrArr(listCarr);
@@ -54,8 +61,8 @@ export default function QuickSelection() {
         <h3>Быстрый подбор авто</h3>
         <RangeSlider />
         <div className={s.block__selects_wrapper}>
-          <Selected title="Тип кузова" items={['Седан', 'Хэтчбек', 'Универсал']} />
-          <Selected title="Коробка" items={['Автомат', 'Механическая']} />
+          <Selected title="Тип кузова" items={itemsTypeCar} />
+          <Selected title="Коробка" items={itemsTransmissionCar} />
           <Button size="big" title={string} click={() => showCars('show')} />
         </div>
       </div>

@@ -9,11 +9,8 @@ interface IInput {
 }
 
 export function Input({ placeholder, value, onChange, refInput, type }: IInput) {
-  if (type === 'tel') {
-  }
-
   return (
-    <label>
+    <>
       {type === 'tel' ? (
         <input
           className={s.input}
@@ -33,6 +30,6 @@ export function Input({ placeholder, value, onChange, refInput, type }: IInput) 
           onChange={(e) => onChange && onChange(e.target.value)}
         />
       )}
-    </label>
+    </>
   );
 }

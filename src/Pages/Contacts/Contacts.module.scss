@@ -93,9 +93,8 @@
   .section {
     padding: 0 15px;
     margin-bottom: 50px;
-    margin-top: 20px;
+    margin-top: 0px;
     p {
-      font-size: 14px;
       line-height: 21px;
     }
   }
@@ -132,6 +131,9 @@
     p {
       font-size: 14px;
       line-height: 21px;
+    }
+    h1 {
+      margin-top: 0px;
     }
   }
 

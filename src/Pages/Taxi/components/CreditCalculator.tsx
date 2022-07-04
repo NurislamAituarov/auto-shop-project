@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addPopUpBackCall } from '../../../Actions/action';
+import { addPopUpBackCall } from '../../../Redux/Actions/action';
 import { useAppSelector } from '../../../Hooks/Hooks';
 import { useValueValidate } from '../../../Hooks/useValueValidate';
 import { IItemCar } from '../../../Type';
@@ -28,6 +28,15 @@ export function CreditCalculator() {
     }
   }
 
+  const ageArr = useMemo(() => {
+    return ['3 лет', '7 лет', '10 лет', '12 лет', '24 лет'];
+  }, []);
+  const autoClass = useMemo(() => {
+    return ['A', 'B', 'C', 'D', 'E', 'S'];
+  }, []);
+  const typeCar = useMemo(() => {
+    return ['Седан', 'Хэтчбек', 'Универсал', 'Купе'];
+  }, []);
   return (
     <div className={s.calculator}>
       <h2>Кредитный калькулятор</h2>
@@ -48,7 +57,7 @@ export function CreditCalculator() {
         </div>
 
         <div className={s.calculator__select_item}>
-          <Select name="Старт" arr={['A', 'B', 'C', 'D', 'E', 'S']} />
+          <Select name="Старт" arr={autoClass} />
         </div>
       </div>
 
@@ -69,7 +78,7 @@ export function CreditCalculator() {
 
         <div className={`${s.calculator__select_item} ${s.calculator__select_item2}`}>
           <Select name="Выберите марку" listItems={listItems} />
-          <Select name="Выберите модель" arr={['Седан', 'Хэтчбек', 'Универсал', 'Купе']} />
+          <Select name="Выберите модель" arr={typeCar} />
         </div>
       </div>
 
@@ -89,7 +98,7 @@ export function CreditCalculator() {
         </div>
 
         <div className={`${s.calculator__select_item} ${s.calculator__select_item2}`}>
-          <Select name="7 лет" arr={['3 лет', '7 лет', '10 лет', '12 лет', '24 лет']} />
+          <Select name="7 лет" arr={ageArr} />
         </div>
       </div>
 

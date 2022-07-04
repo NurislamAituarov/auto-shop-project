@@ -2,13 +2,13 @@ import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 import s from './Advantageous.module.scss';
 
-import fon from '../../../Images/advantageous.png';
 import { useAppSelector } from '../../../Hooks/Hooks';
 import { Button } from '../../../components/Btn/Button';
 import { useValueValidate } from '../../../Hooks/useValueValidate';
-import { addPopUpBackCall } from '../../../Actions/action';
+import { addPopUpBackCall } from '../../../Redux/Actions/action';
 import { Select } from '../../../components/Select';
 import { Input } from '../../../components/Input';
+import { fon3 } from '../../../Assets';
 
 interface IAdvantageous {
   name: string | undefined;
@@ -33,7 +33,7 @@ export function Advantageous({ name }: IAdvantageous) {
   return (
     <div className={s.wrapper}>
       <div className={s.block__advantageous}>
-        <img src={fon} alt="fon" />
+        <img src={fon3} alt="fon" />
 
         <div className={s.block__title}>
           <div></div>

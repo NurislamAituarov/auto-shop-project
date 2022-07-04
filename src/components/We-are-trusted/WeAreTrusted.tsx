@@ -1,9 +1,9 @@
 import { useRef } from 'react';
+import { google, yandex } from '../../Assets';
 
 import { onNext, onPrev } from '../../Hooks/direction';
 import { sum5 } from '../../Hooks/useCustomCounter';
-import yandex from '../../Assets/Svg/yandex-maps.svg';
-import google from '../../Assets/Svg/Google_Maps.svg';
+
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { Rating } from '../Rating';
 

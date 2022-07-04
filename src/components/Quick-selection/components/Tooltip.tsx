@@ -8,7 +8,7 @@ interface IProps {
   price: number;
 }
 
-export default function PositionedTooltips({ name, price }: IProps) {
+const PositionedTooltips = React.memo(({ name, price }: IProps) => {
   const priceStr = price.toString().length <= 6 ? `${price} т` : `${price} м`;
 
   return (
@@ -20,4 +20,6 @@ export default function PositionedTooltips({ name, price }: IProps) {
       </Grid>
     </Grid>
   );
-}
+});
+
+export default PositionedTooltips;

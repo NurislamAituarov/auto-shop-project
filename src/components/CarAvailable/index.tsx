@@ -4,13 +4,13 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDispatch } from 'react-redux';
 
 import { Button } from '../Btn/Button';
-import { addCar, addListItem } from '../../Actions/action';
 import { IItemCar } from '../../Type';
 import { ReactContentLoader } from '../Loader/ContentLoader';
 import { useAppSelector } from '../../Hooks/Hooks';
 
 const ListItem = lazy(() => import('./ListItem'));
 let count = 0;
+
 interface IProps {
   refCarAvailable: any;
 }
@@ -40,9 +40,6 @@ export default function CarAvailable({ refCarAvailable }: IProps) {
     };
   }, [listItemHome]);
 
-  function addCarSelect(item: IItemCar, id: number) {
-    dispatch(addCar(id));
-  }
   function showMore() {
     count += 6;
     setListItem(listItemHome.slice(0, count));
@@ -55,7 +52,7 @@ export default function CarAvailable({ refCarAvailable }: IProps) {
           <h2>Автомобили в наличии с ПТС</h2>
           <div className={s.wrapper__items}>
             {listItem.map((el, i) => {
-              return <ListItem key={i} el={el} addCarSelect={addCarSelect} i={el.id} />;
+              return <ListItem key={i} el={el} i={el.id} dispatch={dispatch} />;
             })}
           </div>
         </>

@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import s from './Taxi.module.scss';
 
 import { Down } from '../../components/Svg';
-import taxi from '../../Images/taxi.png';
+
 import { BlockCart } from './components/BlockCart';
 import { MadeMoney } from './components/MadeMoney';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { CreditCalculator } from './components/CreditCalculator';
+import { taxi } from '../../Assets';
 
 const additional = [
   'Льготный автокредит от 1,9%',
