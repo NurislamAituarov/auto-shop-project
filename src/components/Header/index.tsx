@@ -31,7 +31,7 @@ const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHea
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(location());
+    // dispatch(location());
     dispatch(addListItem());
 
     function onResize() {
