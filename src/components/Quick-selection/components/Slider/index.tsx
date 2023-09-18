@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useDispatch } from 'react-redux';
 
-import { addPriceCar } from '../../../../Redux/Actions/action';
-import { useDebounce } from '../../../../Hooks/useDebounce';
+import { addPriceCar } from '../../../../redux/actions/action';
+import { useDebounce } from '../../../../hooks/useDebounce';
 
 function valuetext(value: number) {
   return `${value}°C`;

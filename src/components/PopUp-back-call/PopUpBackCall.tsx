@@ -3,11 +3,11 @@ import Modal from '@mui/material/Modal';
 import { useDispatch } from 'react-redux';
 import s from './PopUpBackCall.module.scss';
 
-import { addPopUpBackCall } from '../../Redux/Actions/action';
+import { addPopUpBackCall } from '../../redux/actions/action';
 import { Button } from '../Btn/Button';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { useAppSelector } from '../../hooks/Hooks';
 import { PopUpForm } from './components/PopUpForm';
-import { camry, credit, fon2, girl, rio2, tiguan2 } from '../../Assets';
+import { camry, credit, fon2, girl, rio2, tiguan2 } from '../../assets';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface IProps {

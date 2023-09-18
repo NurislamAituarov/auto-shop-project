@@ -1,6 +1,6 @@
 import s from './Application.module.scss';
 import { useState } from 'react';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { useAppSelector } from '../../hooks/Hooks';
 
 import { SettingSelect } from './SettingSelect';
 import { FillForm } from './components/FillForm';

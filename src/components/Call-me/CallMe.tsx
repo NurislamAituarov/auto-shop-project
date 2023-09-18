@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
 
 import s from './CallMe.module.scss';
-import { addPopUpBackCall } from '../../Redux/Actions/action';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { addPopUpBackCall } from '../../redux/actions/action';
+import { useAppSelector } from '../../hooks/Hooks';
 
 export default function CallMe() {
   const popUpBackCall = useAppSelector((state: any) => state.reducer.popUpBackCall);

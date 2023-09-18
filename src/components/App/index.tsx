@@ -3,24 +3,24 @@ import Header from '../Header';
 import { createContext, lazy, Suspense, useRef } from 'react';
 import { Spinner } from '../Loader/Spinner';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { useAppSelector } from '../../hooks/Hooks';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Up } from '../Up';
 import Main from '../Main';
 import ErrorBoundary from '../Error-boundary/ErrorBoundary';
 
-const AboutCompany = lazy(() => import('../../Pages/About-company/AboutCompany'));
-const TechnicalCenter = lazy(() => import('../../Pages/Technical-center/TechnicalCenter'));
-const Reviews = lazy(() => import('../../Pages/Reviews/Reviews'));
-const Contacts = lazy(() => import('../../Pages/Contacts/Contacts'));
+const AboutCompany = lazy(() => import('../../pages/About-company/AboutCompany'));
+const TechnicalCenter = lazy(() => import('../../pages/Technical-center/TechnicalCenter'));
+const Reviews = lazy(() => import('../../pages/Reviews/Reviews'));
+const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
 const AllOurSelection = lazy(() => import('../Our-selection/AllOurSelection'));
-const Search = lazy(() => import('../../Pages/Search/Search'));
+const Search = lazy(() => import('../../pages/Search/Search'));
 const BasicModal = lazy(() => import('../PopUp-back-call/PopUpBackCall'));
-const Favorites = lazy(() => import('../../Pages/Favorites/Favorites'));
-const MoreAboutCar = lazy(() => import('../../Pages/MoreAboutCar/MoreAboutCar'));
+const Favorites = lazy(() => import('../../pages/Favorites/Favorites'));
+const MoreAboutCar = lazy(() => import('../../pages/MoreAboutCar/MoreAboutCar'));
 const Footer = lazy(() => import('../Footer'));
 const CallMe = lazy(() => import('../Call-me/CallMe'));
-const Taxi = lazy(() => import('../../Pages/Taxi'));
+const Taxi = lazy(() => import('../../pages/Taxi'));
 
 const scrollToSection = (elementRef: any) => {
   window.scrollTo({

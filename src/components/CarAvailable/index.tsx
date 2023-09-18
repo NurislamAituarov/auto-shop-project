@@ -4,9 +4,9 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDispatch } from 'react-redux';
 
 import { Button } from '../Btn/Button';
-import { IItemCar } from '../../Type';
+import { IItemCar } from '../../types';
 import { ReactContentLoader } from '../Loader/ContentLoader';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { useAppSelector } from '../../hooks/Hooks';
 
 const ListItem = lazy(() => import('./ListItem'));
 let count = 0;

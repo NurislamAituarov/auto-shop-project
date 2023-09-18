@@ -1,6 +1,6 @@
 import { Slider } from '@mui/material';
 import { memo } from 'react';
-import { useDebounce } from '../../../Hooks/useDebounce';
+import { useDebounce } from '../../../hooks/useDebounce';
 import { IValues } from '../Application';
 import s from './styles.module.scss';
 

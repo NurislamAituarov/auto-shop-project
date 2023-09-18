@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addPopUpBackCall } from '../../Redux/Actions/action';
+import { addPopUpBackCall } from '../../redux/actions/action';
 import { Phone } from '../Svg';
 import './BackCall.scss';
 

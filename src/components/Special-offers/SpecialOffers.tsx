@@ -9,7 +9,7 @@ import {
   specialOff4,
   specialOff5,
   specialOff6,
-} from '../../Assets';
+} from '../../assets';
 
 interface IProps {
   index: number;

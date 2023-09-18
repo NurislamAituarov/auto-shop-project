@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addPopUpBackCall } from '../../../Redux/Actions/action';
-import { useValueValidate } from '../../../Hooks/useValueValidate';
-import { IItemCar } from '../../../Type';
+import { addPopUpBackCall } from '../../../redux/actions/action';
+import { useValueValidate } from '../../../hooks/useValueValidate';
+import { IItemCar } from '../../../types';
 import { Button } from '../../Btn/Button';
 import { Input } from '../../Input';
 import { IValues } from '../Application';

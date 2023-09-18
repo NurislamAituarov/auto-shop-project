@@ -5,9 +5,9 @@ import cn from 'classnames';
 import { memo, useEffect, useRef, useState } from 'react';
 
 import { Down } from '../Svg';
-import { IItemCar } from '../../Type';
-import { addBrandItem } from '../../Redux/Actions/action';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { IItemCar } from '../../types';
+import { addBrandItem } from '../../redux/actions/action';
+import { useAppSelector } from '../../hooks/Hooks';
 
 export interface IItem {
   name: string;

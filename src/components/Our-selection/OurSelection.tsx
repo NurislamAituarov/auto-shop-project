@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { img1, img2, img3, img4, img5, img6, img7, img8, img9 } from '../../Assets';
+import { img1, img2, img3, img4, img5, img6, img7, img8, img9 } from '../../assets';
 import { Button } from '../Btn/Button';
 import s from './OurSelection.module.scss';
 
