@@ -6,9 +6,9 @@ import s from './QuickSelection.module.scss';
 
 import { Button } from '../Btn/Button';
 import { Selected } from './components/Select';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { useAppSelector } from '../../hooks/Hooks';
 import PositionedTooltips from './components/Tooltip';
-import { IListCarr } from '../../Type';
+import { IListCarr } from '../../types';
 import { RangeSlider } from './components/Slider';
 import { listCarr } from './list-car';
 

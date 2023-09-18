@@ -1,4 +1,4 @@
-import { IListCarr } from '../../Type';
+import { IListCarr } from '../../types';
 import {
   Suzuki,
   Opel,

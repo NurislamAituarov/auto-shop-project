@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-import { google, yandex } from '../../Assets';
+import { google, yandex } from '../../assets';
 
-import { onNext, onPrev } from '../../Hooks/direction';
-import { sum5 } from '../../Hooks/useCustomCounter';
+import { onNext, onPrev } from '../../hooks/direction';
+import { sum5 } from '../../hooks/useCustomCounter';
 
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { Rating } from '../Rating';

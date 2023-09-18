@@ -8,15 +8,15 @@ import { Search } from './Search';
 import { Diagram } from './Diagram';
 import { Phone } from './Phone';
 import { Direction } from './Direction';
-import add from '../../Assets/Svg/add.svg';
-import reward from '../../Assets/Svg/reward.svg';
-import SB from '../../Assets/Svg/SB.svg';
-import vtb from '../../Assets/Svg/vtb.svg';
-import alfa from '../../Assets/Svg/alfa.svg';
-import sberbank from '../../Assets/Svg/Sberbank.svg';
-import sberbank2 from '../../Assets/Svg/Sberbank2.svg';
-import alfa2 from '../../Assets/Svg/alfa2.svg';
-import rost from '../../Assets/Svg/rost.svg';
+import add from '../../assets/Svg/add.svg';
+import reward from '../../assets/Svg/reward.svg';
+import SB from '../../assets/Svg/SB.svg';
+import vtb from '../../assets/Svg/vtb.svg';
+import alfa from '../../assets/Svg/alfa.svg';
+import sberbank from '../../assets/Svg/Sberbank.svg';
+import sberbank2 from '../../assets/Svg/Sberbank2.svg';
+import alfa2 from '../../assets/Svg/alfa2.svg';
+import rost from '../../assets/Svg/rost.svg';
 
 export {
   sberbank2,

@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
 import { Diagram, Heart, Search } from '../../Svg';
-import { useAppSelector } from '../../../Hooks/Hooks';
-import { IItemCar } from '../../../Type';
+import { useAppSelector } from '../../../hooks/Hooks';
+import { IItemCar } from '../../../types';
 
 interface IHeaderSelectSVG {
   width?: number | string;

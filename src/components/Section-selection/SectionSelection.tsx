@@ -8,12 +8,12 @@ import { Button } from '../Btn/Button';
 import { DirectionButtons } from '../Direction-btn/DirectionButtons';
 import { SpecialOffers } from '../Special-offers/SpecialOffers';
 import { OurSelection } from '../Our-selection/OurSelection';
-import { sum1, sum2 } from '../../Hooks/useCustomCounter';
-import { onNext, onPrev } from '../../Hooks/direction';
-import { addPopUpBackCall } from '../../Redux/Actions/action';
-import { useValueValidate } from '../../Hooks/useValueValidate';
+import { sum1, sum2 } from '../../hooks/useCustomCounter';
+import { onNext, onPrev } from '../../hooks/direction';
+import { addPopUpBackCall } from '../../redux/actions/action';
+import { useValueValidate } from '../../hooks/useValueValidate';
 import { Input } from '../Input';
-import { ellipse, wing } from '../../Assets';
+import { ellipse, wing } from '../../assets';
 
 export const arrSpecificOffers = [
   'Первый автомобиль',

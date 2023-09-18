@@ -2,7 +2,7 @@ import s from './Footer.module.scss';
 import { listCarr } from '../Quick-selection/list-car';
 
 import { Contacts } from './Contacts';
-import { rating_all } from '../../Assets';
+import { rating_all } from '../../assets';
 
 const navMenu = [
   'Каталог авто',

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import './404.scss';
 
 import { Button } from '../Btn/Button';
-import { error, fon, rio_new } from '../../Assets';
+import { error, fon, rio_new } from '../../assets';
 
 export function Error() {
   return (

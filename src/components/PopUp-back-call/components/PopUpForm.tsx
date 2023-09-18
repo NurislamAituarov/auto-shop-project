@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useValueValidate } from '../../../Hooks/useValueValidate';
+import { useValueValidate } from '../../../hooks/useValueValidate';
 
 import { Button } from '../../Btn/Button';
 import { Input } from '../../Input';

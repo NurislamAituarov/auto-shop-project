@@ -2,8 +2,8 @@ import s from './styles.module.scss';
 import cn from 'classnames';
 
 import { IValues } from '../Application';
-import { IItemCar } from '../../../Type';
-import { car } from '../../../Assets';
+import { IItemCar } from '../../../types';
+import { car } from '../../../assets';
 
 interface IView {
   brandList: IItemCar;

@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import cn from 'classnames';
 import s from './Select.module.scss';
 
-import { useOutsideAlerter } from '../../Hooks/useOutsideAlerter';
-import { IItemCar } from '../../Type';
+import { useOutsideAlerter } from '../../hooks/useOutsideAlerter';
+import { IItemCar } from '../../types';
 import { Down } from '../Svg';
 import { memo, useEffect, useState } from 'react';
 

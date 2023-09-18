@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { useAppSelector } from '../../Hooks/Hooks';
-import { IItemCar } from '../../Type';
+import { useAppSelector } from '../../hooks/Hooks';
+import { IItemCar } from '../../types';
 import { Date, Phone } from '../Svg';
 import { Select } from '../Select';
-import { watch } from '../../Assets';
+import { watch } from '../../assets';
 import s from './Footer.module.scss';
 
 export function Contacts() {

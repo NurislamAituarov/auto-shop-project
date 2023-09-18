@@ -7,8 +7,8 @@ import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/Header-select';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../BackCall/BackCall';
-import { addListItem, location } from '../../Redux/Actions/action';
-import { useAppSelector } from '../../Hooks/Hooks';
+import { addListItem, location } from '../../redux/actions/action';
+import { useAppSelector } from '../../hooks/Hooks';
 
 const text: string[] = [
   'Страна, Город, 38КМ МКАД, 6Бс1',

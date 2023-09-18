@@ -10,8 +10,8 @@ const CarAvailable = lazy(() => import('../CarAvailable'));
 const CustomCarousel = lazy(() => import('../Carousel'));
 const Application = lazy(() => import('../Aplication/Application'));
 const WeAreTrusted = lazy(() => import('../We-are-trusted/WeAreTrusted'));
-const ReviewHome = lazy(() => import('../../Pages/Reviews/ReviewHome'));
-const AboutCompanyHome = lazy(() => import('../../Pages/About-company/AboutCompanyHome'));
+const ReviewHome = lazy(() => import('../../pages/Reviews/ReviewHome'));
+const AboutCompanyHome = lazy(() => import('../../pages/About-company/AboutCompanyHome'));
 const SimpleMap = lazy(() => import('../Maps'));
 const Partners = lazy(() => import('../Partners'));
 

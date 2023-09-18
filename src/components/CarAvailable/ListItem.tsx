@@ -4,10 +4,10 @@ import s from './CarAvailable.module.scss';
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { IItemCar } from '../../Type';
+import { IItemCar } from '../../types';
 import { Diagram, Heart } from '../Svg';
-import { addCar } from '../../Redux/Actions/action';
-import { car_skeleton, gift, petrol, power, sec, speed } from '../../Assets';
+import { addCar } from '../../redux/actions/action';
+import { car_skeleton, gift, petrol, power, sec, speed } from '../../assets';
 
 interface IListItem {
   el: IItemCar;
