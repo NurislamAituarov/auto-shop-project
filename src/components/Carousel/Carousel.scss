@@ -86,6 +86,27 @@
   }
 }
 
+@media screen and (max-width: 1916px) {
+  .section__slider {
+    width: calc(var(--index) * 52);
+    left: 0;
+  }
+  .wrapper__slider {
+    width: 1000px;
+    background-position: inherit;
+  }
+  .main__title {
+    left: calc(var(--index) * 2);
+    top: calc(var(--index) * 2);
+  }
+}
+
+@media screen and (max-width: 1840px) {
+  .section__slider {
+    width: 1440px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .section__slider {
     max-width: 96%;
