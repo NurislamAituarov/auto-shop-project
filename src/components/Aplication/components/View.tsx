@@ -13,7 +13,7 @@ interface IView {
 export function View({ brandList, value }: IView) {
   return (
     <div className={s.setting__view}>
-      {!brandList ? (
+      {!brandList?.url_img ? (
         <img src={car} alt="car" />
       ) : (
         <img src={brandList.url_img} alt="фото машины" width="424" />
