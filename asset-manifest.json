@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/auto-shop-project/static/css/main.201444cf.css",
-    "main.js": "/auto-shop-project/static/js/main.7cff1701.js",
+    "main.css": "/auto-shop-project/static/css/main.8cd6f9ad.css",
+    "main.js": "/auto-shop-project/static/js/main.799a4115.js",
     "static/css/733.9ae2f390.chunk.css": "/auto-shop-project/static/css/733.9ae2f390.chunk.css",
     "static/js/733.6d3745f8.chunk.js": "/auto-shop-project/static/js/733.6d3745f8.chunk.js",
     "static/css/882.e3d0dd3e.chunk.css": "/auto-shop-project/static/css/882.e3d0dd3e.chunk.css",
@@ -20,7 +20,7 @@
     "static/js/982.4a1a28ed.chunk.js": "/auto-shop-project/static/js/982.4a1a28ed.chunk.js",
     "static/css/356.6947d15c.chunk.css": "/auto-shop-project/static/css/356.6947d15c.chunk.css",
     "static/js/356.206a2979.chunk.js": "/auto-shop-project/static/js/356.206a2979.chunk.js",
-    "static/js/173.a17939f3.chunk.js": "/auto-shop-project/static/js/173.a17939f3.chunk.js",
+    "static/js/173.66995f6c.chunk.js": "/auto-shop-project/static/js/173.66995f6c.chunk.js",
     "static/css/204.196b7545.chunk.css": "/auto-shop-project/static/css/204.196b7545.chunk.css",
     "static/js/204.b0ba4df1.chunk.js": "/auto-shop-project/static/js/204.b0ba4df1.chunk.js",
     "static/css/459.a1479392.chunk.css": "/auto-shop-project/static/css/459.a1479392.chunk.css",
@@ -170,8 +170,8 @@
     "static/media/sec.svg": "/auto-shop-project/static/media/sec.1b6b0436af340f67959edbb2290830f6.svg",
     "static/media/add.svg": "/auto-shop-project/static/media/add.4dd4620ddbee420dfc26c7abc087a636.svg",
     "static/media/play.svg": "/auto-shop-project/static/media/play.75b5ea63a2413308cfecc06782bf82c0.svg",
-    "main.201444cf.css.map": "/auto-shop-project/static/css/main.201444cf.css.map",
-    "main.7cff1701.js.map": "/auto-shop-project/static/js/main.7cff1701.js.map",
+    "main.8cd6f9ad.css.map": "/auto-shop-project/static/css/main.8cd6f9ad.css.map",
+    "main.799a4115.js.map": "/auto-shop-project/static/js/main.799a4115.js.map",
     "733.9ae2f390.chunk.css.map": "/auto-shop-project/static/css/733.9ae2f390.chunk.css.map",
     "733.6d3745f8.chunk.js.map": "/auto-shop-project/static/js/733.6d3745f8.chunk.js.map",
     "882.e3d0dd3e.chunk.css.map": "/auto-shop-project/static/css/882.e3d0dd3e.chunk.css.map",
@@ -190,7 +190,7 @@
     "982.4a1a28ed.chunk.js.map": "/auto-shop-project/static/js/982.4a1a28ed.chunk.js.map",
     "356.6947d15c.chunk.css.map": "/auto-shop-project/static/css/356.6947d15c.chunk.css.map",
     "356.206a2979.chunk.js.map": "/auto-shop-project/static/js/356.206a2979.chunk.js.map",
-    "173.a17939f3.chunk.js.map": "/auto-shop-project/static/js/173.a17939f3.chunk.js.map",
+    "173.66995f6c.chunk.js.map": "/auto-shop-project/static/js/173.66995f6c.chunk.js.map",
     "204.196b7545.chunk.css.map": "/auto-shop-project/static/css/204.196b7545.chunk.css.map",
     "204.b0ba4df1.chunk.js.map": "/auto-shop-project/static/js/204.b0ba4df1.chunk.js.map",
     "459.a1479392.chunk.css.map": "/auto-shop-project/static/css/459.a1479392.chunk.css.map",
@@ -228,7 +228,7 @@
     "296.ba1ba610.chunk.js.map": "/auto-shop-project/static/js/296.ba1ba610.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.201444cf.css",
-    "static/js/main.7cff1701.js"
+    "static/css/main.8cd6f9ad.css",
+    "static/js/main.799a4115.js"
   ]
 }
