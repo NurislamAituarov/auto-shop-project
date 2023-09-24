@@ -59,6 +59,7 @@ const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHea
   return (
     <header ref={refHeader} className="header">
       {size === 'mobile' && <BackCall />}
+
       <div className="title_info flex">
         {text.map((el, i) => {
           return <TitleInfo key={i} text={el} index={i + 1} />;

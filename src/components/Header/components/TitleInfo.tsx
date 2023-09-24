@@ -21,7 +21,7 @@ export function TitleInfo({ text, index }: ITitleInfo) {
   };
 
   return (
-    <div className="title_info_first flex">
+    <div className="flex">
       {svg()}
       <p>{text}</p>
     </div>

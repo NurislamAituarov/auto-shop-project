@@ -98,9 +98,15 @@
 .setting__view {
   grid-column: 1/2;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   img {
     border-radius: 25px;
     margin-bottom: 15px;
+    object-fit: cover;
+    object-position: center;
   }
   .setting__view__container {
     width: 390px;
