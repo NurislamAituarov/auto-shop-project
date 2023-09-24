@@ -66,6 +66,7 @@ export const SettingSelect = memo(function SettingSelect() {
   }
 
   function showList(event: any, name: string, index: number) {
+    refItem.current[0]!.scrollTop = 0;
     activeList === name ? setActiveList('') : setActiveList(name);
     if (refItem.current[index]?.contains(event.target)) {
       setActiveList('');
