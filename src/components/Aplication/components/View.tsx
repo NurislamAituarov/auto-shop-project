@@ -13,11 +13,14 @@ interface IView {
 export function View({ brandList, value }: IView) {
   return (
     <div className={s.setting__view}>
-      {!brandList?.url_img ? (
-        <img src={car} alt="car" />
-      ) : (
-        <img src={brandList.url_img} alt="фото машины" width="424" />
-      )}
+      <div className={s['setting__view-img']}>
+        {!brandList?.url_img ? (
+          <img src={car} alt="car" />
+        ) : (
+          <img src={brandList.url_img} alt="фото машины" />
+        )}
+      </div>
+
       <div className={s.setting__view__container}>
         <div className={cn({ [s.active_credit]: value.value3 })}>
           <p>
