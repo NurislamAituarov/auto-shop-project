@@ -7,6 +7,7 @@
   padding: 22px 30px;
   display: grid;
   grid-template-columns: 1.7fr 1fr;
+  gap: 20px;
 }
 
 .block__listCar {
@@ -60,10 +61,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .block__listCar {
-    // grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+@media screen and (max-width: 1090px) {
   .section {
     padding: 0 30px;
     grid-template-columns: 1fr;

@@ -7,6 +7,12 @@
 .App__loading {
   text-align: center;
 }
+
+@media screen and (max-width: 1455px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
 @media screen and (max-width: 768px) {
   .wrapper {
     margin: 0;

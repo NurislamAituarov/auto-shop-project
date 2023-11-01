@@ -28,8 +28,9 @@
   }
 }
 .header__select_svg {
+  gap: 40px;
+
   svg {
-    margin-left: 40px;
     cursor: pointer;
     fill: white;
     &:hover {
@@ -87,10 +88,10 @@
     }
   }
   .header__select_mobile {
+    gap: 20px;
     svg {
       width: 15px;
       height: 15px;
-      margin-left: 20px;
       path {
         stroke: #737373;
       }

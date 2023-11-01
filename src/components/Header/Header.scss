@@ -123,6 +123,7 @@
 }
 .header__select {
   justify-content: space-between;
+  gap: 5px;
 }
 
 //media =========================================================================
@@ -136,10 +137,25 @@
     padding: 0 50px;
   }
 }
+
+@media screen and(max-width: 1440px) {
+  .header__nav_subtitle {
+    display: none;
+  }
+}
+
 @media screen and(max-width: 1440px) {
   .header {
     padding: 0 20px;
     padding-top: 43px;
+  }
+}
+
+@media screen and(max-width: 1200px) {
+  .header__nav_contacts {
+    div {
+      display: none;
+    }
   }
 }
 
@@ -167,6 +183,10 @@
   }
 
   .header__nav_contacts {
+    gap: 20px;
+    div {
+      display: flex;
+    }
     .phones {
       width: 200px;
       align-items: center;
