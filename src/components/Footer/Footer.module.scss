@@ -55,7 +55,8 @@
   padding-top: 60px;
   padding-bottom: 50px;
   display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr;
+  grid-template-columns: 2fr 194px 270px;
+  gap: 34px;
   font-size: 16px;
   line-height: 18px;
   color: rgba(115, 115, 115, 1);
@@ -109,8 +110,7 @@
   .catalog_list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-row-gap: 15px;
-    grid-column-gap: 63px;
+    gap: 15px;
     div {
       width: max-content;
     }
@@ -118,7 +118,6 @@
 }
 
 .footer__catalog_credit {
-  margin-left: 100px;
   h4 {
     margin-bottom: 30px;
   }
@@ -128,7 +127,6 @@
 }
 
 .footer__catalog_contacts {
-  margin-left: 35px;
   h4 {
     margin-bottom: 30px;
   }

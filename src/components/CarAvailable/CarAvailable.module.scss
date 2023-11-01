@@ -89,6 +89,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 30px;
+    flex-wrap: wrap;
     p:nth-child(1) {
       font-size: 22px;
       line-height: 25px;
@@ -107,6 +108,8 @@
     justify-content: space-between;
     margin-top: 11px;
     margin-bottom: 19px;
+    flex-wrap: wrap;
+
     div {
       padding: 7px 10px;
       border-radius: 29px;
@@ -198,13 +201,23 @@
     display: block;
     position: absolute;
     top: 150px;
-    right: 20px;
+    right: 0;
   }
 }
 
 // ============================================================================================================
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1260px) {
+  .fon {
+    img {
+      height: 120px;
+      top: 80px;
+      right: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
   .section {
     margin-top: 40px;
     h2 {
@@ -264,11 +277,7 @@
     .item__svg {
       top: -35px;
     }
-    img {
-      height: 120px;
-      top: 80px;
-      right: 30px;
-    }
+
     span {
       top: 120px;
       right: 0px;

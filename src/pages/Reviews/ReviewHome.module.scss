@@ -12,6 +12,14 @@
   grid-column-gap: 30px;
 }
 
+@media screen and (max-width: 1840px) {
+  .review__wrapper {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .section {
     margin-bottom: 40px;
@@ -26,11 +34,6 @@
     grid-template-columns: repeat(3, 347px);
     padding: 20px 10px;
     grid-column-gap: 15px;
-
-    overflow-x: scroll;
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 }
 @media screen and (max-width: 414px) {
