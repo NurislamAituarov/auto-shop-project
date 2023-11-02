@@ -35,10 +35,10 @@ const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHea
     dispatch(addListItem());
 
     function onResize() {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 938) {
         setSize('normal');
       }
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 938) {
         setSize('desktop');
       }
       if (window.innerWidth < 525) {

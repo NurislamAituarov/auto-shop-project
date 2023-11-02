@@ -3,12 +3,14 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
+  gap: 10px;
 }
 
 .selection__title_subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   h3 {
     color: black;
     font-size: 40px;
@@ -23,6 +25,7 @@
 }
 
 .selection__title_btn {
+  display: flex;
   button {
     width: 48px;
     height: 48px;
@@ -47,7 +50,7 @@
 
 @media screen and (max-width: 768px) {
   .selection__title {
-    padding: 0 40px;
+    padding: 0 20px;
     margin-bottom: 25px;
   }
   .selection__title_subtitle {
@@ -59,6 +62,16 @@
       font-size: 14px;
       line-height: 24px;
     }
+  }
+}
+
+@media screen and (max-width: 484px) {
+  .selection__title {
+    padding: 0 10px;
+  }
+  .selection__title_btn button {
+    width: 36px;
+    height: 36px;
   }
 }
 

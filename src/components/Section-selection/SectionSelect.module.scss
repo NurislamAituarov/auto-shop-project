@@ -25,6 +25,7 @@
   border-radius: 25px;
   overflow: hidden;
   margin-bottom: 70px;
+  // padding-right: 20px;
   span:nth-child(1) {
     position: relative;
     z-index: 20;
@@ -39,6 +40,7 @@
     position: relative;
     color: white;
     z-index: 10;
+    padding: 0 20px;
     h2 {
       font-size: 30px;
       list-style: 35px;
@@ -123,7 +125,6 @@
     }
   }
   .selection__sentence {
-    width: 710px;
     height: 380px;
     margin: 50px auto;
     img:nth-child(1) {
@@ -157,7 +158,7 @@
   }
 }
 
-@media screen and (max-width: 528px) {
+@media screen and (max-width: 584px) {
   .section {
     margin: 40px 0;
   }
