@@ -32,7 +32,7 @@ export function Hamburger({
 
   useEffect(() => {
     function onResize() {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 938) {
         setSize(true);
       } else {
         setSize(false);

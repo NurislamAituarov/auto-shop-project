@@ -25,7 +25,7 @@ export function HeaderSelect({
   const context = useContext(myContext);
   useEffect(() => {
     function onResize() {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 938) {
         setSize(true);
       } else {
         setSize(false);
@@ -63,9 +63,7 @@ export function HeaderSelect({
       {title !== 'Такси в кредит' ? (
         <div className="header__select_item flex">
           {size && <Down />}
-          <li onClick={() => context(createHref(title))}>
-            <h3>{title}</h3>
-          </li>
+          <h3 onClick={() => context(createHref(title))}>{title}</h3>
           {!size && <Down />}
         </div>
       ) : (

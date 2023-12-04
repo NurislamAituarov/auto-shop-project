@@ -98,11 +98,22 @@
   .main__title {
     left: calc(var(--index) * 2);
     top: calc(var(--index) * 2);
+
+    h1 {
+      font-size: calc(var(--index) * 2.41);
+      line-height: calc(var(--index) * 2.8);
+    }
   }
 }
 
 @media screen and (max-width: 1840px) {
   .section__slider {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .wrapper__slider {
     width: 100%;
   }
 }
@@ -124,8 +135,6 @@
     left: 50px;
     max-width: 600px;
     h1 {
-      font-size: 40px;
-      line-height: 43px;
       margin: 20px 0 10px 0;
     }
     p {

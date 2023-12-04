@@ -123,7 +123,7 @@
 }
 .header__select {
   justify-content: space-between;
-  gap: 5px;
+  gap: 10px;
 }
 
 //media =========================================================================
@@ -152,6 +152,9 @@
 }
 
 @media screen and(max-width: 1200px) {
+  .header__nav {
+    gap: 10px;
+  }
   .header__nav_contacts {
     div {
       display: none;
@@ -159,7 +162,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 938px) {
   .header {
     padding: 0 15px;
   }

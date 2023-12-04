@@ -1,5 +1,6 @@
 .header__select_item {
   position: relative;
+  flex: 1;
   justify-content: flex-start;
   cursor: pointer;
 
@@ -67,7 +68,7 @@
     fill: rgb(0, 0, 0);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 938px) {
   .header__select {
     display: none;
   }
