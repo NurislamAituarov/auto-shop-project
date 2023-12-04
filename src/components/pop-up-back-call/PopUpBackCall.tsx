@@ -17,7 +17,7 @@ interface IProps {
 }
 
 export default function BasicModal({ popUpBlock, title, button }: IProps) {
-  const { brandList } = useAppSelector((state: any) => state.reducer);
+  const { brandList } = useAppSelector((state) => state.reducer);
   const [open, setOpen] = React.useState(false);
   const [sent, setSent] = React.useState(false);
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export default function BasicModal({ popUpBlock, title, button }: IProps) {
       case 'back call':
         return girl;
       case 'a discount':
-        return brandList.url_img;
+        return brandList?.url_img;
       case 'offer':
         return camry;
       case 'credit':

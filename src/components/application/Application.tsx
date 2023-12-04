@@ -22,7 +22,7 @@ const values = {
 };
 
 export default function Application({ refApplication }: any) {
-  const { brandList } = useAppSelector((state: any) => state.reducer);
+  const { brandList } = useAppSelector((state) => state.reducer);
   const [value, setValue] = useState<IValues>(values);
 
   return (

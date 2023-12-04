@@ -15,7 +15,7 @@ interface IAdvantageous {
 }
 
 export function Advantageous({ name }: IAdvantageous) {
-  const listItems = useAppSelector((state: any) => state.reducer.listItems);
+  const listItems = useAppSelector((state) => state.reducer.listItems);
   const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const refInput = useRef<HTMLInputElement | null>(null);
   const dispatch = useDispatch();

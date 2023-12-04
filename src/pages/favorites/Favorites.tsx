@@ -9,7 +9,7 @@ import ListItem from '../../components/car-available/ListItem';
 import { CompanyTitle } from '../../components/company-title';
 
 export default function Favorites() {
-  const item = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.listItems);
+  const item = useAppSelector((state) => state.reducer.listItems);
   const [listItem, setListItem] = useState<Array<IItemCar>>([]);
   const dispatch = useDispatch();
 

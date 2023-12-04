@@ -6,7 +6,7 @@ import { IItemCar } from '../../../types';
 import { car } from '../../../assets';
 
 interface IView {
-  brandList: IItemCar;
+  brandList: IItemCar | null;
   value: IValues;
 }
 

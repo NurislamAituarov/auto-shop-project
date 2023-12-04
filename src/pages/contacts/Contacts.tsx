@@ -9,12 +9,11 @@ import cn from 'classnames';
 import { CompanyTitle } from '../../components/company-title';
 import SimpleMap from '../../components/Maps';
 import { useAppSelector } from '../../hooks/Hooks';
-import { IItemCar } from '../../types';
 import { Phone } from '../../components/svg';
 import { address, company_img, road } from '../../assets';
 
 export default function Contacts() {
-  const location = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.location);
+  const location = useAppSelector((state) => state.reducer.location);
 
   return (
     <section className={s.section}>

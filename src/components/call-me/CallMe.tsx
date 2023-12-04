@@ -7,7 +7,7 @@ import { addPopUpBackCall } from '../../redux/actions/action';
 import { useAppSelector } from '../../hooks/Hooks';
 
 export default function CallMe() {
-  const popUpBackCall = useAppSelector((state: any) => state.reducer.popUpBackCall);
+  const popUpBackCall = useAppSelector((state) => state.reducer.popUpBackCall);
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
 

@@ -12,7 +12,7 @@ import s from './styles.module.scss';
 interface IFillForm {
   value: IValues;
   setValue: (value: any) => void;
-  brandList: IItemCar;
+  brandList: IItemCar | null;
 }
 
 export function FillForm({ setValue, value, brandList }: IFillForm) {
@@ -22,7 +22,7 @@ export function FillForm({ setValue, value, brandList }: IFillForm) {
 
   function onSubmit(e: any) {
     e.preventDefault();
-    if (valuePhone && brandList.name_car) {
+    if (valuePhone && brandList?.name_car) {
       dispatch(addPopUpBackCall('a discount'));
       setValue({ ...value, name: '' });
       setValuePhone('');

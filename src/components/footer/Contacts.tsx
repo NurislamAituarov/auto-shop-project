@@ -1,14 +1,13 @@
 import { useMemo } from 'react';
 
 import { useAppSelector } from '../../hooks/Hooks';
-import { IItemCar } from '../../types';
 import { Date, Phone } from '../svg';
 import { Select } from '../select';
 import { watch } from '../../assets';
 import s from './Footer.module.scss';
 
 export function Contacts() {
-  const location = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.location);
+  const location = useAppSelector((state) => state.reducer.location);
 
   const streetArr = useMemo(() => {
     return ['Aстана', 'Костанай', 'Алматы'];

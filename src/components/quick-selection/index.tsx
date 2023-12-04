@@ -13,7 +13,7 @@ import { RangeSlider } from './components/Slider';
 import { listCarr } from './list-car';
 
 export default function QuickSelection() {
-  const price = useAppSelector((state: any) => state.reducer.priceCar);
+  const price = useAppSelector((state) => state.reducer.priceCar);
   const [numCar, setNumCar] = useState<number>(0);
   const [listCarrArr, setListCarrArr] = useState<IListCarr[]>();
 

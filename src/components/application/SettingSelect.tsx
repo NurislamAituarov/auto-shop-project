@@ -36,7 +36,7 @@ const variantsChildren = {
 };
 
 export const SettingSelect = memo(function SettingSelect() {
-  const { listItems } = useAppSelector((state: any) => state.reducer);
+  const { listItems } = useAppSelector((state) => state.reducer);
 
   const [activeList, setActiveList] = useState('');
   const [state, setState] = useState(blockSelect);

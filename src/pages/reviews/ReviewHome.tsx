@@ -5,7 +5,7 @@ import { BlockItemReview } from './components/BlockItem';
 import s from './ReviewHome.module.scss';
 
 export default function ReviewHome() {
-  const reviewUser = useAppSelector((state: any) => state.reducer.reviewsUser);
+  const reviewUser = useAppSelector((state) => state.reducer.reviewsUser);
   const refBlocks = useRef<(HTMLDivElement | null)[]>([]);
 
   return (

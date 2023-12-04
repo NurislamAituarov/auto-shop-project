@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 
 import { Diagram, Heart, Search } from '../../svg';
 import { useAppSelector } from '../../../hooks/Hooks';
-import { IItemCar } from '../../../types';
 
 interface IHeaderSelectSVG {
   width?: number | string;
@@ -10,7 +9,7 @@ interface IHeaderSelectSVG {
 }
 
 export function HeaderSelectSVG({ width, height }: IHeaderSelectSVG) {
-  const listItems = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.listItems);
+  const listItems = useAppSelector((state) => state.reducer.listItems);
   const sumFilter = listItems.length && listItems.filter((el) => el.active !== 'false');
 
   return (

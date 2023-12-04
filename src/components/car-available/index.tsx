@@ -16,7 +16,7 @@ interface IProps {
 }
 
 export default function CarAvailable({ refCarAvailable }: IProps) {
-  const listItemHome = useAppSelector((state: any) => state.reducer.listItems);
+  const listItemHome = useAppSelector((state) => state.reducer.listItems);
   const [listItem, setListItem] = useState<Array<IItemCar>>(listItemHome);
   const dispatch = useDispatch();
 

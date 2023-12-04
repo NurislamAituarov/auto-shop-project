@@ -9,7 +9,7 @@ import { CompanyTitle } from '../../components/company-title';
 import { BlockItemReview } from './components/BlockItem';
 
 export default function Reviews() {
-  const reviewUser = useAppSelector((state: any) => state.reducer.reviewsUser);
+  const reviewUser = useAppSelector((state) => state.reducer.reviewsUser);
   const [state, setState] = useState<Array<IItem>>(reviewUser);
   const refBlocks = useRef<(HTMLDivElement | null)[]>([]);
 

@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { addPopUpBackCall } from '../../../redux/actions/action';
 import { useAppSelector } from '../../../hooks/Hooks';
 import { useValueValidate } from '../../../hooks/useValueValidate';
-import { IItemCar } from '../../../types';
 import { Button } from '../../../components/btn/Button';
 import { Input } from '../../../components/Input';
 import { Select } from '../../../components/select';
@@ -12,7 +11,7 @@ import { Select } from '../../../components/select';
 import s from './CreditCalculator.module.scss';
 
 export function CreditCalculator() {
-  const listItems = useAppSelector<Array<IItemCar>>((state: any) => state.reducer.listItems);
+  const listItems = useAppSelector((state) => state.reducer.listItems);
   const { valuePhone, setValuePhone, onChange } = useValueValidate();
   const [valueName, setValueName] = useState('');
   const refInput = useRef<HTMLInputElement | null>(null);

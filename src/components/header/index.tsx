@@ -25,7 +25,7 @@ export const listSelect: string[] = [
 ];
 
 const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHeader }: any) => {
-  const locationAddress = useAppSelector((state: any) => state.reducer.location);
+  const locationAddress = useAppSelector((state) => state.reducer.location);
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
   const dispatch = useDispatch();
