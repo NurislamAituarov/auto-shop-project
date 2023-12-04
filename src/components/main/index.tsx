@@ -12,7 +12,7 @@ const Application = lazy(() => import('../application/Application'));
 const WeAreTrusted = lazy(() => import('../we-are-trusted/WeAreTrusted'));
 const ReviewHome = lazy(() => import('../../pages/reviews/ReviewHome'));
 const AboutCompanyHome = lazy(() => import('../../pages/about-company/AboutCompanyHome'));
-const SimpleMap = lazy(() => import('../Maps'));
+const SimpleMap = lazy(() => import('../maps'));
 const Partners = lazy(() => import('../partners'));
 
 interface IProps {
