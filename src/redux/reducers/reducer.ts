@@ -1,4 +1,4 @@
-import { IAction, IInitialState } from '../../types';
+import { IInitialState } from '../../types';
 const reviewUser = [
   {
     name: 'Сергей Васильев',
@@ -41,7 +41,7 @@ const initialState: IInitialState = {
   location: '',
 };
 
-export default function render(state = initialState, action: IAction) {
+export default function render(state = initialState, action: any): IInitialState {
   switch (action.type) {
     case 'ADD_LIST_ITEM':
       return {
