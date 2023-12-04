@@ -7,7 +7,7 @@ import s from './Contacts.module.scss';
 import cn from 'classnames';
 
 import { CompanyTitle } from '../../components/company-title';
-import SimpleMap from '../../components/Maps';
+import SimpleMap from '../../components/maps';
 import { useAppSelector } from '../../hooks/Hooks';
 import { Phone } from '../../components/svg';
 import { address, company_img, road } from '../../assets';
