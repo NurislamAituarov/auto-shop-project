@@ -120,10 +120,11 @@
 
 @media screen and (max-width: 768px) {
   .section__slider {
-    max-width: 96%;
     height: 360px;
-    left: 15px;
+    max-width: 100%;
+    left: 0;
   }
+
   .wrapper__slider {
     width: 100%;
     .carousel.carousel-slider .control-arrow {
@@ -167,9 +168,6 @@
 }
 
 @media screen and (max-width: 414px) {
-  .section__slider {
-    max-width: 91.8%;
-  }
   .wrapper__slider {
     width: 100%;
     .carousel.carousel-slider .control-arrow {

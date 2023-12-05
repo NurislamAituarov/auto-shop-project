@@ -94,11 +94,13 @@
   }
 }
 @media screen and (max-width: 668px) {
+  .section {
+    padding: 0;
+  }
   .block__listCar {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 @media screen and (max-width: 478px) {
   .section {
     padding: 0;
