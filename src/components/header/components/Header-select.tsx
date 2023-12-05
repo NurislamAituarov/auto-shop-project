@@ -1,28 +1,22 @@
 import { useContext, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { myContext } from '../../app';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Down } from '../../svg';
+import { scrollContext } from '../../../lib/context';
 import '../HeaderSelect.scss';
 
 interface IHeaderSelect {
   title: string;
   setTrigger?: (v: boolean) => void;
   refInput?: any;
-  refCarAvailable?: any;
-  refSpecialOffers?: any;
-  refApplication?: any;
+  setActiveClass: (value: string) => void;
 }
 
-export function HeaderSelect({
-  title,
-  setTrigger,
-  refInput,
-  refCarAvailable,
-  refSpecialOffers,
-  refApplication,
-}: IHeaderSelect) {
+export function HeaderSelect({ title, setTrigger, refInput, setActiveClass }: IHeaderSelect) {
   const [size, setSize] = useState(false);
-  const context = useContext(myContext);
+  const scrollContextData = useContext(scrollContext);
+  const navigate = useNavigate();
+  const currentUrl = window.location;
+
   useEffect(() => {
     function onResize() {
       if (window.innerWidth <= 938) {
@@ -39,16 +33,35 @@ export function HeaderSelect({
   }, []);
 
   function createHref(title: string) {
-    switch (title) {
-      case 'Кредит и рассрочка':
-        return refApplication;
-      case 'Спецпредложения':
-        return refSpecialOffers;
-      case 'Авто с пробегом':
-        return refCarAvailable;
-      default:
-        return '';
+    if (currentUrl.hash.length > 2) {
+      navigate('/', { replace: false });
+      localStorage.setItem('active', 'Подбор авто');
+      setActiveClass('Подбор авто');
+      transitionFromAnotherPage(title);
+    } else {
+      if (scrollContextData) {
+        const { refCarAvailable, refSpecialOffers, refApplication, refQuickSelection } =
+          scrollContextData;
+        switch (title) {
+          case 'Каталог авто':
+            return refQuickSelection;
+          case 'Кредит и рассрочка':
+            return refApplication;
+          case 'Спецпредложения':
+            return refSpecialOffers;
+          case 'Авто с пробегом':
+            return refCarAvailable;
+          default:
+            return '';
+        }
+      }
     }
+  }
+
+  function transitionFromAnotherPage(title: string) {
+    setTimeout(() => {
+      scrollContextData?.scrollToSection(createHref(title));
+    }, 500);
   }
 
   function onClick() {
@@ -63,7 +76,7 @@ export function HeaderSelect({
       {title !== 'Такси в кредит' ? (
         <div className="header__select_item flex">
           {size && <Down />}
-          <h3 onClick={() => context(createHref(title))}>{title}</h3>
+          <h3 onClick={() => scrollContextData?.scrollToSection(createHref(title))}>{title}</h3>
           {!size && <Down />}
         </div>
       ) : (

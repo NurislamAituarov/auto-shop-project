@@ -13,19 +13,11 @@ import { addPopUpBackCall } from '../../redux/actions';
 interface IHeaderNav {
   listMenu: string[];
   size: string;
-  refCarAvailable: any;
-  refSpecialOffers: any;
-  refApplication: any;
+  setActiveClass: (value: string) => void;
+  activeClass: string;
 }
 
-export function HeaderNav({
-  listMenu,
-  size,
-  refCarAvailable,
-  refSpecialOffers,
-  refApplication,
-}: IHeaderNav) {
-  const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
+export function HeaderNav({ listMenu, size, activeClass, setActiveClass }: IHeaderNav) {
   const [trigger, setTrigger] = useState(false);
   const refPhone = useRef<HTMLParagraphElement>(null);
   const refHeaderNav = useRef<HTMLHeadingElement>(null);
@@ -45,9 +37,8 @@ export function HeaderNav({
         <Hamburger
           trigger={trigger}
           setTrigger={setTrigger}
-          refCarAvailable={refCarAvailable}
-          refSpecialOffers={refSpecialOffers}
-          refApplication={refApplication}
+          setActiveClass={setActiveClass}
+          activeClass={activeClass}
         />
         <hr id="hr" />
         <p className="header__nav_subtitle">

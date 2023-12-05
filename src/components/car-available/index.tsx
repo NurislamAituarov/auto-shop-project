@@ -1,5 +1,4 @@
-import s from './CarAvailable.module.scss';
-import { lazy, useEffect, useState } from 'react';
+import { MutableRefObject, lazy, useEffect, useState } from 'react';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useDispatch } from 'react-redux';
 
@@ -7,12 +6,13 @@ import { Button } from '../btn/Button';
 import { IItemCar } from '../../types';
 import { ReactContentLoader } from '../loader/ContentLoader';
 import { useAppSelector } from '../../hooks/Hooks';
+import s from './CarAvailable.module.scss';
 
 const ListItem = lazy(() => import('./ListItem'));
 let count = 0;
 
 interface IProps {
-  refCarAvailable: any;
+  refCarAvailable: MutableRefObject<HTMLDivElement | null>;
 }
 
 export default function CarAvailable({ refCarAvailable }: IProps) {
