@@ -4,14 +4,14 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useDispatch } from 'react-redux';
 
-import { addPriceCar } from '../../../../redux/actions/action';
 import { useDebounce } from '../../../../hooks/useDebounce';
-
+// import { addPriceCar } from '@/redux/actions';
+import { addPriceCar } from '../../../../redux/actions';
 function valuetext(value: number) {
   return `${value}°C`;
 }
 
-interface Imark {
+interface IMark {
   value: number;
   label: string;
 }
@@ -27,7 +27,7 @@ export const RangeSlider = React.memo(() => {
     dispatch(addPriceCar(newValue));
   };
 
-  const mark: Imark[] = [
+  const mark: IMark[] = [
     { value: 0, label: '0' },
     { value: 300000, label: '300т' },
     { value: 600000, label: '600т' },

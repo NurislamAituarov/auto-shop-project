@@ -5,7 +5,7 @@ import s from './Advantageous.module.scss';
 import { useAppSelector } from '../../../hooks/Hooks';
 import { Button } from '../../../components/btn/Button';
 import { useValueValidate } from '../../../hooks/useValueValidate';
-import { addPopUpBackCall } from '../../../redux/actions/action';
+import { addPopUpBackCall } from '../../../redux/actions';
 import { Select } from '../../../components/select';
 import { Input } from '../../../components/Input';
 import { fon3 } from '../../../assets';

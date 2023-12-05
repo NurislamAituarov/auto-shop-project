@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addPopUpBackCall } from '../../../redux/actions/action';
+import { addPopUpBackCall } from '../../../redux/actions';
 import { useAppSelector } from '../../../hooks/Hooks';
 import { useValueValidate } from '../../../hooks/useValueValidate';
 import { Button } from '../../../components/btn/Button';

@@ -7,7 +7,7 @@ import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/Header-select';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../back-call/BackCall';
-import { addListItem, location } from '../../redux/actions/action';
+import { addListItem, location } from '../../redux/actions';
 import { useAppSelector } from '../../hooks/Hooks';
 
 const text: string[] = [

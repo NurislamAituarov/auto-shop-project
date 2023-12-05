@@ -10,7 +10,7 @@ import { SpecialOffers } from '../special-offers/SpecialOffers';
 import { OurSelection } from '../our-selection/OurSelection';
 import { sum1, sum2 } from '../../hooks/useCustomCounter';
 import { onNext, onPrev } from '../../hooks/direction';
-import { addPopUpBackCall } from '../../redux/actions/action';
+import { addPopUpBackCall } from '../../redux/actions';
 import { useValueValidate } from '../../hooks/useValueValidate';
 import { Input } from '../Input';
 import { ellipse, wing } from '../../assets';

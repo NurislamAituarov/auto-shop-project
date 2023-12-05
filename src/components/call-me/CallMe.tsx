@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
 
 import s from './CallMe.module.scss';
-import { addPopUpBackCall } from '../../redux/actions/action';
+import { addPopUpBackCall } from '../../redux/actions';
 import { useAppSelector } from '../../hooks/Hooks';
 
 export default function CallMe() {
