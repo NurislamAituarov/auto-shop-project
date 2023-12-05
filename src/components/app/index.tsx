@@ -1,6 +1,6 @@
 import './App.css';
 import Header from '../header';
-import { createContext, lazy, Suspense, useRef } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import { Spinner } from '../loader/Spinner';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/Hooks';
@@ -8,6 +8,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Up } from '../up';
 import Main from '../main';
 import ErrorBoundary from '../error-boundary/ErrorBoundary';
+import { scrollToSection, scrollContext } from '../../lib/context';
 
 const AboutCompany = lazy(() => import('../../pages/about-company/AboutCompany'));
 const TechnicalCenter = lazy(() => import('../../pages/technical-center/TechnicalCenter'));
@@ -22,21 +23,14 @@ const Footer = lazy(() => import('../footer'));
 const CallMe = lazy(() => import('../call-me/CallMe'));
 const Taxi = lazy(() => import('../../pages/taxi'));
 
-const scrollToSection = (elementRef: any) => {
-  window.scrollTo({
-    top: elementRef?.current.offsetTop,
-    behavior: 'smooth',
-  });
-};
-export const myContext = createContext(scrollToSection);
-
 function App() {
-  const popUpBlock = useAppSelector((state: any) => state.reducer.popUpBackCall);
-  const { brandList } = useAppSelector((state: any) => state.reducer);
-  const refCarAvailable = useRef<any>(null);
-  const refSpecialOffers = useRef<any>(null);
-  const refApplication = useRef<any>(null);
-  const refHeader = useRef<any>(null);
+  const popUpBlock = useAppSelector((state) => state.reducer.popUpBackCall);
+  const { brandList } = useAppSelector((state) => state.reducer);
+  const refCarAvailable = useRef<HTMLDivElement>(null);
+  const refSpecialOffers = useRef<HTMLDivElement>(null);
+  const refApplication = useRef<HTMLDivElement>(null);
+  const refQuickSelection = useRef<HTMLDivElement>(null);
+  const refHeader = useRef<HTMLDivElement>(null);
 
   return (
     <HelmetProvider>
@@ -44,14 +38,22 @@ function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Helmet>
-      <myContext.Provider value={scrollToSection}>
+      <scrollContext.Provider
+        value={{
+          scrollToSection,
+          refCarAvailable,
+          refSpecialOffers,
+          refApplication,
+          refQuickSelection,
+        }}>
         <Header
           refCarAvailable={refCarAvailable}
           refSpecialOffers={refSpecialOffers}
           refApplication={refApplication}
+          refQuickSelection={refQuickSelection}
           refHeader={refHeader}
         />
-      </myContext.Provider>
+      </scrollContext.Provider>
       <div className="wrapper">
         <Suspense fallback={<Spinner />}>
           <Routes>
@@ -63,6 +65,7 @@ function App() {
                     refCarAvailable={refCarAvailable}
                     refSpecialOffers={refSpecialOffers}
                     refApplication={refApplication}
+                    refQuickSelection={refQuickSelection}
                   />
                 }
               />
@@ -91,7 +94,7 @@ function App() {
           {popUpBlock === 'a discount' && (
             <BasicModal
               popUpBlock={popUpBlock}
-              title={['Зафиксировать скидку до 300 000 ₽', `на автомобиль ${brandList.name_car}`]}
+              title={['Зафиксировать скидку до 300 000 ₽', `на автомобиль ${brandList?.name_car}`]}
               button="Отправить"
             />
           )}

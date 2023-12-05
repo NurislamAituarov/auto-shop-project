@@ -9,23 +9,17 @@ import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../back-call/BackCall';
 import { addListItem, location } from '../../redux/actions';
 import { useAppSelector } from '../../hooks/Hooks';
+import { carOptions, listMenu } from '../../lib/constants';
 
 const text: string[] = [
   'Страна, Город, 38КМ МКАД, 6Бс1',
   'Время работы: c 08:00 до 21:00',
   'Whatsapp',
 ];
-export const listMenu: string[] = ['Подбор авто', 'О компании', 'Техцентр', 'Отзывы', 'Контакты'];
-export const listSelect: string[] = [
-  'Каталог авто',
-  'Авто с пробегом',
-  'Кредит и рассрочка',
-  'Спецпредложения',
-  'Такси в кредит',
-];
 
-const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHeader }: any) => {
+const Header = memo(({ refHeader }: any) => {
   const locationAddress = useAppSelector((state) => state.reducer.location);
+  const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
   const dispatch = useDispatch();
@@ -69,22 +63,13 @@ const Header = memo(({ refCarAvailable, refSpecialOffers, refApplication, refHea
       <HeaderNav
         listMenu={listMenu}
         size={size}
-        refCarAvailable={refCarAvailable}
-        refSpecialOffers={refSpecialOffers}
-        refApplication={refApplication}
+        setActiveClass={setActiveClass}
+        activeClass={activeClass}
       />
 
       <div className="header__select flex">
-        {listSelect.map((el, i) => {
-          return (
-            <HeaderSelect
-              key={i}
-              title={el}
-              refCarAvailable={refCarAvailable}
-              refSpecialOffers={refSpecialOffers}
-              refApplication={refApplication}
-            />
-          );
+        {carOptions.map((el, i) => {
+          return <HeaderSelect key={i} title={el} setActiveClass={setActiveClass} />;
         })}
         <HeaderSelectSVG />
       </div>

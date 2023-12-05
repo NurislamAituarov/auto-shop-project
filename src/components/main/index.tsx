@@ -19,9 +19,10 @@ interface IProps {
   refCarAvailable: any;
   refSpecialOffers: any;
   refApplication: any;
+  refQuickSelection: any;
 }
 
-const Main = ({ refCarAvailable, refSpecialOffers, refApplication }: IProps) => {
+const Main = ({ refCarAvailable, refSpecialOffers, refApplication, refQuickSelection }: IProps) => {
   return (
     <main className={s.main}>
       <Helmet>
@@ -34,13 +35,12 @@ const Main = ({ refCarAvailable, refSpecialOffers, refApplication }: IProps) => 
         </Suspense>
       </section>
       <Suspense fallback={<></>}>
-        <QuickSelection />
+        <QuickSelection refQuickSelection={refQuickSelection} />
       </Suspense>
 
       <Suspense fallback={<ReactContentLoader />}>
         <CarAvailable refCarAvailable={refCarAvailable} />
       </Suspense>
-
       <Suspense fallback={<></>}>
         <SectionSelect refSpecialOffers={refSpecialOffers} />
       </Suspense>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { HeaderSelect } from '../header/components/Header-select';
 import { NavList } from '../header/components/NavList';
 import { Logo } from '../svg';
-import { listMenu, listSelect } from '../header';
+import { listMenu, carOptions } from '../../lib/constants';
 import { Contacts } from '../footer/Contacts';
 
 import './Hamburger.scss';
@@ -13,19 +13,11 @@ import '../header/Header.scss';
 interface IProps {
   trigger: boolean;
   setTrigger: (value: boolean) => void;
-  refCarAvailable: any;
-  refSpecialOffers: any;
-  refApplication: any;
+  setActiveClass: (value: string) => void;
+  activeClass: string;
 }
 
-export function Hamburger({
-  trigger,
-  setTrigger,
-  refCarAvailable,
-  refSpecialOffers,
-  refApplication,
-}: IProps) {
-  const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
+export function Hamburger({ trigger, setTrigger, setActiveClass, activeClass }: IProps) {
   const [size, setSize] = useState(false);
   const refLabel = useRef<HTMLLabelElement>(null);
   const refInput = useRef<HTMLInputElement>(null);
@@ -89,16 +81,14 @@ export function Hamburger({
           initial={'hidden'}
           animate={trigger ? 'visible' : 'hidden'}
           className="showMenu">
-          {listSelect.map((el, i) => {
+          {carOptions.map((el, i) => {
             return (
               <motion.div key={i} variants={variantsChildren}>
                 <HeaderSelect
                   title={el}
                   setTrigger={setTrigger}
                   refInput={refInput}
-                  refCarAvailable={refCarAvailable}
-                  refSpecialOffers={refSpecialOffers}
-                  refApplication={refApplication}
+                  setActiveClass={setActiveClass}
                 />
               </motion.div>
             );

@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import s from './QuickSelection.module.scss';
 
@@ -11,18 +11,16 @@ import PositionedTooltips from './components/Tooltip';
 import { IListCarr } from '../../types';
 import { RangeSlider } from './components/Slider';
 import { listCarr } from './list-car';
+import { itemsTransmissionCar, itemsTypeCar } from '../../lib/constants';
 
-export default function QuickSelection() {
+interface Props {
+  refQuickSelection: any;
+}
+
+export default function QuickSelection({ refQuickSelection }: Props) {
   const price = useAppSelector((state) => state.reducer.priceCar);
-  const [numCar, setNumCar] = useState<number>(0);
+  const [numCar, setNumCar] = useState(0);
   const [listCarrArr, setListCarrArr] = useState<IListCarr[]>();
-
-  const itemsTypeCar = useMemo(() => {
-    return ['Седан', 'Хэтчбек', 'Универсал'];
-  }, []);
-  const itemsTransmissionCar = useMemo(() => {
-    return ['Автомат', 'Механическая'];
-  }, []);
 
   useEffect(() => {
     setListCarrArr(listCarr);
@@ -39,13 +37,13 @@ export default function QuickSelection() {
       return item.price < price[1] && item.price > price[0];
     });
   }
-  function showCars(item: string) {
+  function showCars() {
     setListCarrArr(filterListCar());
   }
 
   let string = `Показать ${numCar}`;
   return (
-    <section className={cn(s.section)}>
+    <section ref={refQuickSelection} className={cn(s.section)}>
       <div className={s.block__listCar}>
         {listCarrArr &&
           listCarrArr.map((el, i) => {
@@ -63,7 +61,7 @@ export default function QuickSelection() {
         <div className={s.block__selects_wrapper}>
           <Selected title="Тип кузова" items={itemsTypeCar} />
           <Selected title="Коробка" items={itemsTransmissionCar} />
-          <Button size="big" title={string} click={() => showCars('show')} />
+          <Button size="big" title={string} click={showCars} />
         </div>
       </div>
     </section>
