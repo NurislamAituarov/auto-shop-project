@@ -94,10 +94,6 @@
   .section {
     padding: 0 5px;
   }
-  .trusted__maps {
-    padding: 0 30px;
-    grid-column-gap: 15px;
-  }
   .trusted__map_item {
     padding: 20px;
     .trusted__map_name {
@@ -131,7 +127,14 @@
     padding: 0 15px;
     margin-top: 0px;
     margin-bottom: 40px;
+    padding: 0;
   }
 }
 @media screen and (max-width: 414px) {
+  .section {
+    padding: 0;
+  }
+  .wrapper {
+    padding: 20px 10px;
+  }
 }

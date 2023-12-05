@@ -79,7 +79,7 @@
 @media screen and (max-width: 768px) {
   .section {
     text-align: start;
-    padding: 0 30px;
+    padding: 0;
     margin-bottom: 40px;
     h2 {
       font-size: 30px;
@@ -112,9 +112,6 @@
 }
 
 @media screen and (max-width: 414px) {
-  .section {
-    padding: 0 15px;
-  }
   .direction {
     div {
       width: 100%;
