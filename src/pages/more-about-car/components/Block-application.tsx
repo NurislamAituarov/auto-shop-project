@@ -1,7 +1,7 @@
 import { Slider } from '@mui/material';
 import { memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addPopUpBackCall } from '../../../redux/actions/action';
+import { addPopUpBackCall } from '../../../redux/actions';
 
 import { Button } from '../../../components/btn/Button';
 import s from './components.module.scss';

@@ -6,7 +6,7 @@ import { memo, useEffect, useRef, useState } from 'react';
 
 import { Down } from '../svg';
 import { IItemCar } from '../../types';
-import { addBrandItem } from '../../redux/actions/action';
+import { addBrandItem } from '../../redux/actions';
 import { useAppSelector } from '../../hooks/Hooks';
 
 export interface IItem {

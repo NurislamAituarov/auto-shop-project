@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addPopUpBackCall } from '../../../redux/actions/action';
+import { addPopUpBackCall } from '../../../redux/actions';
 import { useValueValidate } from '../../../hooks/useValueValidate';
 import { IItemCar } from '../../../types';
 import { Button } from '../../btn/Button';

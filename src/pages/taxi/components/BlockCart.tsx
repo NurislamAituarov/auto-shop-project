@@ -5,7 +5,7 @@ import s from './BlockCart.module.scss';
 import { Tag } from '../../../components/tag';
 import { Input } from '../../../components/Input';
 import { Button } from '../../../components/btn/Button';
-import { addPopUpBackCall } from '../../../redux/actions/action';
+import { addPopUpBackCall } from '../../../redux/actions';
 import { useValueValidate } from '../../../hooks/useValueValidate';
 import { svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9 } from '../../../assets';
 

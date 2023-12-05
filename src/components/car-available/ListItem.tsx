@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 import { IItemCar } from '../../types';
 import { Diagram, Heart } from '../svg';
-import { addCar } from '../../redux/actions/action';
+import { addCar } from '../../redux/actions';
 import { car_skeleton, gift, petrol, power, sec, speed } from '../../assets';
 
 interface IListItem {

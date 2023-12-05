@@ -3,7 +3,7 @@ import Modal from '@mui/material/Modal';
 import { useDispatch } from 'react-redux';
 import s from './PopUpBackCall.module.scss';
 
-import { addPopUpBackCall } from '../../redux/actions/action';
+import { addPopUpBackCall } from '../../redux/actions';
 import { Button } from '../btn/Button';
 import { useAppSelector } from '../../hooks/Hooks';
 import { PopUpForm } from './components/PopUpForm';

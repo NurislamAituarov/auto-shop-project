@@ -8,7 +8,7 @@ import { Button } from '../btn/Button';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { Tag } from '../tag';
 import { NavList } from './components/NavList';
-import { addPopUpBackCall } from '../../redux/actions/action';
+import { addPopUpBackCall } from '../../redux/actions';
 
 interface IHeaderNav {
   listMenu: string[];

@@ -6,7 +6,7 @@ import { IItemCar } from '../../types';
 import s from './MoreAboutCar.module.scss';
 
 import { getCarItem } from '../../api/client';
-import { addCar } from '../../redux/actions/action';
+import { addCar } from '../../redux/actions';
 import { Button } from '../../components/btn/Button';
 import { BlockApplication } from './components/Block-application';
 import { Advantageous } from './components/Advantageous';
