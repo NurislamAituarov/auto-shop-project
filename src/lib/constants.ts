@@ -1,4 +1,10 @@
-export const listMenu: string[] = ['Подбор авто', 'О компании', 'Техцентр', 'Отзывы', 'Контакты'];
+export const navMenuItems: string[] = [
+  'Подбор авто',
+  'О компании',
+  'Техцентр',
+  'Отзывы',
+  'Контакты',
+];
 export const carOptions: string[] = [
   'Каталог авто',
   'Авто с пробегом',

@@ -10,17 +10,10 @@ interface IHeaderSelect {
   title: string;
   setTrigger?: (v: boolean) => void;
   refInput?: any;
-  setActiveClass: (value: string) => void;
   setIsOpenMenu: (value: boolean) => void;
 }
 
-export function HeaderSelect({
-  title,
-  setTrigger,
-  refInput,
-  setActiveClass,
-  setIsOpenMenu,
-}: IHeaderSelect) {
+export function HeaderSelect({ title, setTrigger, refInput, setIsOpenMenu }: IHeaderSelect) {
   const [size, setSize] = useState(false);
   const scrollContextData = useContext(scrollContext);
   const navigate = useNavigate();
@@ -41,9 +34,7 @@ export function HeaderSelect({
   }, []);
 
   function followTheAnchor() {
-    scrollContextData?.scrollToSection(
-      createHref(title, navigate, scrollContextData, setActiveClass),
-    );
+    scrollContextData?.scrollToSection(createHref(title, navigate, scrollContextData));
   }
 
   function openPage() {

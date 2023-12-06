@@ -9,9 +9,9 @@ import { Button } from '../btn/Button';
 import { Phone } from '../svg';
 import { Tag } from '../tag';
 import { addPopUpBackCall } from '../../redux/actions';
+import { navMenuItems } from '../../lib/constants';
 
 interface IHeaderNav {
-  listMenu: string[];
   size: string;
   setActiveClass: (value: string) => void;
   activeClass: string;
@@ -20,7 +20,6 @@ interface IHeaderNav {
 }
 
 export function HeaderNav({
-  listMenu,
   size,
   activeClass,
   setActiveClass,
@@ -55,7 +54,7 @@ export function HeaderNav({
         </p>
         <nav className="nav">
           <ul className="flex">
-            {listMenu.map((el, i) => {
+            {navMenuItems.map((el, i) => {
               return (
                 <NavList
                   key={i}

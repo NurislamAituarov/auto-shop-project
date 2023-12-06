@@ -15,7 +15,7 @@ export const addPopUpBackCall = (value: string) => ({ type: 'POP_UP_BACK_CALL', 
 export const addBrandItem = (item: IItemCar) => ({ type: 'ADD_BRAND', payload: item });
 
 export const addLocation = (value: string) => ({ type: 'ADD_LOCATION', payload: value });
-export const location = () => (dispatch: Dispatch) => {
+export const fetchUserLocation = () => (dispatch: Dispatch) => {
   try {
     const successfulLookup = (position: any) => {
       const { latitude, longitude } = position.coords;
