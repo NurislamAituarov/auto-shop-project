@@ -1,19 +1,11 @@
 const currentUrl = window.location;
 
-export function createHref(
-  title: string,
-  navigate: any,
-  scrollContextData: any,
-  setActiveClass?: any,
-) {
+export function createHref(title: string, navigate: any, scrollContextData: any) {
   if (currentUrl.hash.length > 2) {
     navigate('/', { replace: false });
     localStorage.setItem('active', 'Подбор авто');
-    setActiveClass('Подбор авто');
     setTimeout(() => {
-      scrollContextData?.scrollToSection(
-        createHref(title, navigate, scrollContextData, setActiveClass),
-      );
+      scrollContextData?.scrollToSection(createHref(title, navigate, scrollContextData));
     }, 500);
   } else {
     if (scrollContextData) {

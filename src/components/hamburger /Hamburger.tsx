@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { HeaderSelect } from '../header/components/HeaderSelect';
 import { NavList } from '../header/components/NavList';
 import { Logo } from '../svg';
-import { listMenu, carOptions } from '../../lib/constants';
+import { navMenuItems, carOptions } from '../../lib/constants';
 import { Contacts } from '../footer/Contacts';
 
 import './Hamburger.scss';
@@ -95,13 +95,12 @@ export function Hamburger({
                   title={el}
                   setTrigger={setTrigger}
                   refInput={refInput}
-                  setActiveClass={setActiveClass}
                   setIsOpenMenu={setIsOpenMenu}
                 />
               </motion.div>
             );
           })}
-          {listMenu.map((el, i) => {
+          {navMenuItems.map((el, i) => {
             return (
               <motion.div key={i} variants={variantsChildren}>
                 <NavList

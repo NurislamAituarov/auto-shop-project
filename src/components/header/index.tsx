@@ -7,9 +7,10 @@ import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/HeaderSelect';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../back-call/BackCall';
-import { addListItem, location } from '../../redux/actions';
+import { addListItem, fetchUserLocation } from '../../redux/actions';
 import { useAppSelector } from '../../hooks/Hooks';
-import { carOptions, listMenu } from '../../lib/constants';
+import { carOptions, navMenuItems } from '../../lib/constants';
+import { useLocation } from 'react-router-dom';
 
 const text: string[] = [
   'Страна, Город, 38КМ МКАД, 6Бс1',
@@ -24,9 +25,19 @@ const Header = memo(({ refHeader }: any) => {
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
-    // dispatch(location());
+    if (location.pathname.length <= 2) {
+      setActiveClass('Подбор авто');
+    }
+
+    const regex = /\btaxi\b/;
+    if (regex.test(location.pathname)) setActiveClass('');
+  }, [location]);
+
+  useEffect(() => {
+    // dispatch(fetchUserLocation());
     dispatch(addListItem());
 
     function onResize() {
@@ -62,7 +73,6 @@ const Header = memo(({ refHeader }: any) => {
       </div>
 
       <HeaderNav
-        listMenu={listMenu}
         size={size}
         setActiveClass={setActiveClass}
         activeClass={activeClass}
@@ -72,14 +82,7 @@ const Header = memo(({ refHeader }: any) => {
 
       <div className="header__select flex">
         {carOptions.map((el, i) => {
-          return (
-            <HeaderSelect
-              key={i}
-              title={el}
-              setActiveClass={setActiveClass}
-              setIsOpenMenu={setIsOpenMenu}
-            />
-          );
+          return <HeaderSelect key={i} title={el} setIsOpenMenu={setIsOpenMenu} />;
         })}
         <HeaderSelectSVG />
       </div>
