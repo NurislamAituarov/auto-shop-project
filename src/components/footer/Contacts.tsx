@@ -14,7 +14,7 @@ export function Contacts() {
   }, []);
 
   return (
-    <div className={s.footer__catalog_contacts}>
+    <div className={s.catalog_contacts}>
       <h4>Контакты</h4>
       <div className={s.contact__phone}>
         <div>

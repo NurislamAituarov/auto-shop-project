@@ -9,9 +9,16 @@ interface IHeaderSelect {
   setTrigger?: (v: boolean) => void;
   refInput?: any;
   setActiveClass: (value: string) => void;
+  setIsOpenMenu: (value: boolean) => void;
 }
 
-export function HeaderSelect({ title, setTrigger, refInput, setActiveClass }: IHeaderSelect) {
+export function HeaderSelect({
+  title,
+  setTrigger,
+  refInput,
+  setActiveClass,
+  setIsOpenMenu,
+}: IHeaderSelect) {
   const [size, setSize] = useState(false);
   const scrollContextData = useContext(scrollContext);
   const navigate = useNavigate();
@@ -33,6 +40,10 @@ export function HeaderSelect({ title, setTrigger, refInput, setActiveClass }: IH
   }, []);
 
   function createHref(title: string) {
+    setTimeout(() => {
+      setIsOpenMenu(false);
+    }, 1000);
+
     if (currentUrl.hash.length > 2) {
       navigate('/', { replace: false });
       localStorage.setItem('active', 'Подбор авто');
@@ -64,7 +75,14 @@ export function HeaderSelect({ title, setTrigger, refInput, setActiveClass }: IH
     }, 500);
   }
 
-  function onClick() {
+  function followTheAnchor() {
+    scrollContextData?.scrollToSection(createHref(title));
+    if (refInput) {
+      refInput.current.checked = false;
+    }
+  }
+
+  function openPage() {
     setTrigger && setTrigger(false);
     if (refInput) {
       refInput.current.checked = false;
@@ -76,13 +94,13 @@ export function HeaderSelect({ title, setTrigger, refInput, setActiveClass }: IH
       {title !== 'Такси в кредит' ? (
         <div className="header__select_item flex">
           {size && <Down />}
-          <h3 onClick={() => scrollContextData?.scrollToSection(createHref(title))}>{title}</h3>
+          <h3 onClick={followTheAnchor}>{title}</h3>
           {!size && <Down />}
         </div>
       ) : (
         <div className="header__select_item header__select_link flex">
           <NavLink to="/taxi">
-            <h3 onClick={onClick}>{title}</h3>
+            <h3 onClick={openPage}>{title}</h3>
           </NavLink>
         </div>
       )}

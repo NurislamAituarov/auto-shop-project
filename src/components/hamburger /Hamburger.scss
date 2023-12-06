@@ -6,7 +6,7 @@
 
 .shoMenu_info {
   width: 100%;
-  height: 222px;
+  height: auto;
   background-color: var(--lite-grey);
   border-radius: 25px;
   margin-top: 20px;
@@ -32,7 +32,7 @@
     position: absolute;
     z-index: 10;
     left: 0;
-    bottom: -570px;
+    bottom: -670px;
     width: 94%;
     margin-left: 20px;
     .header__select_item {
@@ -52,10 +52,8 @@
 @media screen and (max-width: 414px) {
   .showMenu {
     width: 100%;
-    bottom: -540px;
+    bottom: -640px;
     padding: 0 15px;
-    // left: 50%;
-    // transform: translate(-50%);
     margin: 0;
     .header__select_item {
       margin-bottom: 0px;
