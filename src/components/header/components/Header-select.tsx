@@ -40,10 +40,6 @@ export function HeaderSelect({
   }, []);
 
   function createHref(title: string) {
-    setTimeout(() => {
-      setIsOpenMenu(false);
-    }, 1000);
-
     if (currentUrl.hash.length > 2) {
       navigate('/', { replace: false });
       localStorage.setItem('active', 'Подбор авто');
@@ -77,9 +73,6 @@ export function HeaderSelect({
 
   function followTheAnchor() {
     scrollContextData?.scrollToSection(createHref(title));
-    if (refInput) {
-      refInput.current.checked = false;
-    }
   }
 
   function openPage() {
