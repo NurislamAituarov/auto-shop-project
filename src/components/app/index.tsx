@@ -115,7 +115,16 @@ function App() {
         </Suspense>
       </div>
       <Suspense fallback={<></>}>
-        <Footer />
+        <scrollContext.Provider
+          value={{
+            scrollToSection,
+            refCarAvailable,
+            refSpecialOffers,
+            refApplication,
+            refQuickSelection,
+          }}>
+          <Footer />
+        </scrollContext.Provider>
       </Suspense>
 
       <Suspense fallback={<></>}>

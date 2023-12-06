@@ -1,13 +1,13 @@
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import s from './Taxi.module.scss';
 
 import { Down } from '../../components/svg';
-
 import { BlockCart } from './components/BlockCart';
 import { MadeMoney } from './components/MadeMoney';
 import { CreditCalculator } from './components/CreditCalculator';
 import { taxi } from '../../assets';
+import s from './Taxi.module.scss';
 
 const additional = [
   'Льготный автокредит от 1,9%',
@@ -17,6 +17,10 @@ const additional = [
 ];
 
 export default function Taxi() {
+  useEffect(() => {
+    document.body.scrollIntoView();
+  }, []);
+
   return (
     <section className={s.section__taxi}>
       <div className={s.banner__wrapper}>

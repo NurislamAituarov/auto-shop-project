@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { HeaderSelect } from '../header/components/Header-select';
+import { HeaderSelect } from '../header/components/HeaderSelect';
 import { NavList } from '../header/components/NavList';
 import { Logo } from '../svg';
 import { listMenu, carOptions } from '../../lib/constants';
