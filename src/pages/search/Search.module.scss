@@ -84,6 +84,9 @@
 }
 
 @media screen and (max-width: 378px) {
+  .section {
+    padding: 0;
+  }
   .search__wrapper {
     svg {
       margin-right: 15px;
