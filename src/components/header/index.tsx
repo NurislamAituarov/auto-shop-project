@@ -19,6 +19,7 @@ const text: string[] = [
 
 const Header = memo(({ refHeader }: any) => {
   const locationAddress = useAppSelector((state) => state.reducer.location);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [activeClass, setActiveClass] = useState(localStorage.getItem('active') || 'Подбор авто');
   const [size, setSize] = useState('desktop');
   const [arrTitle, setArrTitle] = useState(text);
@@ -65,11 +66,20 @@ const Header = memo(({ refHeader }: any) => {
         size={size}
         setActiveClass={setActiveClass}
         activeClass={activeClass}
+        isOpenMenu={isOpenMenu}
+        setIsOpenMenu={setIsOpenMenu}
       />
 
       <div className="header__select flex">
         {carOptions.map((el, i) => {
-          return <HeaderSelect key={i} title={el} setActiveClass={setActiveClass} />;
+          return (
+            <HeaderSelect
+              key={i}
+              title={el}
+              setActiveClass={setActiveClass}
+              setIsOpenMenu={setIsOpenMenu}
+            />
+          );
         })}
         <HeaderSelectSVG />
       </div>

@@ -14,10 +14,17 @@ interface IProps {
   trigger: boolean;
   setTrigger: (value: boolean) => void;
   setActiveClass: (value: string) => void;
+  setIsOpenMenu: (value: boolean) => void;
   activeClass: string;
 }
 
-export function Hamburger({ trigger, setTrigger, setActiveClass, activeClass }: IProps) {
+export function Hamburger({
+  trigger,
+  setTrigger,
+  setActiveClass,
+  activeClass,
+  setIsOpenMenu,
+}: IProps) {
   const [size, setSize] = useState(false);
   const refLabel = useRef<HTMLLabelElement>(null);
   const refInput = useRef<HTMLInputElement>(null);
@@ -89,6 +96,7 @@ export function Hamburger({ trigger, setTrigger, setActiveClass, activeClass }: 
                   setTrigger={setTrigger}
                   refInput={refInput}
                   setActiveClass={setActiveClass}
+                  setIsOpenMenu={setIsOpenMenu}
                 />
               </motion.div>
             );

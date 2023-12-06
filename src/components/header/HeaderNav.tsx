@@ -1,13 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import cn from 'classnames';
 import { useDispatch } from 'react-redux';
 
-import { Hamburger } from '../hamburger /Hamburger';
-import { Phone } from '../svg';
-import { Button } from '../btn/Button';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
-import { Tag } from '../tag';
 import { NavList } from './components/NavList';
+import { Hamburger } from '../hamburger /Hamburger';
+import { Button } from '../btn/Button';
+import { Phone } from '../svg';
+import { Tag } from '../tag';
 import { addPopUpBackCall } from '../../redux/actions';
 
 interface IHeaderNav {
@@ -15,10 +15,18 @@ interface IHeaderNav {
   size: string;
   setActiveClass: (value: string) => void;
   activeClass: string;
+  setIsOpenMenu: (value: boolean) => void;
+  isOpenMenu: boolean;
 }
 
-export function HeaderNav({ listMenu, size, activeClass, setActiveClass }: IHeaderNav) {
-  const [trigger, setTrigger] = useState(false);
+export function HeaderNav({
+  listMenu,
+  size,
+  activeClass,
+  setActiveClass,
+  setIsOpenMenu,
+  isOpenMenu,
+}: IHeaderNav) {
   const refPhone = useRef<HTMLParagraphElement>(null);
   const refHeaderNav = useRef<HTMLHeadingElement>(null);
   const dispatch = useDispatch();
@@ -33,12 +41,13 @@ export function HeaderNav({ listMenu, size, activeClass, setActiveClass }: IHead
 
   return (
     <>
-      <div ref={refHeaderNav} className={cn('header__nav flex ', { trigger: trigger })}>
+      <div ref={refHeaderNav} className={cn('header__nav flex ', { trigger: isOpenMenu })}>
         <Hamburger
-          trigger={trigger}
-          setTrigger={setTrigger}
+          trigger={isOpenMenu}
+          setTrigger={setIsOpenMenu}
           setActiveClass={setActiveClass}
           activeClass={activeClass}
+          setIsOpenMenu={setIsOpenMenu}
         />
         <hr id="hr" />
         <p className="header__nav_subtitle">
@@ -53,7 +62,7 @@ export function HeaderNav({ listMenu, size, activeClass, setActiveClass }: IHead
                   el={el}
                   activeClass={activeClass}
                   setActiveClass={setActiveClass}
-                  setTrigger={setTrigger}
+                  setTrigger={setIsOpenMenu}
                 />
               );
             })}
