@@ -4,7 +4,7 @@ import './Header.scss';
 
 import { TitleInfo } from './components/TitleInfo';
 import { HeaderNav } from './HeaderNav';
-import { HeaderSelect } from './components/Header-select';
+import { HeaderSelect } from './components/HeaderSelect';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../back-call/BackCall';
 import { addListItem, location } from '../../redux/actions';

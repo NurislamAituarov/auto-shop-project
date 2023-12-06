@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+
 import { Down } from '../../svg';
 import { scrollContext } from '../../../lib/context';
+import { createHref } from '../../../lib/helpers';
 import '../HeaderSelect.scss';
 
 interface IHeaderSelect {
@@ -22,7 +24,6 @@ export function HeaderSelect({
   const [size, setSize] = useState(false);
   const scrollContextData = useContext(scrollContext);
   const navigate = useNavigate();
-  const currentUrl = window.location;
 
   useEffect(() => {
     function onResize() {
@@ -39,40 +40,10 @@ export function HeaderSelect({
     };
   }, []);
 
-  function createHref(title: string) {
-    if (currentUrl.hash.length > 2) {
-      navigate('/', { replace: false });
-      localStorage.setItem('active', 'Подбор авто');
-      setActiveClass('Подбор авто');
-      transitionFromAnotherPage(title);
-    } else {
-      if (scrollContextData) {
-        const { refCarAvailable, refSpecialOffers, refApplication, refQuickSelection } =
-          scrollContextData;
-        switch (title) {
-          case 'Каталог авто':
-            return refQuickSelection;
-          case 'Кредит и рассрочка':
-            return refApplication;
-          case 'Спецпредложения':
-            return refSpecialOffers;
-          case 'Авто с пробегом':
-            return refCarAvailable;
-          default:
-            return '';
-        }
-      }
-    }
-  }
-
-  function transitionFromAnotherPage(title: string) {
-    setTimeout(() => {
-      scrollContextData?.scrollToSection(createHref(title));
-    }, 500);
-  }
-
   function followTheAnchor() {
-    scrollContextData?.scrollToSection(createHref(title));
+    scrollContextData?.scrollToSection(
+      createHref(title, navigate, scrollContextData, setActiveClass),
+    );
   }
 
   function openPage() {

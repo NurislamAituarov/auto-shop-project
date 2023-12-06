@@ -1,24 +1,37 @@
-import s from './Footer.module.scss';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { listCarr } from '../quick-selection/list-car';
 
 import { Contacts } from './Contacts';
 import { rating_all } from '../../assets';
-
-const navMenu = [
-  'Каталог авто',
-  'Авто с пробегом',
-  'Кредит и рассрочка',
-  'Спецпредложения',
-  'Такси в кредит',
-];
+import { carOptions } from '../../lib/constants';
+import { scrollContext } from '../../lib/context';
+import { createHref } from '../../lib/helpers';
+import s from './Footer.module.scss';
 
 export default function Footer() {
+  const scrollContextData = useContext(scrollContext);
+  const navigate = useNavigate();
+
+  function followTheAnchor(title: string) {
+    if (title === 'Такси в кредит') {
+      navigate('/taxi', { replace: false });
+      return;
+    }
+
+    scrollContextData?.scrollToSection(createHref(title, navigate, scrollContextData));
+  }
+
   return (
     <footer className={s.container}>
       <div className={s.wrapper}>
         <nav className={s.footer__nav}>
-          {navMenu.map((el) => {
-            return <div key={el}>{el}</div>;
+          {carOptions.map((el) => {
+            return (
+              <div onClick={() => followTheAnchor(el)} key={el}>
+                {el}
+              </div>
+            );
           })}
         </nav>
         <div className={s.hr}></div>
