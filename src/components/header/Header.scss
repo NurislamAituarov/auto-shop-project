@@ -207,7 +207,7 @@
     }
   }
   .trigger {
-    margin-bottom: 620px;
+    margin-bottom: 700px;
   }
 }
 
@@ -216,6 +216,11 @@
     padding-top: 32px;
   }
   .trigger {
-    margin-bottom: 570px;
+    margin-bottom: 690px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .trigger {
+    margin-bottom: 670px;
   }
 }
