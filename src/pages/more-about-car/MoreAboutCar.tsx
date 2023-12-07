@@ -3,15 +3,13 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { IItemCar } from '../../types';
-import s from './MoreAboutCar.module.scss';
 
-import { getCarItem } from '../../api/client';
+import { getCarItem } from '../../api/services';
 import { addCar } from '../../redux/actions';
 import { Button } from '../../components/btn/Button';
 import { BlockApplication } from './components/Block-application';
 import { Advantageous } from './components/Advantageous';
 import { Diagram, Heart } from '../../components/svg';
-
 import { BlockItem } from './components/BlockItem';
 import {
   characteristic1,
@@ -23,6 +21,7 @@ import {
   service,
   service2,
 } from '../../assets';
+import s from './MoreAboutCar.module.scss';
 
 export default function MoreAboutCar() {
   const [carItem, setCarItem] = useState<IItemCar>();

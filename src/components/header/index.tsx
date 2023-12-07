@@ -7,7 +7,7 @@ import { HeaderNav } from './HeaderNav';
 import { HeaderSelect } from './components/HeaderSelect';
 import { HeaderSelectSVG } from './components/HeaderSelectSVG';
 import { BackCall } from '../back-call/BackCall';
-import { addListItem, fetchUserLocation } from '../../redux/actions';
+import { addCarListItemsAsync, fetchUserLocation } from '../../redux/actions';
 import { useAppSelector } from '../../hooks/Hooks';
 import { carOptions, navMenuItems } from '../../lib/constants';
 import { useLocation } from 'react-router-dom';
@@ -38,7 +38,7 @@ const Header = memo(({ refHeader }: any) => {
 
   useEffect(() => {
     // dispatch(fetchUserLocation());
-    dispatch(addListItem());
+    dispatch(addCarListItemsAsync());
 
     function onResize() {
       if (window.innerWidth <= 938) {
