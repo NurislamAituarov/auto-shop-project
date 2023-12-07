@@ -95,7 +95,7 @@ export default function AboutCompany() {
           </div>
         </div>
 
-        <img className={s.company__map_foto} src={map} alt="map" />
+        <img className={s.company__map_img} src={map} alt="map" />
       </div>
       <Partners />
     </section>

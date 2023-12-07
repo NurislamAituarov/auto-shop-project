@@ -92,6 +92,22 @@
   }
 }
 
+@media screen and (max-width: 1224px) {
+  .company__map {
+    position: relative;
+    .company__map_img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+    .company__map_num {
+      z-index: 10;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .section {
     margin-top: 0px;
@@ -118,13 +134,7 @@
     padding: 50px 60px;
     display: block;
     position: relative;
-    .company__map_foto {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-    }
+
     .company__map_num {
       width: 255px;
       position: relative;
